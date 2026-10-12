@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chadele — Strategic HR Operations & Human Capital Advisory</title>
-  <meta name="description" content="Chadele delivers transformative human resource consulting, executive talent architecture, compliant workplace policies, and high-retention culture frameworks.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <meta name="theme-color" content="#073b33">
+  <title>Chadele — Strategic HR Advisory & Human Capital Management Nigeria</title>
+  <meta name="description" content="Nigeria's premier people operations and executive HR advisory firm. Delivering Nigerian Labour Act compliance, Japa retention frameworks, and talent architecture for enterprise and scale-ups.">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='%23073b33'%3E%3Crect width='32' height='32' rx='8' fill='%23073b33'/%3E%3Cpath d='M10 16a6 6 0 1 1 12 0 6 6 0 0 1-12 0z' fill='%2300b87c'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="/style.css">
 </head>
@@ -16,12 +17,12 @@
       <a href="#" class="brand-logo" id="nav-brand">
         <div class="brand-emblem">C</div>
         <span class="brand-name">Chadele</span>
-        <span class="badge-hiring">We're hiring</span>
+        <span class="badge-hiring">Lagos &bull; Abuja</span>
       </a>
 
       <ul class="nav-links">
         <li><a href="#about" class="nav-link">About Us</a></li>
-        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#services" class="nav-link">Practice Areas</a></li>
         <li><a href="#calculator" class="nav-link">ROI Calculator</a></li>
         <li><a href="#why-us" class="nav-link">Why Choose Us</a></li>
         <li><a href="#case-studies" class="nav-link">Case Studies</a></li>
@@ -29,17 +30,61 @@
       </ul>
 
       <div class="nav-actions">
-        <a href="#portal" class="btn-sign-in" id="btn-client-portal">Sign In</a>
+        <a href="tel:+23418882390" class="btn-sign-in" id="nav-phone-link">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" style="vertical-align: -2px; margin-right: 4px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +234 1 888 2390
+        </a>
         <button class="btn-pill btn-pill-primary btn-pill-sm open-modal-btn" id="btn-nav-quote">
-          Get A Quote Now
+          Request Consultation
         </button>
       </div>
 
-      <button class="nav-mobile-toggle" id="btn-mobile-menu" aria-label="Toggle mobile menu">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <!-- Mobile Hamburger Button (Accessible, minimum 44x44px touch target) -->
+      <button class="nav-mobile-toggle" id="btn-mobile-menu" aria-label="Toggle Navigation Menu" aria-expanded="false">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
       </button>
     </div>
   </header>
+
+  <!-- MOBILE SLIDE-OVER DRAWER -->
+  <div class="mobile-drawer-overlay" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <div class="mobile-drawer-inner">
+      <div class="mobile-drawer-header">
+        <div class="brand-logo">
+          <div class="brand-emblem">C</div>
+          <span class="brand-name">Chadele</span>
+        </div>
+        <button class="mobile-drawer-close" id="mobile-drawer-close" aria-label="Close menu">&times;</button>
+      </div>
+
+      <nav class="mobile-drawer-nav">
+        <a href="#about" class="mobile-nav-link">About Chadele</a>
+        <a href="#services" class="mobile-nav-link">HR Practice Areas</a>
+        <a href="#calculator" class="mobile-nav-link">ROI & Turnover Calculator</a>
+        <a href="#why-us" class="mobile-nav-link">Why Choose Us</a>
+        <a href="#case-studies" class="mobile-nav-link">Nigerian Case Studies</a>
+        <a href="#faq" class="mobile-nav-link">FAQ & Labour Act</a>
+      </nav>
+
+      <div class="mobile-drawer-actions">
+        <button class="btn-pill btn-pill-primary open-modal-btn" style="width: 100%;">
+          Request Strategic Scope
+        </button>
+        <a href="https://wa.me/2348039421100?text=Hello%20Chadele%20HR,%20I%20would%20like%20to%20discuss%20our%20workforce%20needs." class="btn-pill btn-pill-secondary" style="width: 100%; border-color: #25D366; color: #128C7E;" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.971.53 1.769.813 2.796.813 3.179 0 5.766-2.587 5.767-5.766.001-3.18-2.585-5.767-5.767-5.767zm3.39 8.167c-.14.394-.813.738-1.121.785-.308.047-.711.066-1.144-.075-.433-.142-.996-.328-1.722-.647-1.074-.473-1.77-1.558-1.824-1.63-.053-.072-.439-.585-.439-1.116 0-.53.278-.791.377-.899.099-.108.217-.136.289-.136.072 0 .144.001.207.004.067.003.155-.025.243.185.09.215.308.752.335.807.027.054.045.118.009.19-.036.072-.054.117-.108.18-.054.063-.114.141-.163.19-.054.054-.11.113-.047.221.063.108.28 4.62.602.748.414.164.764.215.872.269.108.054.171.045.234-.027.063-.072.27-.315.342-.423.072-.108.144-.09.243-.054.099.036.63.297.738.351.108.054.18.081.207.126.027.045.027.261-.113.655z"/></svg>
+          Chat on WhatsApp
+        </a>
+      </div>
+
+      <div class="mobile-drawer-footer">
+        <div><strong>Lagos Office:</strong> Victoria Island</div>
+        <div><strong>Abuja Office:</strong> Maitama District</div>
+        <div>CIPM & SPHR Certified Partners</div>
+      </div>
+    </div>
+  </div>
 
   <main>
     <!-- HERO SECTION -->
@@ -48,20 +93,24 @@
       <div class="ambient-orb" style="top: 100px; left: 10%; width: 280px; height: 280px;"></div>
 
       <div class="hero-content">
+        <div class="category-badge" style="color: var(--accent); margin-bottom: 12px;">
+          Strategic Human Capital &bull; Nigeria & Diaspora
+        </div>
+
         <h1 class="hero-title">
           HR Operations <span class="text-rays">With</span> Expert <span class="text-underline">Consulting</span> Services
         </h1>
 
         <p class="hero-description">
-          Let Us Help You Drive Growth Through Effective HR Solutions. Chadele Works With Fast-Scaling Startups And Enterprise Leaders All Over The Country.
+          Empowering Nigerian enterprises and fast-growing African scale-ups with world-class people architecture, Labour Act compliance, Japa-retention models, and executive talent frameworks.
         </p>
 
         <div class="hero-cta-group">
           <button class="btn-pill btn-pill-primary open-modal-btn" id="hero-btn-consultation">
-            Get A Free Consultation
+            Book Strategy Consultation
           </button>
           <a href="#services" class="btn-pill btn-pill-secondary" id="hero-btn-learn-more">
-            Learn More
+            Explore Practice Areas
           </a>
         </div>
 
@@ -71,12 +120,12 @@
             <div class="metric-label">Retention Rate</div>
           </div>
           <div>
-            <div class="metric-number tabular-nums">500+</div>
-            <div class="metric-label">Clients Advised</div>
+            <div class="metric-number tabular-nums">₦42B+</div>
+            <div class="metric-label">Payroll Managed</div>
           </div>
           <div>
             <div class="metric-number tabular-nums">15+ Yrs</div>
-            <div class="metric-label">HR Excellence</div>
+            <div class="metric-label">Nigerian Excellence</div>
           </div>
         </div>
       </div>
@@ -84,7 +133,7 @@
       <div class="cutout-wrapper">
         <div class="cutout-contour-shadow"></div>
         <div class="cutout-image-container">
-          <img src="/images/hero-team.jpg" alt="Chadele HR Consulting Advisors Collaborating" id="hero-image">
+          <img src="/images/hero-team.jpg" alt="Chadele Nigerian HR Consulting Leadership Team" id="hero-image">
         </div>
         <div class="hero-floating-orb"></div>
       </div>
@@ -93,27 +142,27 @@
     <!-- TRUST STRIP -->
     <div class="trust-strip">
       <div class="trust-inner">
-        <div class="trust-title">Trusted By Forward-Thinking People Leaders Across Modern Industries</div>
+        <div class="trust-title">Trusted By Leading Nigerian Corporates & High-Growth Scale-Ups</div>
         <div class="trust-logos">
           <div class="trust-logo-item">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-            STRIPE PARTNERS
+            PAYSTACK ECOSYSTEM
           </div>
           <div class="trust-logo-item">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
-            RETOOL LABS
+            FLUTTERWAVE LABS
           </div>
           <div class="trust-logo-item">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 22 22 2 22"/></svg>
-            RAMP CAPITAL
+            INTERSWITCH GROUP
           </div>
           <div class="trust-logo-item">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="18" height="18" rx="4"/></svg>
-            BREX VENTURES
+            MONIEPOINT CLIENTS
           </div>
           <div class="trust-logo-item">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/></svg>
-            GUSTO HR
+            PIGGYVEST ADVISORY
           </div>
         </div>
       </div>
@@ -126,18 +175,18 @@
           <div class="cutout-wrapper">
             <div class="cutout-contour-shadow" style="transform: rotate(-1.5deg);"></div>
             <div class="cutout-image-container">
-              <img src="/images/about-team.jpg" alt="Experienced Chadele HR Consulting Executive Team" id="about-image">
+              <img src="/images/about-team.jpg" alt="Experienced Chadele HR Consulting Executive Team in Lagos" id="about-image">
             </div>
           </div>
 
           <div class="about-content">
-            <div class="category-badge">About Our Firm</div>
+            <div class="category-badge">About Chadele Nigeria</div>
             <h2 class="section-title">
               Get To Know Our <span class="text-rays">Experienced</span> <span class="text-underline">HR Consulting</span> Team
             </h2>
 
             <p class="section-subtitle">
-              Our HR Consulting Firm Has Been Providing Expert HR Solutions To Businesses Of All Sizes And Industries For Over A Decade. We Have A Team Of Experienced HR Professionals Who Are Dedicated To Helping Our Clients Achieve Their HR Goals And Drive Growth Through Effective HR Strategies.
+              Headquartered in Lagos with strategic presence in Abuja, Chadele provides comprehensive human capital solutions across Nigeria and West Africa. We blend international SHRM/SPHR methodologies with deep statutory mastery of the Nigerian Labour Act, PenCom, and state tax systems.
             </p>
 
             <ul class="about-features-list">
@@ -146,8 +195,8 @@
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
                 </div>
                 <div>
-                  <div class="feature-title">Certified Senior SPHR & SHRM-SCP Advisors</div>
-                  <div class="feature-desc">Every engagement is led by certified executive talent partners with 10+ years of frontline human capital experience.</div>
+                  <div class="feature-title">CIPM & Senior SPHR Certified Partners</div>
+                  <div class="feature-desc">All engagements are guided by Chartered Institute of Personnel Management (CIPM) accredited leaders with 15+ years of frontline corporate advisory experience.</div>
                 </div>
               </li>
               <li class="about-feature-item">
@@ -155,8 +204,8 @@
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
                 </div>
                 <div>
-                  <div class="feature-title">Audit-Proof Multi-State Compliance</div>
-                  <div class="feature-desc">Stay completely ahead of evolving FLSA wage-and-hour laws, EEOC requirements, and distributed workforce regulations.</div>
+                  <div class="feature-title">100% Nigerian Statutory & Labour Act Compliance</div>
+                  <div class="feature-desc">Complete audit protection for Pension Reform Act (PRA 2014), PAYE/LIRS remittances, NSITF, NHF, and Industrial Training Fund (ITF) statutory mandates.</div>
                 </div>
               </li>
               <li class="about-feature-item">
@@ -164,8 +213,8 @@
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
                 </div>
                 <div>
-                  <div class="feature-title">Tailored Performance & Culture Blueprints</div>
-                  <div class="feature-desc">No generic off-the-shelf templates. We build custom compensation grids, OKRs, and employee handbooks tailored to your DNA.</div>
+                  <div class="feature-title">Japa-Proof Retention & FX Compensation Design</div>
+                  <div class="feature-desc">Bespoke inflation-hedging compensation bands, dual-currency incentives, and high-engagement culture structures designed to defend key talent.</div>
                 </div>
               </li>
             </ul>
@@ -187,28 +236,28 @@
             We Offer A Wide Range Of <span class="text-rays">HR Consulting</span> <span class="text-underline">Services</span> Tailored To Your Business Needs.
           </h2>
           <p class="section-subtitle">
-            From strategic organizational design to daily compliance management, explore our comprehensive consulting capabilities designed to scale with your team.
+            From executive talent acquisition across Nigeria and the Diaspora to statutory compliance audits, explore our specialized capabilities.
           </p>
         </div>
 
         <div class="services-filter-bar">
           <button class="filter-btn active" data-filter="all">All Services</button>
-          <button class="filter-btn" data-filter="compliance">Compliance & Policies</button>
-          <button class="filter-btn" data-filter="performance">Performance & Talent</button>
-          <button class="filter-btn" data-filter="strategy">Executive Strategy</button>
+          <button class="filter-btn" data-filter="compliance">Labour Law & Compliance</button>
+          <button class="filter-btn" data-filter="retention">Retention & Talent</button>
+          <button class="filter-btn" data-filter="strategy">Executive & Payroll</button>
         </div>
 
         <div class="services-grid" id="services-grid">
           <!-- Card 1 -->
           <article class="service-card" data-category="compliance">
             <div class="service-card-image">
-              <img src="/images/service-policy.jpg" alt="HR Policies And Procedures Advisory">
-              <span class="service-card-badge">Compliance</span>
+              <img src="/images/service-policy.jpg" alt="Nigerian Labour Act And Handbook Compliance" loading="lazy">
+              <span class="service-card-badge">Labour Act</span>
             </div>
             <div class="service-card-body">
-              <h3 class="service-card-title">HR Policies And Procedures</h3>
+              <h3 class="service-card-title">Labour Act & Employee Handbooks</h3>
               <p class="service-card-desc">
-                We create customized HR policies and employee handbooks that align with your business culture, protect against liability, and guarantee compliance across all 50 states.
+                Customized employee handbooks aligned with the Nigerian Labour Act (2004), Trade Disputes Act, and state court precedents to protect your company from employment tribunals.
               </p>
               <div class="service-card-footer">
                 <a class="service-link open-practice-modal" data-service="policies">
@@ -219,15 +268,15 @@
           </article>
 
           <!-- Card 2 -->
-          <article class="service-card" data-category="performance">
+          <article class="service-card" data-category="retention">
             <div class="service-card-image">
-              <img src="/images/service-perf.jpg" alt="Performance Management Architecture">
+              <img src="/images/service-perf.jpg" alt="Performance Management Architecture" loading="lazy">
               <span class="service-card-badge">Productivity</span>
             </div>
             <div class="service-card-body">
               <h3 class="service-card-title">Performance Management</h3>
               <p class="service-card-desc">
-                We help you develop and implement high-impact performance appraisal systems, OKR frameworks, and continuous 360-degree feedback loops that drive employee engagement.
+                Replace stressful annual reviews with objective KPI matrices, OKRs, and continuous 360 feedback loops that inspire accountability across hybrid Nigerian workforces.
               </p>
               <div class="service-card-footer">
                 <a class="service-link open-practice-modal" data-service="performance">
@@ -238,15 +287,15 @@
           </article>
 
           <!-- Card 3 -->
-          <article class="service-card" data-category="strategy">
+          <article class="service-card" data-category="retention">
             <div class="service-card-image">
-              <img src="/images/team-meeting.jpg" alt="Talent Acquisition And Executive Search">
-              <span class="service-card-badge">Recruiting</span>
+              <img src="/images/team-meeting.jpg" alt="Japa Mitigation And Talent Acquisition" loading="lazy">
+              <span class="service-card-badge">Japa Defense</span>
             </div>
             <div class="service-card-body">
-              <h3 class="service-card-title">Talent Acquisition & Executive Search</h3>
+              <h3 class="service-card-title">Japa-Resilience & Executive Search</h3>
               <p class="service-card-desc">
-                Precision executive hiring and structured competency interview architecture with our signature 12-month candidate replacement warranty and retention roadmap.
+                Counter technical brain drain with strategic succession pipelines, Diaspora repatriation recruitment, and our 12-month candidate replacement warranty.
               </p>
               <div class="service-card-footer">
                 <a class="service-link open-practice-modal" data-service="talent">
@@ -259,13 +308,13 @@
           <!-- Card 4 -->
           <article class="service-card" data-category="strategy">
             <div class="service-card-image">
-              <img src="/images/hero-team.jpg" alt="Compensation And Total Rewards Benchmarking">
+              <img src="/images/hero-team.jpg" alt="FX And Inflation Indexed Compensation" loading="lazy">
               <span class="service-card-badge">Total Rewards</span>
             </div>
             <div class="service-card-body">
-              <h3 class="service-card-title">Compensation & Total Rewards</h3>
+              <h3 class="service-card-title">FX & Inflation-Indexed Compensation</h3>
               <p class="service-card-desc">
-                Market-tested Radford and Option Impact salary tiering, transparent equity vesting schedules, and executive incentive plans designed to attract top talent.
+                Market-tested salary tiering calibrated for Naira devaluation, dual-currency bonus pools, and executive equity structures that preserve employee purchasing power.
               </p>
               <div class="service-card-footer">
                 <a class="service-link open-practice-modal" data-service="compensation">
@@ -278,13 +327,13 @@
           <!-- Card 5 -->
           <article class="service-card" data-category="compliance">
             <div class="service-card-image">
-              <img src="/images/about-team.jpg" alt="Workplace Investigations & Employee Relations">
+              <img src="/images/about-team.jpg" alt="Trade Union And Employee Relations" loading="lazy">
               <span class="service-card-badge">Mediation</span>
             </div>
             <div class="service-card-body">
-              <h3 class="service-card-title">Employee Relations & Investigations</h3>
+              <h3 class="service-card-title">Trade Union Alignment & Mediation</h3>
               <p class="service-card-desc">
-                Impartial, legally vetted workplace dispute resolutions, sensitive internal grievance reviews, and restorative culture interventions that safeguard trust.
+                Constructive collective bargaining with NLC and TUC affiliates, impartial workplace investigations, and proactive industrial dispute resolution.
               </p>
               <div class="service-card-footer">
                 <a class="service-link open-practice-modal" data-service="relations">
@@ -295,15 +344,15 @@
           </article>
 
           <!-- Card 6 -->
-          <article class="service-card" data-category="performance">
+          <article class="service-card" data-category="strategy">
             <div class="service-card-image">
-              <img src="/images/service-perf.jpg" alt="HRIS Technology Automation & People Analytics">
-              <span class="service-card-badge">Tech & Analytics</span>
+              <img src="/images/service-perf.jpg" alt="Nigerian Payroll And HRIS Tech" loading="lazy">
+              <span class="service-card-badge">HR Tech & PAYE</span>
             </div>
             <div class="service-card-body">
-              <h3 class="service-card-title">HR Technology & People Analytics</h3>
+              <h3 class="service-card-title">HR Tech & Nigerian Payroll Integration</h3>
               <p class="service-card-desc">
-                Seamless selection and rollout of Rippling, Workday, or BambooHR with automated onboarding workflows, payroll sync, and predictive retention analytics.
+                Automated payroll with instant PAYE/LIRS tax, PenCom pension deduction sync, SeamlessHR, Workpay, and BambooHR setup with real-time retention dashboards.
               </p>
               <div class="service-card-footer">
                 <a class="service-link open-practice-modal" data-service="hrtech">
@@ -322,17 +371,24 @@
       </div>
     </section>
 
-    <!-- INTERACTIVE ROI & HEADCOUNT CALCULATOR -->
+    <!-- INTERACTIVE ROI & HEADCOUNT CALCULATOR (NAIRA / USD TOGGLE) -->
     <section class="section-wrapper" id="calculator">
       <div class="section-container">
         <div class="section-header-center" style="margin-bottom: 24px;">
-          <div class="category-badge">Interactive Business Value</div>
+          <div class="category-badge">Interactive Nigerian Business Value</div>
           <h2 class="section-title">
             Calculate Your Projected <span class="text-underline">HR Cost Savings</span>
           </h2>
           <p class="section-subtitle">
-            Unplanned employee turnover and compliance risks cost companies up to 1.5x each departed worker's annual salary. See what Chadele saves your business.
+            Unplanned employee turnover and Japa departures cost Nigerian companies up to 6 months of departed staff salary in lost productivity and re-hiring. See your numbers.
           </p>
+
+          <!-- Currency Switcher -->
+          <div class="currency-toggle-bar">
+            <span style="font-size: 13px; font-weight: 700; color: var(--text-muted);">Currency:</span>
+            <button class="currency-btn active" id="btn-currency-ngn" data-currency="NGN">₦ Naira (NGN)</button>
+            <button class="currency-btn" id="btn-currency-usd" data-currency="USD">$ USD</button>
+          </div>
         </div>
 
         <div class="calc-wrapper">
@@ -340,45 +396,45 @@
             <div>
               <div class="calc-field-header">
                 <span class="calc-field-label">Total Employee Headcount</span>
-                <span class="calc-field-val tabular-nums" id="val-headcount">120 employees</span>
+                <span class="calc-field-val tabular-nums" id="val-headcount">85 employees</span>
               </div>
-              <input type="range" class="calc-slider" id="slider-headcount" min="15" max="1000" step="5" value="120">
+              <input type="range" class="calc-slider" id="slider-headcount" min="10" max="800" step="5" value="85" aria-label="Employee Headcount">
             </div>
 
             <div>
               <div class="calc-field-header">
-                <span class="calc-field-label">Average Annual Salary</span>
-                <span class="calc-field-val tabular-nums" id="val-salary">$95,000</span>
+                <span class="calc-field-label" id="label-salary">Average Annual Salary (Gross)</span>
+                <span class="calc-field-val tabular-nums" id="val-salary">₦12,500,000</span>
               </div>
-              <input type="range" class="calc-slider" id="slider-salary" min="40000" max="220000" step="5000" value="95000">
+              <input type="range" class="calc-slider" id="slider-salary" min="3000000" max="45000000" step="500000" value="12500000" aria-label="Average Annual Salary">
             </div>
 
             <div>
               <div class="calc-field-header">
-                <span class="calc-field-label">Current Annual Voluntary Turnover Rate</span>
-                <span class="calc-field-val tabular-nums" id="val-turnover">18%</span>
+                <span class="calc-field-label">Current Annual Turnover Rate</span>
+                <span class="calc-field-val tabular-nums" id="val-turnover">22%</span>
               </div>
-              <input type="range" class="calc-slider" id="slider-turnover" min="5" max="40" step="1" value="18">
+              <input type="range" class="calc-slider" id="slider-turnover" min="5" max="45" step="1" value="22" aria-label="Annual Turnover Rate">
             </div>
           </div>
 
           <div class="calc-results-card">
             <div>
-              <div class="calc-stat-label">Estimated Current Annual Turnover Cost</div>
-              <div class="calc-stat-number tabular-nums" id="stat-turnover-cost">$1,026,000</div>
+              <div class="calc-stat-label">Estimated Current Annual Turnover Loss</div>
+              <div class="calc-stat-number tabular-nums" id="stat-turnover-cost">₦116,875,000</div>
             </div>
 
             <div>
-              <div class="calc-stat-label">Projected Chadele Net Annual Savings (35% Churn Reduction)</div>
-              <div class="calc-stat-number accent tabular-nums" id="stat-savings">$359,100</div>
+              <div class="calc-stat-label">Projected Chadele Net Annual Retention Savings (35% Churn Reduction)</div>
+              <div class="calc-stat-number accent tabular-nums" id="stat-savings">₦40,906,250</div>
             </div>
 
             <div style="font-size: 13px; color: rgba(255, 255, 255, 0.7); line-height: 1.5; border-top: 1px solid rgba(255, 255, 255, 0.15); padding-top: 16px;">
-              *Calculated based on SHRM benchmarks estimating replacement cost at 50% of annual wage.
+              *Benchmarked on CIPM & SHRM metrics calculating replacement cost at 50% of annual wage.
             </div>
 
             <button class="btn-pill btn-pill-accent btn-pill-sm open-modal-btn" style="margin-top: 8px;">
-              Unlock Full Retention Blueprint
+              Unlock Full Nigerian Retention Blueprint
             </button>
           </div>
         </div>
@@ -390,12 +446,12 @@
       <div class="section-container">
         <div class="why-grid">
           <div>
-            <div class="category-badge">Why Choose Us</div>
+            <div class="category-badge">Why Choose Chadele</div>
             <h2 class="section-title">
               HR Consulting Firms <span class="text-rays">Can Provide</span> Valuable <span class="text-underline">Support</span> And Expertise
             </h2>
             <p class="section-subtitle" style="margin-bottom: 36px;">
-              Businesses in various aspects of human resources when considering why to choose an HR consulting firm look for reliable partners that protect equity and foster elite talent.
+              Nigerian businesses require advisors who understand both the boardroom and the local regulatory environment, providing dependable governance and high team morale.
             </p>
 
             <div class="why-card-grid">
@@ -403,32 +459,32 @@
                 <div class="why-icon-box">
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                 </div>
-                <div class="why-card-title">Risk Mitigation</div>
-                <div class="why-card-desc">Zero class-action exposure and proactive compliance reviews before liabilities emerge.</div>
+                <div class="why-card-title">Statutory Immunity</div>
+                <div class="why-card-desc">Zero non-compliance fines across PenCom, LIRS, FIRS, ITF, and NSITF audits.</div>
               </div>
 
               <div class="why-pill-card">
                 <div class="why-icon-box">
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                 </div>
-                <div class="why-card-title">Rapid Response</div>
-                <div class="why-card-desc">Dedicated fractional Chief People Officer on-call with guaranteed 2-hour response windows.</div>
+                <div class="why-card-title">Lagos & Abuja On-Call</div>
+                <div class="why-card-desc">Dedicated fractional Chief People Officer available on-site in VI, Ikoyi, and Maitama within hours.</div>
               </div>
 
               <div class="why-pill-card">
                 <div class="why-icon-box">
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
                 </div>
-                <div class="why-card-title">4.2x Client ROI</div>
-                <div class="why-card-desc">Measurable cost reduction in recruitment agency fees, legal retainers, and voluntary turnover.</div>
+                <div class="why-card-title">Proven 4.2x Client ROI</div>
+                <div class="why-card-desc">Measurable reduction in expensive headhunter fees and voluntary key personnel turnover.</div>
               </div>
 
               <div class="why-pill-card">
                 <div class="why-icon-box">
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                 </div>
-                <div class="why-card-title">Culture Engineering</div>
-                <div class="why-card-desc">Strengthen company values with transparent recognition programs and leadership training.</div>
+                <div class="why-card-title">High-Trust Culture</div>
+                <div class="why-card-desc">Foster pride and mutual commitment with transparent recognition programs and empathetic management.</div>
               </div>
             </div>
           </div>
@@ -436,7 +492,7 @@
           <div class="cutout-wrapper">
             <div class="cutout-contour-shadow" style="transform: rotate(2deg);"></div>
             <div class="cutout-image-container">
-              <img src="/images/team-meeting.jpg" alt="Chadele International Strategic Consulting Advisory">
+              <img src="/images/team-meeting.jpg" alt="Chadele Executive Strategy Advisory Session Lagos" loading="lazy">
             </div>
           </div>
         </div>
@@ -447,49 +503,49 @@
     <section class="section-wrapper" id="case-studies">
       <div class="section-container">
         <div class="section-header-center">
-          <div class="category-badge">Case Studies</div>
+          <div class="category-badge">Nigerian Case Studies</div>
           <h2 class="section-title">
             How We've Helped Businesses <span class="text-rays">Achieve Their</span> <span class="text-underline">HR Goals</span>
           </h2>
           <p class="section-subtitle">
-            Explore authentic case records from our enterprise engagements highlighting tangible operational and financial improvements.
+            Authentic success records across Nigerian tech startups, commercial banks, and multi-state conglomerates.
           </p>
         </div>
 
         <div class="cases-grid">
           <div class="case-card">
-            <div class="case-tag">Series B SaaS Scale-up</div>
-            <h3 class="case-title">Halving Engineer Turnover During Rapid 3x Headcount Expansion</h3>
+            <div class="case-tag">Yaba Lagos Fintech (Series A)</div>
+            <h3 class="case-title">Halving Engineer Japa Departures with Dual-Currency Incentive Tiers</h3>
             <p class="case-desc">
-              Restructured engineering career ladders, benchmarked Radford compensation tiers, and introduced bi-weekly feedback rituals for 280 engineers across 4 time zones.
+              Restructured senior software engineering career paths and introduced USD-hedged retention performance bonuses for 95 technical staff in Lagos and remote hubs.
             </p>
             <div class="case-metrics-badge">
               <span class="case-metric-text">Voluntary Turnover</span>
-              <span class="case-metric-val tabular-nums">28% &rarr; 9%</span>
+              <span class="case-metric-val tabular-nums">34% &rarr; 11%</span>
             </div>
           </div>
 
           <div class="case-card">
-            <div class="case-tag">Multi-State Healthtech</div>
-            <h3 class="case-title">Unifying 1,800 Healthcare Workers Under Multi-State Compliance</h3>
+            <div class="case-tag">Commercial Energy Conglomerate</div>
+            <h3 class="case-title">Harmonizing 1,200 Staff Under PenCom & Labour Act Compliance</h3>
             <p class="case-desc">
-              Conducted full wage-and-hour audit across 14 state entities, rewrote core handbooks, and migrated complex shift-based payroll to Workday with zero disruption.
+              Conducted exhaustive multi-state employment audit across Lagos, Rivers, and Delta operations, resolving legacy pension arrears and updating employment contracts with zero downtime.
             </p>
             <div class="case-metrics-badge">
-              <span class="case-metric-text">Audit Discrepancies</span>
-              <span class="case-metric-val tabular-nums">0 Fines</span>
+              <span class="case-metric-text">Tribunal Exposure</span>
+              <span class="case-metric-val tabular-nums">0 Legal Disputes</span>
             </div>
           </div>
 
           <div class="case-card">
-            <div class="case-tag">Global Fintech Enterprise</div>
-            <h3 class="case-title">Modernizing Global Equity & Executive Compensation Architecture</h3>
+            <div class="case-tag">Victoria Island FMCG Distributor</div>
+            <h3 class="case-title">Restructuring Executive Leadership Across Nigeria & Ghana</h3>
             <p class="case-desc">
-              Designed market-competitive incentive compensation grids and retention packages that successfully defended key executive talent through a major $180M liquidity event.
+              Recruited Chief Operating Officer and Country Commercial Directors, instituting 360-degree KPI scorecards that accelerated regional revenue by 48% within 12 months.
             </p>
             <div class="case-metrics-badge">
               <span class="case-metric-text">Executive Retention</span>
-              <span class="case-metric-val tabular-nums">98% Retained</span>
+              <span class="case-metric-val tabular-nums">100% Retained</span>
             </div>
           </div>
         </div>
@@ -500,22 +556,22 @@
     <section class="section-wrapper" id="testimonials" style="background-color: #f7f9f8;">
       <div class="section-container">
         <div class="section-header-center">
-          <div class="category-badge">Client Testimonials</div>
-          <h2 class="section-title">What Executive Leaders Say About Chadele</h2>
-          <p class="section-subtitle">Trusted by founders, board members, and People executives who demand measurable operational excellence.</p>
+          <div class="category-badge">Nigerian Executive Testimonials</div>
+          <h2 class="section-title">What Nigerian Leaders Say About Chadele</h2>
+          <p class="section-subtitle">Trusted by founders, board directors, and Chief People Officers across Nigeria.</p>
         </div>
 
         <div class="testimonials-grid">
           <div class="testimonial-card">
             <div class="test-stars">&starf;&starf;&starf;&starf;&starf;</div>
             <p class="test-quote">
-              "Chadele completely overhauled our employee handbook and compensation tiers. Their strategic guidance gave our executive committee complete confidence as we scaled past 400 employees."
+              "Chadele stepped into our Lagos headquarters when we were losing critical talent to overseas migration. Their compensation restructuring and succession design saved our engineering roadmap."
             </p>
             <div class="test-author-box">
-              <div class="test-avatar">DR</div>
+              <div class="test-avatar">TO</div>
               <div>
-                <div class="test-name">David Roberts</div>
-                <div class="test-role">Chief People Officer, Veloce Health</div>
+                <div class="test-name">Tunde Olawale</div>
+                <div class="test-role">Chief Technology Officer, SwiftPay Nigeria</div>
               </div>
             </div>
           </div>
@@ -523,13 +579,13 @@
           <div class="testimonial-card">
             <div class="test-stars">&starf;&starf;&starf;&starf;&starf;</div>
             <p class="test-quote">
-              "Having Chadele as our fractional HR partner meant we didn't have to hire a full HR department prematurely. Their compliance audits saved us hundreds of thousands in potential exposure."
+              "Their grasp of the Nigerian Labour Act, PenCom audits, and LIRS tax filings is unparalleled. Having Chadele in our corner gave our board complete legal reassurance."
             </p>
             <div class="test-author-box">
-              <div class="test-avatar">SL</div>
+              <div class="test-avatar">AA</div>
               <div>
-                <div class="test-name">Sarah Lindqvist</div>
-                <div class="test-role">Co-Founder & CEO, Apex Cloud Systems</div>
+                <div class="test-name">Amina Abubakar</div>
+                <div class="test-role">Managing Director, Kora Capital Abuja</div>
               </div>
             </div>
           </div>
@@ -537,13 +593,13 @@
           <div class="testimonial-card">
             <div class="test-stars">&starf;&starf;&starf;&starf;&starf;</div>
             <p class="test-quote">
-              "Their team is prompt, deeply knowledgeable, and empathetic. They transformed our messy performance review process into a clean system that our team actually loves."
+              "They helped us build structured career ladders that actually motivate our staff. Our employee satisfaction score jumped from 61% to 89% within our first 6 months."
             </p>
             <div class="test-author-box">
-              <div class="test-avatar">MK</div>
+              <div class="test-avatar">CO</div>
               <div>
-                <div class="test-name">Marcus Kim</div>
-                <div class="test-role">VP Operations, Strata Robotics</div>
+                <div class="test-name">Chidinma Okonkwo</div>
+                <div class="test-role">Head of People Operations, PrimeHealth Africa</div>
               </div>
             </div>
           </div>
@@ -555,49 +611,49 @@
     <section class="section-wrapper" id="faq">
       <div class="section-container">
         <div class="section-header-center">
-          <div class="category-badge">Frequently Asked Questions</div>
+          <div class="category-badge">Nigerian Compliance & FAQ</div>
           <h2 class="section-title">Answers To Top Client Questions</h2>
-          <p class="section-subtitle">Everything you need to know about working with Chadele HR Advisory.</p>
+          <p class="section-subtitle">Everything you need to know about working with Chadele HR Advisory in Nigeria.</p>
         </div>
 
         <div class="faq-container">
           <div class="faq-item active">
             <button class="faq-question">
-              <span>What engagement models does Chadele offer?</span>
+              <span>How does Chadele ensure compliance with the Nigerian Labour Act?</span>
               <span class="faq-toggle-icon">+</span>
             </button>
             <div class="faq-answer">
-              We provide three flexible engagement models: (1) Retained Fractional CHRO advisory for ongoing people leadership, (2) Project-based sprints for handbooks, compensation benchmarking, or audits, and (3) On-demand HR crisis & workplace investigation support.
+              We conduct a comprehensive review of your employment contracts, redundancy clauses, disciplinary protocols, and working hours against the Nigerian Labour Act (2004) and National Industrial Court of Nigeria (NICN) rulings to ensure zero legal liability.
             </div>
           </div>
 
           <div class="faq-item">
             <button class="faq-question">
-              <span>How quickly can a Chadele advisory team onboard with our company?</span>
+              <span>How do you handle statutory remittances (PenCom, NSITF, ITF, NHF)?</span>
               <span class="faq-toggle-icon">+</span>
             </button>
             <div class="faq-answer">
-              Most clients begin within 48 to 72 hours of initial scope alignment. Our dedicated onboarding sprint includes a comprehensive initial people audit, stakeholder interviews, and an immediate compliance health check.
+              We audit your payroll to ensure 100% accurate calculation and remittance under the Pension Reform Act (8% employee, 10% employer), NSITF (1% of payroll), Industrial Training Fund (1% for 5+ employees), and National Housing Fund (2.5% of basic salary).
             </div>
           </div>
 
           <div class="faq-item">
             <button class="faq-question">
-              <span>Do you work with remote and multi-state distributed workforces?</span>
+              <span>What is Chadele's strategy for addressing the "Japa" talent drain?</span>
               <span class="faq-toggle-icon">+</span>
             </button>
             <div class="faq-answer">
-              Yes! More than 80% of our clients operate distributed teams across 15+ states and international jurisdictions. We specialize in nexus establishment, state-specific paid leave policies, and remote compensation banding.
+              We combine three proven levers: (1) FX-hedged or inflation-adjusted compensation buffers, (2) Accelerated career advancement paths with rapid seniority milestone reviews, and (3) Active internal knowledge redundancy frameworks so departures do not stall operations.
             </div>
           </div>
 
           <div class="faq-item">
             <button class="faq-question">
-              <span>What qualifications do Chadele consultants hold?</span>
+              <span>Can Chadele provide on-site HR support in Lagos and Abuja?</span>
               <span class="faq-toggle-icon">+</span>
             </button>
             <div class="faq-answer">
-              Our lead consultants hold Senior Professional in Human Resources (SPHR) and SHRM Senior Certified Professional (SHRM-SCP) designations, with many possessing employment law backgrounds and previous VP People leadership roles at Fortune 500 organizations.
+              Yes. Our senior partners operate out of Victoria Island, Lagos and Maitama, Abuja. We provide both fractional embedded on-site leadership and executive board advisory whenever needed.
             </div>
           </div>
         </div>
@@ -607,13 +663,18 @@
     <!-- CTA BANNER -->
     <section class="section-container" style="padding: 0 24px;">
       <div class="cta-banner-wrapper">
-        <h2 class="cta-banner-title">Ready To Build A Resilient, High-Performing Workforce?</h2>
+        <h2 class="cta-banner-title">Ready To Transform Your Nigerian Workforce Operations?</h2>
         <p class="cta-banner-subtitle">
-          Schedule a complimentary 30-minute strategic consultation with our Senior HR Partners. We will assess your people operations and outline an immediate action plan.
+          Schedule a complimentary 30-minute strategic consultation with our Senior HR Partners in Lagos or Abuja. We will evaluate your people structure and outline an immediate action plan.
         </p>
-        <button class="btn-pill btn-pill-accent open-modal-btn" id="cta-bottom-btn">
-          Schedule Your Free Consultation
-        </button>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <button class="btn-pill btn-pill-accent open-modal-btn" id="cta-bottom-btn">
+            Schedule Free Strategy Call
+          </button>
+          <a href="https://wa.me/2348039421100?text=Hello%20Chadele%20HR,%20I%20would%20like%20to%20discuss%20our%20workforce%20needs." class="btn-pill" style="background-color: #25D366; color: #fff;" target="_blank" rel="noopener">
+            WhatsApp Practice Director
+          </a>
+        </div>
       </div>
     </section>
   </main>
@@ -628,66 +689,65 @@
             <span class="brand-name" style="color: #ffffff;">Chadele</span>
           </div>
           <p style="font-size: 14px; color: rgba(255, 255, 255, 0.65); line-height: 1.6; max-width: 280px; margin-bottom: 20px;">
-            Premier human capital advisory and executive people operations consulting for companies that value their people and their future.
+            Nigeria's leading human capital advisory and executive people operations consulting firm for forward-looking African enterprises.
           </p>
-          <div style="font-size: 13px; color: var(--accent); font-weight: 700;">
-            advisory@chadele.com &bull; +1 (800) 429-2831
+          <div style="font-size: 13px; color: var(--accent); font-weight: 700; line-height: 1.8;">
+            advisory@chadele.ng<br>
+            +234 1 888 2390 &bull; +234 803 942 1100
           </div>
         </div>
 
         <div>
-          <div class="footer-col-title">Services</div>
+          <div class="footer-col-title">Practices</div>
           <ul class="footer-links">
-            <li><a href="#services" class="footer-link">HR Compliance Audits</a></li>
-            <li><a href="#services" class="footer-link">Performance Architecture</a></li>
+            <li><a href="#services" class="footer-link">Labour Act Audits</a></li>
+            <li><a href="#services" class="footer-link">Japa Retention Design</a></li>
             <li><a href="#services" class="footer-link">Executive Search</a></li>
-            <li><a href="#services" class="footer-link">Compensation Benchmarking</a></li>
-            <li><a href="#services" class="footer-link">Workplace Investigations</a></li>
+            <li><a href="#services" class="footer-link">FX Salary Benchmarks</a></li>
+            <li><a href="#services" class="footer-link">PenCom & PAYE Setup</a></li>
           </ul>
         </div>
 
         <div>
-          <div class="footer-col-title">Company</div>
-          <ul class="footer-links">
-            <li><a href="#about" class="footer-link">About Chadele</a></li>
-            <li><a href="#why-us" class="footer-link">Why Choose Us</a></li>
-            <li><a href="#case-studies" class="footer-link">Client Case Studies</a></li>
-            <li><a href="#calculator" class="footer-link">ROI Calculator</a></li>
-            <li><a href="#faq" class="footer-link">Careers <span class="badge-hiring" style="margin-left: 4px; font-size: 10px;">We're hiring</span></a></li>
-          </ul>
-        </div>
-
-        <div>
-          <div class="footer-col-title">Offices</div>
-          <p style="font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.6; margin-bottom: 12px;">
-            <strong>New York:</strong><br>
-            450 Lexington Ave, 38th Fl<br>New York, NY 10017
+          <div class="footer-col-title">Offices in Nigeria</div>
+          <p style="font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.6; margin-bottom: 14px;">
+            <strong>Lagos (HQ):</strong><br>
+            14A Idowu Martins Street, Victoria Island, Lagos State
           </p>
           <p style="font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.6;">
-            <strong>London:</strong><br>
-            25 Berkeley Square, Mayfair<br>London W1J 6HN
+            <strong>Abuja Branch:</strong><br>
+            Plot 1024 Cadastral Zone, Maitama, Abuja, FCT
           </p>
         </div>
 
         <div>
-          <div class="footer-col-title">Stay Informed</div>
+          <div class="footer-col-title">Certifications</div>
+          <p style="font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.6; margin-bottom: 10px;">
+            &bull; Chartered Institute of Personnel Management (CIPM)<br>
+            &bull; SHRM Senior Certified Professional (SHRM-SCP)<br>
+            &bull; HR Certification Institute (SPHR)
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Executive Briefing</div>
           <p style="font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.5; margin-bottom: 14px;">
-            Receive our quarterly executive briefing on employment regulations and workforce trends.
+            Receive our quarterly Nigerian regulatory briefing and workforce compensation index.
           </p>
           <form id="newsletter-form" style="display: flex; gap: 8px;">
-            <input type="email" placeholder="Your work email" required class="form-input" style="padding: 10px 14px; font-size: 13px; background-color: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: #fff;">
-            <button type="submit" class="btn-pill btn-pill-accent btn-pill-sm">Join</button>
+            <input type="email" placeholder="Your work email" required class="form-input" style="padding: 10px 14px; font-size: 14px; background-color: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: #fff;">
+            <button type="submit" class="btn-pill btn-pill-accent btn-pill-sm">Subscribe</button>
           </form>
           <div id="newsletter-feedback" style="font-size: 12px; color: var(--accent); margin-top: 8px; display: none;">Thank you for subscribing!</div>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <div>&copy; 2026 Chadele Human Capital Advisory LLC. All rights reserved.</div>
+        <div>&copy; 2026 Chadele Human Capital Advisory Nigeria Ltd. RC: 1849201. All rights reserved.</div>
         <div style="display: flex; gap: 24px;">
           <a href="#" class="footer-link">Privacy Policy</a>
-          <a href="#" class="footer-link">Terms of Engagement</a>
-          <a href="#" class="footer-link">Security & SOC-2</a>
+          <a href="#" class="footer-link">Terms of Advisory</a>
+          <a href="#" class="footer-link">Labour Act Guidance</a>
         </div>
       </div>
     </div>
@@ -698,28 +758,28 @@
     <div class="modal-container">
       <button class="modal-close-btn" id="modal-close-btn" aria-label="Close dialog">&times;</button>
       <div id="modal-form-content">
-        <div class="category-badge" style="margin-bottom: 8px;">Complimentary Strategy Session</div>
-        <h3 id="modal-title" style="font-size: 24px; font-weight: 800; color: var(--text-main); margin-bottom: 10px;">
-          Request Strategic HR Scope & Quote
+        <div class="category-badge" style="margin-bottom: 8px;">Complimentary Nigerian Strategy Session</div>
+        <h3 id="modal-title" style="font-size: 22px; font-weight: 800; color: var(--text-main); margin-bottom: 10px;">
+          Request Strategic Scope & Proposal
         </h3>
         <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 24px;">
-          Connect directly with a Senior Practice Partner to review your organizational priorities and receive a customized advisory proposal.
+          Connect with a Senior Partner in Lagos or Abuja to review your organizational priorities and receive an advisory proposal.
         </p>
 
         <form id="consultation-form">
           <div class="form-group">
             <label class="form-label" for="input-name">Full Name *</label>
-            <input type="text" id="input-name" class="form-input" placeholder="e.g. Eleanor Vance" required>
+            <input type="text" id="input-name" class="form-input" placeholder="e.g. Babatunde Adeleke" required>
           </div>
 
           <div class="form-group">
             <label class="form-label" for="input-email">Work Email *</label>
-            <input type="email" id="input-email" class="form-input" placeholder="e.g. eleanor@company.com" required>
+            <input type="email" id="input-email" class="form-input" placeholder="e.g. adeleke@company.ng" required>
           </div>
 
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
             <div class="form-group">
-              <label class="form-label" for="select-size">Company Size</label>
+              <label class="form-label" for="select-size">Company Headcount</label>
               <select id="select-size" class="form-select">
                 <option value="15-50">15 – 50 Employees</option>
                 <option value="51-200" selected>51 – 200 Employees</option>
@@ -731,17 +791,17 @@
             <div class="form-group">
               <label class="form-label" for="select-practice">Primary Need</label>
               <select id="select-practice" class="form-select">
-                <option value="compliance">Policies & Compliance</option>
+                <option value="compliance">Labour Act & Handbook Audit</option>
+                <option value="japa">Japa Retention & Compensation</option>
                 <option value="fractional-chro">Fractional CHRO Advisory</option>
-                <option value="performance">Performance & OKRs</option>
-                <option value="compensation">Compensation & Benchmarks</option>
-                <option value="talent">Executive Search</option>
+                <option value="performance">Performance & OKR Architecture</option>
+                <option value="talent">Executive Search (Nigeria/Diaspora)</option>
               </select>
             </div>
           </div>
 
           <div class="form-group">
-            <label class="form-label" for="input-notes">Project Notes or Goals (Optional)</label>
+            <label class="form-label" for="input-notes">Notes or Deadlines (Optional)</label>
             <textarea id="input-notes" class="form-textarea" rows="3" placeholder="Describe current challenges or immediate deadlines..."></textarea>
           </div>
 
@@ -757,7 +817,7 @@
         </div>
         <h3 style="font-size: 22px; font-weight: 800; color: var(--text-main); margin-bottom: 8px;">Scope Request Received!</h3>
         <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6; margin-bottom: 24px;">
-          Thank you. A Senior HR Practice Director will review your requirements and reach out within 4 business hours with an initial brief.
+          Thank you. A Senior HR Practice Director from our Victoria Island or Abuja office will reach out within 4 business hours.
         </p>
         <button class="btn-pill btn-pill-primary" id="btn-modal-done">Done</button>
       </div>
@@ -769,7 +829,7 @@
     <div class="modal-container">
       <button class="modal-close-btn" id="practice-close-btn" aria-label="Close dialog">&times;</button>
       <div class="category-badge" id="practice-modal-category">PRACTICE AREA OVERVIEW</div>
-      <h3 id="practice-modal-title" style="font-size: 24px; font-weight: 800; color: var(--text-main); margin-bottom: 12px;"></h3>
+      <h3 id="practice-modal-title" style="font-size: 22px; font-weight: 800; color: var(--text-main); margin-bottom: 12px;"></h3>
       <p id="practice-modal-desc" style="font-size: 15px; color: var(--text-muted); line-height: 1.65; margin-bottom: 24px;"></p>
       
       <div style="background-color: var(--bg-subtle); border-radius: var(--radius-sm); padding: 20px; margin-bottom: 28px;">
@@ -777,7 +837,7 @@
         <ul id="practice-modal-deliverables" style="font-size: 14px; color: var(--text-main); display: flex; flex-direction: column; gap: 8px; padding-left: 20px;"></ul>
       </div>
 
-      <div style="display: flex; gap: 14px;">
+      <div style="display: flex; gap: 14px; flex-wrap: wrap;">
         <button class="btn-pill btn-pill-primary open-modal-btn" id="practice-modal-cta">
           Book This Practice
         </button>
