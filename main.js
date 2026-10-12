@@ -4,9 +4,15 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
+// Prevent browser from jumping to top or fighting GSAP on page reload
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const isMobile = window.innerWidth <= 768;
+  let heroTl = null;
 
   // =========================================================================
   // 1. MOBILE SLIDE-OVER DRAWER NAVIGATION
@@ -82,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Hero Staged Entrance Timeline
-    const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+    heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
     heroTl
       .from('.hero-title', {
@@ -279,8 +285,9 @@ document.addEventListener('DOMContentLoaded', () => {
     statSavings.textContent = formatMoney(projectedSavings, currentCurrency);
   }
 
-  function setCurrency(currency) {
+  function setCurrency(currency, resetSalary = true) {
     currentCurrency = currency;
+    localStorage.setItem('chadele_calc_currency', currency);
     if (currency === 'NGN') {
       btnNgn?.classList.add('active');
       btnUsd?.classList.remove('active');
@@ -288,7 +295,7 @@ document.addEventListener('DOMContentLoaded', () => {
         sliderSalary.min = "3000000";
         sliderSalary.max = "45000000";
         sliderSalary.step = "500000";
-        sliderSalary.value = "12500000";
+        if (resetSalary) sliderSalary.value = "12500000";
       }
     } else {
       btnUsd?.classList.add('active');
@@ -297,19 +304,46 @@ document.addEventListener('DOMContentLoaded', () => {
         sliderSalary.min = "25000";
         sliderSalary.max = "180000";
         sliderSalary.step = "5000";
-        sliderSalary.value = "75000";
+        if (resetSalary) sliderSalary.value = "75000";
       }
     }
     updateCalculator();
   }
 
-  btnNgn?.addEventListener('click', () => setCurrency('NGN'));
-  btnUsd?.addEventListener('click', () => setCurrency('USD'));
+  btnNgn?.addEventListener('click', () => setCurrency('NGN', true));
+  btnUsd?.addEventListener('click', () => setCurrency('USD', true));
+
+  // Restore saved calculator state across reloads
+  try {
+    const savedCurrency = localStorage.getItem('chadele_calc_currency');
+    const savedHeadcount = localStorage.getItem('chadele_calc_headcount');
+    const savedSalary = localStorage.getItem('chadele_calc_salary');
+    const savedTurnover = localStorage.getItem('chadele_calc_turnover');
+
+    if (savedCurrency === 'USD') {
+      setCurrency('USD', !savedSalary);
+    }
+    if (sliderHeadcount && savedHeadcount) sliderHeadcount.value = savedHeadcount;
+    if (sliderSalary && savedSalary) sliderSalary.value = savedSalary;
+    if (sliderTurnover && savedTurnover) sliderTurnover.value = savedTurnover;
+  } catch (e) {
+    // Graceful fallback if localStorage is disabled
+  }
+
+  function handleCalculatorInput() {
+    updateCalculator();
+    try {
+      localStorage.setItem('chadele_calc_currency', currentCurrency);
+      if (sliderHeadcount) localStorage.setItem('chadele_calc_headcount', sliderHeadcount.value);
+      if (sliderSalary) localStorage.setItem('chadele_calc_salary', sliderSalary.value);
+      if (sliderTurnover) localStorage.setItem('chadele_calc_turnover', sliderTurnover.value);
+    } catch (e) {}
+  }
 
   if (sliderHeadcount && sliderSalary && sliderTurnover) {
-    sliderHeadcount.addEventListener('input', updateCalculator);
-    sliderSalary.addEventListener('input', updateCalculator);
-    sliderTurnover.addEventListener('input', updateCalculator);
+    sliderHeadcount.addEventListener('input', handleCalculatorInput);
+    sliderSalary.addEventListener('input', handleCalculatorInput);
+    sliderTurnover.addEventListener('input', handleCalculatorInput);
     updateCalculator();
   }
 
@@ -423,6 +457,10 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.classList.add('active');
 
       const filter = btn.getAttribute('data-filter');
+      try {
+        sessionStorage.setItem('chadele_service_filter', filter);
+      } catch (e) {}
+
       const visibleCards = [];
 
       serviceCards.forEach(card => {
@@ -443,6 +481,22 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // Restore saved filter tab across reloads
+  try {
+    const savedFilter = sessionStorage.getItem('chadele_service_filter');
+    if (savedFilter && savedFilter !== 'all') {
+      const activeFilterBtn = document.querySelector(`.filter-btn[data-filter="${savedFilter}"]`);
+      if (activeFilterBtn) {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        activeFilterBtn.classList.add('active');
+        serviceCards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          card.style.display = (category === savedFilter) ? 'flex' : 'none';
+        });
+      }
+    }
+  } catch (e) {}
 
   // =========================================================================
   // 6. CONSULTATION & QUOTE REQUEST MODAL
@@ -492,6 +546,40 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  const draftInputs = {
+    name: document.getElementById('input-name'),
+    email: document.getElementById('input-email'),
+    size: document.getElementById('select-size'),
+    practice: document.getElementById('select-practice'),
+    notes: document.getElementById('input-notes')
+  };
+
+  // Restore draft if saved across reloads
+  try {
+    const savedDraft = JSON.parse(sessionStorage.getItem('chadele_consultation_draft') || '{}');
+    if (savedDraft.name && draftInputs.name) draftInputs.name.value = savedDraft.name;
+    if (savedDraft.email && draftInputs.email) draftInputs.email.value = savedDraft.email;
+    if (savedDraft.size && draftInputs.size) draftInputs.size.value = savedDraft.size;
+    if (savedDraft.practice && draftInputs.practice) draftInputs.practice.value = savedDraft.practice;
+    if (savedDraft.notes && draftInputs.notes) draftInputs.notes.value = savedDraft.notes;
+  } catch (e) {}
+
+  function saveFormDraft() {
+    try {
+      const draft = {
+        name: draftInputs.name?.value || '',
+        email: draftInputs.email?.value || '',
+        size: draftInputs.size?.value || '',
+        practice: draftInputs.practice?.value || '',
+        notes: draftInputs.notes?.value || ''
+      };
+      sessionStorage.setItem('chadele_consultation_draft', JSON.stringify(draft));
+    } catch (e) {}
+  }
+
+  consultationForm?.addEventListener('input', saveFormDraft);
+  consultationForm?.addEventListener('change', saveFormDraft);
+
   consultationForm?.addEventListener('submit', (e) => {
     e.preventDefault();
     const submitBtn = document.getElementById('btn-submit-consultation');
@@ -504,6 +592,9 @@ document.addEventListener('DOMContentLoaded', () => {
       if (modalFormContent) modalFormContent.style.display = 'none';
       if (modalSuccessContent) modalSuccessContent.style.display = 'block';
       consultationForm.reset();
+      try {
+        sessionStorage.removeItem('chadele_consultation_draft');
+      } catch (e) {}
       if (submitBtn) {
         submitBtn.textContent = 'Submit Scope Request';
         submitBtn.style.opacity = '1';
@@ -539,23 +630,159 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // =========================================================================
-  // 9. ACTIVE NAV SCROLLSPY
+  // 9. SCROLL PERSISTENCE & POSITION RESTORATION
   // =========================================================================
-  const sections = document.querySelectorAll('main section[id]');
-  window.addEventListener('scroll', () => {
-    const scrollY = window.pageYOffset;
-    sections.forEach(current => {
-      const sectionHeight = current.offsetHeight;
-      const sectionTop = current.offsetTop - 120;
-      const sectionId = current.getAttribute('id');
-      const navLink = document.querySelector(`.nav-links a[href*="${sectionId}"]`);
-      if (navLink) {
-        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-          navLink.classList.add('active');
-        } else {
-          navLink.classList.remove('active');
-        }
+  const navbar = document.querySelector('.navbar-wrapper');
+  const allSections = document.querySelectorAll('main section[id]');
+  let scrollTicking = false;
+  let currentActiveId = '';
+
+  // Brand logo click clears scroll memory to return home
+  document.querySelectorAll('.brand-logo').forEach(logo => {
+    logo.addEventListener('click', () => {
+      try {
+        sessionStorage.setItem('chadele_scroll_pos', '0');
+        sessionStorage.setItem('chadele_active_section', 'hero');
+        history.replaceState(null, '', window.location.pathname + window.location.search);
+      } catch (e) {}
+    });
+  });
+
+  function handleScrollPersistence() {
+    const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+
+    // Persist raw scroll offset
+    try {
+      sessionStorage.setItem('chadele_scroll_pos', Math.round(scrollY).toString());
+    } catch (e) {}
+
+    // Navbar scrolled state
+    if (scrollY > 40) {
+      navbar?.classList.add('scrolled');
+    } else {
+      navbar?.classList.remove('scrolled');
+    }
+
+    // Detect currently visible section
+    let detectedId = 'hero';
+    allSections.forEach(sec => {
+      const top = sec.offsetTop - 140;
+      const height = sec.offsetHeight;
+      if (scrollY >= top && scrollY < top + height) {
+        detectedId = sec.getAttribute('id');
       }
     });
+
+    if (detectedId !== currentActiveId) {
+      currentActiveId = detectedId;
+      try {
+        if (detectedId && detectedId !== 'hero') {
+          sessionStorage.setItem('chadele_active_section', detectedId);
+          history.replaceState(null, '', '#' + detectedId);
+        } else if (scrollY < 120) {
+          sessionStorage.setItem('chadele_active_section', 'hero');
+          history.replaceState(null, '', window.location.pathname + window.location.search);
+        }
+      } catch (e) {}
+
+      // Update active state on nav links
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === '#' + detectedId) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    }
+
+    scrollTicking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!scrollTicking) {
+      requestAnimationFrame(handleScrollPersistence);
+      scrollTicking = true;
+    }
+  }, { passive: true });
+
+  // Guarantee persistence before page unloads
+  window.addEventListener('beforeunload', () => {
+    try {
+      const currentScroll = Math.round(window.pageYOffset || document.documentElement.scrollTop);
+      sessionStorage.setItem('chadele_scroll_pos', currentScroll.toString());
+    } catch (e) {}
+  });
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'hidden') {
+      try {
+        const currentScroll = Math.round(window.pageYOffset || document.documentElement.scrollTop);
+        sessionStorage.setItem('chadele_scroll_pos', currentScroll.toString());
+      } catch (e) {}
+    }
+  });
+
+  // RESTORATION FUNCTION: Restores user to their exact place on page reload
+  function restoreScrollPosition() {
+    let savedSection = '';
+    let savedPos = 0;
+
+    try {
+      const hash = window.location.hash.replace('#', '');
+      savedSection = hash || sessionStorage.getItem('chadele_active_section') || '';
+      savedPos = parseInt(sessionStorage.getItem('chadele_scroll_pos') || '0', 10);
+    } catch (e) {}
+
+    let targetY = 0;
+
+    if (savedSection && savedSection !== 'hero') {
+      const targetEl = document.getElementById(savedSection);
+      if (targetEl) {
+        targetY = Math.max(0, targetEl.getBoundingClientRect().top + window.pageYOffset - 80);
+      } else if (savedPos > 0) {
+        targetY = savedPos;
+      }
+    } else if (savedPos > 40) {
+      targetY = savedPos;
+    }
+
+    if (targetY > 20) {
+      // Temporarily disable smooth scroll so the jump is instant and accurate
+      document.documentElement.style.scrollBehavior = 'auto';
+      window.scrollTo(0, targetY);
+
+      if (targetY > 40 && navbar) {
+        navbar.classList.add('scrolled');
+      }
+
+      // If user was far below hero, complete hero entrance animation to avoid layout shifts above
+      if (targetY > 400 && heroTl) {
+        heroTl.progress(1);
+      }
+
+      // Re-confirm scroll position after ScrollTrigger layout calculations
+      requestAnimationFrame(() => {
+        ScrollTrigger.refresh();
+        window.scrollTo(0, targetY);
+        setTimeout(() => {
+          document.documentElement.style.scrollBehavior = '';
+        }, 150);
+      });
+    }
+  }
+
+  // Execute scroll restoration immediately
+  restoreScrollPosition();
+
+  // Double check after all images and fonts load
+  window.addEventListener('load', () => {
+    try {
+      const savedY = parseInt(sessionStorage.getItem('chadele_scroll_pos') || '0', 10);
+      const hash = window.location.hash.replace('#', '');
+      if ((savedY > 40 || hash) && Math.abs((window.pageYOffset || 0) - savedY) > 60) {
+        restoreScrollPosition();
+      }
+    } catch (e) {}
   });
 });
