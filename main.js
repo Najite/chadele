@@ -1,4 +1,4 @@
-// Chadele HR Advisory Nigeria - Mobile-Native & Full-Page Flow Logic
+// Chadele HR Advisory - Mobile-Native & Full-Page Flow Logic
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -314,15 +314,15 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // =========================================================================
-  // 4. PRACTICE AREA DETAILS (NIGERIAN CONTEXT)
+  // 4. PRACTICE AREA DETAILS
   // =========================================================================
   const practiceData = {
     policies: {
-      category: 'Nigerian Labour Act Compliance',
+      category: 'Labour Act Compliance',
       title: 'Labour Act Compliance & Employee Handbooks',
-      desc: 'Ensure 100% legal alignment with the Nigerian Labour Act (2004), Trade Disputes Act, and National Industrial Court of Nigeria precedents. Prevent costly employee claims and industrial disputes.',
+      desc: 'Ensure 100% legal alignment with statutory Labour Act regulations, Trade Disputes Act, and National Industrial Court precedents. Prevent costly employee claims and industrial disputes.',
       deliverables: [
-        'Comprehensive Nigerian Labour Act (2004) Policy Review',
+        'Statutory Labour Act (2004) Policy Review',
         'State-Specific PAYE Tax & LIRS/FIRS Exemption Audits',
         'National Industrial Court Tested Disciplinary Clauses',
         'Multi-Tier Severance, Redundancy & Gratuity Governance'
@@ -331,7 +331,7 @@ document.addEventListener('DOMContentLoaded', () => {
     performance: {
       category: 'Productivity & Culture',
       title: 'Performance Management & KPI Engineering',
-      desc: 'Design transparent appraisal systems, quarterly OKRs, and merit-driven bonuses that motivate distributed Nigerian teams across Lagos, Abuja, Port Harcourt, and remote hubs.',
+      desc: 'Design transparent appraisal systems, quarterly OKRs, and merit-driven bonuses that motivate distributed teams across Lagos, Abuja, Port Harcourt, and remote hubs.',
       deliverables: [
         'Objective OKR and Strategic Priority Cascading Matrices',
         'Seniority & Competency-Based Career Progression Frameworks',
@@ -340,12 +340,12 @@ document.addEventListener('DOMContentLoaded', () => {
       ]
     },
     talent: {
-      category: 'Japa Defense & Talent Acquisition',
-      title: 'Japa-Resilience & Executive Search',
-      desc: 'Combat high turnover driven by international talent relocation. We build institutional succession pipelines, recruit experienced Diaspora returnees, and offer a 12-month candidate replacement warranty.',
+      category: 'Talent Defense & Executive Search',
+      title: 'Key Talent Retention & Executive Search',
+      desc: 'Combat high turnover driven by talent migration. We build institutional succession pipelines, recruit experienced leadership, and offer an unconditional 12-month candidate replacement warranty.',
       deliverables: [
-        'Japa Risk Matrix & Key Personnel Retention Roadmaps',
-        'Executive & Technical Leadership Recruitment across West Africa',
+        'Turnover Risk Matrix & Key Personnel Retention Roadmaps',
+        'Executive & Technical Leadership Recruitment',
         'Structured Scorecard Interview Questions & Scoring',
         'Unconditional 12-Month Replacement Guarantee'
       ]
@@ -353,10 +353,10 @@ document.addEventListener('DOMContentLoaded', () => {
     compensation: {
       category: 'FX & Total Rewards Strategy',
       title: 'FX & Inflation-Indexed Compensation Design',
-      desc: 'Protect your staff against macroeconomic volatility. We design dual-currency packages, Naira cost-of-living adjustments, and Radford-calibrated executive bonus structures.',
+      desc: 'Protect your staff against macroeconomic volatility. We design dual-currency packages, local currency cost-of-living adjustments, and Radford-calibrated executive bonus structures.',
       deliverables: [
-        'Macroeconomic & Naira Inflation Salary Benchmarking',
-        'Dual-Currency (USD/NGN) Compensation & Bonus Modeling',
+        'Macroeconomic & Inflation Salary Benchmarking',
+        'Dual-Currency (USD/Local) Compensation & Bonus Modeling',
         'Executive Equity Vesting & Phantom Stock Plans',
         'Transparent Salary Tiering & CIPM Grade Leveling'
       ]
@@ -366,7 +366,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title: 'Trade Union Relations & Conflict Mediation',
       desc: 'Manage union relationships smoothly with certified arbitration. We support collective bargaining agreements (CBA) and conduct independent internal grievance investigations.',
       deliverables: [
-        'Trade Union (NLC/TUC Affiliates) Negotiation & CBA Support',
+        'Trade Union Negotiation & CBA Support',
         'Independent Third-Party Workplace Investigations',
         'Statutory Dispute Mediation & Settlement Agreements',
         'Confidential Whistleblower & Workplace Ethics Policies'
@@ -374,8 +374,8 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     hrtech: {
       category: 'HR Tech & Payroll Automation',
-      title: 'Nigerian HRIS & Automated Payroll Integration',
-      desc: 'Eliminate payroll errors and automate statutory deductions. Turnkey deployment of SeamlessHR, Workpay, BambooHR, and Paystack integration with automated PenCom schedules.',
+      title: 'HRIS & Automated Payroll Integration',
+      desc: 'Eliminate payroll errors and automate statutory deductions. Turnkey deployment of SeamlessHR, Workpay, BambooHR, and automated PenCom schedules.',
       deliverables: [
         'SeamlessHR / Workpay / BambooHR System Configuration',
         'Automated PAYE, Pension (PenCom), NHF, and NSITF Calculations',
