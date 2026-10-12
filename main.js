@@ -348,24 +348,121 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // =========================================================================
-  // 4. PRACTICE AREA DETAILS
+  // 4. PRACTICE AREA DETAILS (4 CORE SERVICE PILLARS)
   // =========================================================================
   const practiceData = {
-    policies: {
-      category: 'Labour Act Compliance',
+    // PILLAR 1: BUSINESS ADVISORY
+    advisory_strategy: {
+      category: 'Business Advisory',
+      title: 'Strategic Planning & Organizational Architecture',
+      desc: 'Align executive vision with scalable operating realities. We assess departmental structures, eliminate cross-functional bottlenecks, and design agile operating models built for rapid market expansion.',
+      deliverables: [
+        'Organizational Capability Audits & Span-of-Control Optimization',
+        'Operating Model Architecture & Departmental Restructuring Roadmaps',
+        'Commercial Growth Alignment & Resource Allocation Frameworks',
+        'Change Management Strategy & Executive Transformation Playbooks'
+      ]
+    },
+    advisory_governance: {
+      category: 'Business Advisory',
+      title: 'Corporate Governance & Board Advisory',
+      desc: 'Establish institutional governance frameworks that inspire shareholder confidence. We formulate board charters, advisory committees, compliance matrices, and risk oversight frameworks.',
+      deliverables: [
+        'Board of Directors Charter & Governance Committee Protocols',
+        'Executive Succession Planning & C-Suite Continuity Frameworks',
+        'Enterprise Risk Governance & Internal Control Charters',
+        'Ethical Conduct Policies, Whistleblowing & Board Evaluation Surveys'
+      ]
+    },
+
+    // PILLAR 2: HR CONSULTING
+    consulting_compliance: {
+      category: 'HR Consulting',
       title: 'Labour Act Compliance & Employee Handbooks',
-      desc: 'Ensure 100% legal alignment with statutory Labour Act regulations, Trade Disputes Act, and National Industrial Court precedents. Prevent costly employee claims and industrial disputes.',
+      desc: 'Ensure 100% legal alignment with statutory Labour Act regulations, Trade Disputes Act, and industrial court precedents. Prevent costly employee claims, regulatory penalties, and union liabilities.',
+      deliverables: [
+        'Comprehensive Statutory Labour Act Policy Audit & Gap Analysis',
+        'Customized Employee Handbooks & Enforceable Code of Conduct',
+        'Statutory Tax (PAYE), Pension (PenCom), ITF, and NSITF Compliance',
+        'National Industrial Court Tested Disciplinary & Severance Clauses'
+      ]
+    },
+    consulting_performance: {
+      category: 'HR Consulting',
+      title: 'Performance Management & Total Rewards Design',
+      desc: 'Replace stressful subjective evaluations with objective OKR scorecards and inflation-hedged total rewards. We build compensation architectures that motivate and retain high performers.',
+      deliverables: [
+        'Objective OKR and Strategic KPI Cascading Frameworks',
+        'Quarterly 360-Degree Appraisal & Calibration Guidelines',
+        'Macroeconomic & Inflation-Adjusted Compensation Benchmarks',
+        'Executive Equity, Long-Term Incentive & Bonus Pool Architecture'
+      ]
+    },
+
+    // PILLAR 3: RECRUITMENT & TALENT SOLUTION
+    recruitment_executive: {
+      category: 'Recruitment & Talent Solution',
+      title: 'Executive Search & Leadership Headhunting',
+      desc: 'Identify, attract, and secure transformational C-Suite, VP, and Director-level leaders. Supported by multi-stage behavioral scorecards, deep market mapping, and an unconditional 12-month replacement guarantee.',
+      deliverables: [
+        'C-Suite & Managing Director Confidential Executive Search',
+        'Rigorous Multi-Tier Competency & Cultural Alignment Scorecards',
+        'Comprehensive Executive Background & Reputational Due Diligence',
+        'Unconditional 12-Month Candidate Placement & Replacement Guarantee'
+      ]
+    },
+    recruitment_sourcing: {
+      category: 'Recruitment & Talent Solution',
+      title: 'Technical Talent Sourcing & RPO Solutions',
+      desc: 'Scale your engineering, commercial, and operational teams rapidly without sacrificing quality. Turnkey recruitment process outsourcing (RPO) with proactive talent pipeline architecture.',
+      deliverables: [
+        'Specialized Technical & Commercial Talent Pipeline Mapping',
+        'Full-Lifecycle Recruitment Process Outsourcing (RPO)',
+        'Technical Skills Testing & Assessment Center Facilitation',
+        'Accelerated Time-to-Hire Frameworks with Structured Offer Negotiation'
+      ]
+    },
+
+    // PILLAR 4: CORPORATE TRAINING
+    training_leadership: {
+      category: 'Corporate Training',
+      title: 'Executive Leadership & Management Development',
+      desc: 'Empower frontline supervisors and executives with high-impact management competencies. Experiential learning academies focused on strategic thinking, delegation, and emotional intelligence.',
+      deliverables: [
+        'C-Suite & Senior Executive Strategic Leadership Retreats',
+        'Emerging Leaders & Supervisory Management Masterclasses',
+        'Conflict Resolution, Delegation & High-Stakes Communication',
+        'Post-Training Behavioral Assessments & Real-World KPI Tracking'
+      ]
+    },
+    training_upskilling: {
+      category: 'Corporate Training',
+      title: 'Workforce Upskilling & Culture Transformation',
+      desc: 'Cultivate an aligned, high-performance workplace culture. Customized workshops covering statutory workplace compliance, customer excellence, and operational accountability.',
+      deliverables: [
+        'Statutory Workplace Ethics, Anti-Harassment & Compliance Workshops',
+        'Customer Centricity, Cross-Functional Alignment & Culture Design',
+        'Agile Collaboration & Problem-Solving Bootcamps',
+        'Turnkey Corporate Learning Portals & Certificate Issuance'
+      ]
+    },
+
+    // LEGACY ALIASES FOR COMPATIBILITY
+    policies: {
+      category: 'HR Consulting',
+      title: 'Labour Act Compliance & Employee Handbooks',
+      desc: 'Ensure 100% legal alignment with statutory Labour Act regulations, Trade Disputes Act, and National Industrial Court precedents.',
       deliverables: [
         'Statutory Labour Act (2004) Policy Review',
-        'State-Specific PAYE Tax & LIRS/FIRS Exemption Audits',
+        'State-Specific PAYE Tax & Statutory Mandate Audits',
         'National Industrial Court Tested Disciplinary Clauses',
         'Multi-Tier Severance, Redundancy & Gratuity Governance'
       ]
     },
     performance: {
-      category: 'Productivity & Culture',
+      category: 'HR Consulting',
       title: 'Performance Management & KPI Engineering',
-      desc: 'Design transparent appraisal systems, quarterly OKRs, and merit-driven bonuses that motivate distributed teams across Lagos, Abuja, Port Harcourt, and remote hubs.',
+      desc: 'Design transparent appraisal systems, quarterly OKRs, and merit-driven bonuses that motivate distributed teams.',
       deliverables: [
         'Objective OKR and Strategic Priority Cascading Matrices',
         'Seniority & Competency-Based Career Progression Frameworks',
@@ -374,9 +471,9 @@ document.addEventListener('DOMContentLoaded', () => {
       ]
     },
     talent: {
-      category: 'Talent Defense & Executive Search',
+      category: 'Recruitment & Talent Solution',
       title: 'Key Talent Retention & Executive Search',
-      desc: 'Combat high turnover driven by talent migration. We build institutional succession pipelines, recruit experienced leadership, and offer an unconditional 12-month candidate replacement warranty.',
+      desc: 'Combat high turnover with strategic succession pipelines, leadership search, and an unconditional 12-month replacement warranty.',
       deliverables: [
         'Turnover Risk Matrix & Key Personnel Retention Roadmaps',
         'Executive & Technical Leadership Recruitment',
@@ -385,18 +482,18 @@ document.addEventListener('DOMContentLoaded', () => {
       ]
     },
     compensation: {
-      category: 'FX & Total Rewards Strategy',
-      title: 'FX & Inflation-Indexed Compensation Design',
-      desc: 'Protect your staff against macroeconomic volatility. We design dual-currency packages, local currency cost-of-living adjustments, and Radford-calibrated executive bonus structures.',
+      category: 'HR Consulting',
+      title: 'Total Rewards & Compensation Design',
+      desc: 'Design market-tested salary tiering calibrated for currency volatility, dual-currency bonus pools, and executive equity structures.',
       deliverables: [
         'Macroeconomic & Inflation Salary Benchmarking',
-        'Dual-Currency (USD/Local) Compensation & Bonus Modeling',
+        'Dual-Currency Compensation & Bonus Modeling',
         'Executive Equity Vesting & Phantom Stock Plans',
         'Transparent Salary Tiering & CIPM Grade Leveling'
       ]
     },
     relations: {
-      category: 'Industrial Relations & Mediation',
+      category: 'Business Advisory',
       title: 'Trade Union Relations & Conflict Mediation',
       desc: 'Manage union relationships smoothly with certified arbitration. We support collective bargaining agreements (CBA) and conduct independent internal grievance investigations.',
       deliverables: [
@@ -407,9 +504,9 @@ document.addEventListener('DOMContentLoaded', () => {
       ]
     },
     hrtech: {
-      category: 'HR Tech & Payroll Automation',
+      category: 'HR Consulting',
       title: 'HRIS & Automated Payroll Integration',
-      desc: 'Eliminate payroll errors and automate statutory deductions. Turnkey deployment of SeamlessHR, Workpay, BambooHR, and automated PenCom schedules.',
+      desc: 'Eliminate payroll errors and automate statutory deductions. Turnkey deployment of SeamlessHR, Workpay, BambooHR, and automated schedules.',
       deliverables: [
         'SeamlessHR / Workpay / BambooHR System Configuration',
         'Automated PAYE, Pension (PenCom), NHF, and NSITF Calculations',
