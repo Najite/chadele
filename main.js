@@ -1,7 +1,257 @@
-// Chadele HR Advisory - Interactive Logic
+// Chadele HR Advisory - Full Page Motion Choreography (GSAP & Emil Kowalski Principles)
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. INTERACTIVE ROI CALCULATOR
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // =========================================================================
+  // 1. FULL PAGE SCROLL CHOREOGRAPHY (GSAP + ScrollTrigger)
+  // =========================================================================
+  if (!prefersReducedMotion) {
+    // A. Navbar Entrance & Morph on Scroll
+    const navbar = document.querySelector('.navbar-wrapper');
+    gsap.from('.navbar-inner', {
+      y: -24,
+      opacity: 0,
+      duration: 0.7,
+      ease: 'power3.out'
+    });
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 40) {
+        navbar?.classList.add('scrolled');
+      } else {
+        navbar?.classList.remove('scrolled');
+      }
+    });
+
+    // B. Hero Staged Entrance Timeline
+    const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+    heroTl
+      .from('.hero-title', {
+        y: 40,
+        opacity: 0,
+        duration: 0.85,
+        clearProps: 'transform,opacity'
+      })
+      .from('.hero-description', {
+        y: 24,
+        opacity: 0,
+        duration: 0.65,
+        clearProps: 'transform,opacity'
+      }, '-=0.45')
+      .from('.hero-cta-group .btn-pill', {
+        y: 18,
+        opacity: 0,
+        stagger: 0.12,
+        duration: 0.55,
+        clearProps: 'transform,opacity'
+      }, '-=0.4')
+      .from('.hero-metrics > div', {
+        y: 20,
+        opacity: 0,
+        stagger: 0.1,
+        duration: 0.55,
+        clearProps: 'transform,opacity'
+      }, '-=0.35')
+      .from('.hero-section .cutout-wrapper', {
+        scale: 0.94,
+        opacity: 0,
+        duration: 0.9,
+        ease: 'power2.out',
+        clearProps: 'opacity'
+      }, '-=0.8')
+      .from('.hero-section .cutout-contour-shadow', {
+        x: 14,
+        y: -14,
+        opacity: 0,
+        duration: 0.7,
+        ease: 'power2.out',
+        clearProps: 'opacity'
+      }, '-=0.6');
+
+    // C. Social Proof / Trust Strip
+    gsap.from('.trust-inner', {
+      scrollTrigger: {
+        trigger: '.trust-strip',
+        start: 'top 90%'
+      },
+      y: 25,
+      opacity: 0,
+      duration: 0.65,
+      ease: 'power2.out',
+      clearProps: 'transform,opacity'
+    });
+
+    // D. About Our Firm Section
+    gsap.from('#about .cutout-wrapper', {
+      scrollTrigger: {
+        trigger: '#about',
+        start: 'top 82%'
+      },
+      x: -35,
+      opacity: 0,
+      duration: 0.85,
+      ease: 'power2.out',
+      clearProps: 'transform,opacity'
+    });
+
+    gsap.from('#about .about-content > *', {
+      scrollTrigger: {
+        trigger: '#about',
+        start: 'top 82%'
+      },
+      y: 28,
+      opacity: 0,
+      stagger: 0.1,
+      duration: 0.7,
+      ease: 'power3.out',
+      clearProps: 'transform,opacity'
+    });
+
+    // E. Practice Areas / Services Header & Cards Stagger
+    gsap.from('#services .section-header-center > *', {
+      scrollTrigger: {
+        trigger: '#services',
+        start: 'top 85%'
+      },
+      y: 30,
+      opacity: 0,
+      stagger: 0.1,
+      duration: 0.7,
+      ease: 'power3.out',
+      clearProps: 'transform,opacity'
+    });
+
+    gsap.from('.service-card', {
+      scrollTrigger: {
+        trigger: '#services-grid',
+        start: 'top 85%'
+      },
+      y: 45,
+      opacity: 0,
+      stagger: 0.1,
+      duration: 0.65,
+      ease: 'power3.out',
+      clearProps: 'transform,opacity'
+    });
+
+    // F. Interactive Calculator Section
+    gsap.from('.calc-wrapper', {
+      scrollTrigger: {
+        trigger: '#calculator',
+        start: 'top 82%'
+      },
+      y: 40,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'power2.out',
+      clearProps: 'transform,opacity'
+    });
+
+    // G. Why Choose Us Section
+    gsap.from('#why-us .why-card-title, #why-us .category-badge, #why-us .section-title, #why-us .section-subtitle', {
+      scrollTrigger: {
+        trigger: '#why-us',
+        start: 'top 82%'
+      },
+      y: 25,
+      opacity: 0,
+      stagger: 0.08,
+      duration: 0.6,
+      ease: 'power2.out',
+      clearProps: 'transform,opacity'
+    });
+
+    gsap.from('.why-pill-card', {
+      scrollTrigger: {
+        trigger: '.why-card-grid',
+        start: 'top 85%'
+      },
+      y: 30,
+      opacity: 0,
+      stagger: 0.08,
+      duration: 0.55,
+      ease: 'power3.out',
+      clearProps: 'transform,opacity'
+    });
+
+    gsap.from('#why-us .cutout-wrapper', {
+      scrollTrigger: {
+        trigger: '#why-us',
+        start: 'top 80%'
+      },
+      x: 35,
+      opacity: 0,
+      duration: 0.85,
+      ease: 'power2.out',
+      clearProps: 'transform,opacity'
+    });
+
+    // H. Case Studies Cards Stagger
+    gsap.from('.case-card', {
+      scrollTrigger: {
+        trigger: '.cases-grid',
+        start: 'top 85%'
+      },
+      y: 40,
+      opacity: 0,
+      stagger: 0.12,
+      duration: 0.65,
+      ease: 'power3.out',
+      clearProps: 'transform,opacity'
+    });
+
+    // I. Testimonial Cards Stagger
+    gsap.from('.testimonial-card', {
+      scrollTrigger: {
+        trigger: '.testimonials-grid',
+        start: 'top 85%'
+      },
+      y: 35,
+      opacity: 0,
+      stagger: 0.12,
+      duration: 0.6,
+      ease: 'power3.out',
+      clearProps: 'transform,opacity'
+    });
+
+    // J. FAQ Items Stagger
+    gsap.from('.faq-item', {
+      scrollTrigger: {
+        trigger: '.faq-container',
+        start: 'top 85%'
+      },
+      y: 25,
+      opacity: 0,
+      stagger: 0.09,
+      duration: 0.5,
+      ease: 'power2.out',
+      clearProps: 'transform,opacity'
+    });
+
+    // K. CTA Bottom Banner
+    gsap.from('.cta-banner-wrapper', {
+      scrollTrigger: {
+        trigger: '.cta-banner-wrapper',
+        start: 'top 85%'
+      },
+      scale: 0.96,
+      y: 35,
+      opacity: 0,
+      duration: 0.75,
+      ease: 'power3.out',
+      clearProps: 'transform,opacity'
+    });
+  }
+
+  // =========================================================================
+  // 2. INTERACTIVE ROI CALCULATOR
+  // =========================================================================
   const sliderHeadcount = document.getElementById('slider-headcount');
   const sliderSalary = document.getElementById('slider-salary');
   const sliderTurnover = document.getElementById('slider-turnover');
@@ -43,7 +293,9 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCalculator();
   }
 
-  // 2. PRACTICE AREA DETAILS DATA & MODAL
+  // =========================================================================
+  // 3. PRACTICE AREA DETAILS DATA & ACCESSIBLE MODAL
+  // =========================================================================
   const practiceData = {
     policies: {
       category: 'Compliance & Governance',
@@ -143,7 +395,9 @@ document.addEventListener('DOMContentLoaded', () => {
     practiceModalBack.addEventListener('click', () => practiceModal.classList.remove('open'));
   }
 
-  // 3. SERVICES FILTER TABS
+  // =========================================================================
+  // 4. SERVICES FILTER TABS WITH RE-TRIGGERED ENTRANCE
+  // =========================================================================
   const filterBtns = document.querySelectorAll('.filter-btn');
   const serviceCards = document.querySelectorAll('.service-card');
 
@@ -153,20 +407,30 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.classList.add('active');
 
       const filter = btn.getAttribute('data-filter');
+      const visibleCards = [];
+
       serviceCards.forEach(card => {
         const category = card.getAttribute('data-category');
         if (filter === 'all' || category === filter) {
           card.style.display = 'flex';
-          card.style.opacity = '1';
-          card.style.transform = 'translateY(0)';
+          visibleCards.push(card);
         } else {
           card.style.display = 'none';
         }
       });
+
+      if (!prefersReducedMotion && visibleCards.length > 0) {
+        gsap.fromTo(visibleCards, 
+          { opacity: 0, y: 16 }, 
+          { opacity: 1, y: 0, duration: 0.4, stagger: 0.06, ease: 'power2.out', clearProps: 'transform,opacity' }
+        );
+      }
     });
   });
 
-  // 4. CONSULTATION & QUOTE REQUEST MODAL
+  // =========================================================================
+  // 5. CONSULTATION & QUOTE REQUEST MODAL
+  // =========================================================================
   const consultationModal = document.getElementById('consultation-modal');
   const modalCloseBtn = document.getElementById('modal-close-btn');
   const modalFormContent = document.getElementById('modal-form-content');
@@ -201,7 +465,6 @@ document.addEventListener('DOMContentLoaded', () => {
     btnModalDone.addEventListener('click', closeConsultationModal);
   }
 
-  // Close modals on click outside or Escape key
   [consultationModal, practiceModal].forEach(modal => {
     if (!modal) return;
     modal.addEventListener('click', (e) => {
@@ -233,11 +496,13 @@ document.addEventListener('DOMContentLoaded', () => {
           submitBtn.textContent = 'Submit Scope Request';
           submitBtn.style.opacity = '1';
         }
-      }, 600);
+      }, 500);
     });
   }
 
-  // 5. FAQ ACCORDION
+  // =========================================================================
+  // 6. FAQ ACCORDION (INTERRUPTIBLE ANIMATION)
+  // =========================================================================
   const faqItems = document.querySelectorAll('.faq-item');
   faqItems.forEach(item => {
     const questionBtn = item.querySelector('.faq-question');
@@ -250,7 +515,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 6. NEWSLETTER SUBSCRIPTION
+  // =========================================================================
+  // 7. NEWSLETTER SUBSCRIPTION
+  // =========================================================================
   const newsletterForm = document.getElementById('newsletter-form');
   const newsletterFeedback = document.getElementById('newsletter-feedback');
   if (newsletterForm && newsletterFeedback) {
@@ -264,7 +531,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 7. SMOOTH ACTIVE NAV LINK HIGHLIGHT
+  // =========================================================================
+  // 8. ACTIVE NAV LINK HIGHLIGHT & SCROLLSPY
+  // =========================================================================
   const sections = document.querySelectorAll('main section[id]');
   window.addEventListener('scroll', () => {
     const scrollY = window.pageYOffset;
