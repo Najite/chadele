@@ -99,6 +99,13 @@ document.addEventListener('DOMContentLoaded', () => {
         duration: 0.8,
         clearProps: 'transform,opacity'
       })
+      .fromTo('.hero-typed-wrapper .hand-drawn-underline path', {
+        strokeDashoffset: 1
+      }, {
+        strokeDashoffset: 0,
+        duration: 0.65,
+        ease: 'power2.out'
+      }, '-=0.25')
       .from('.hero-description', {
         y: 20,
         opacity: 0,
@@ -231,7 +238,120 @@ document.addEventListener('DOMContentLoaded', () => {
       ease: 'power3.out',
       clearProps: 'transform,opacity'
     });
+
+    // Section Titles SVG Hand-Drawn Underline Drawing on Scroll
+    document.querySelectorAll('.section-wrapper .hand-drawn-underline path').forEach(path => {
+      gsap.fromTo(path,
+        { strokeDashoffset: 1 },
+        {
+          strokeDashoffset: 0,
+          duration: 0.75,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: path.closest('.section-title') || path.closest('.section-wrapper') || path,
+            start: 'top 85%',
+            once: true
+          }
+        }
+      );
+    });
+  } else {
+    document.querySelectorAll('.hand-drawn-underline path').forEach(path => {
+      path.style.strokeDashoffset = '0';
+    });
   }
+
+  // =========================================================================
+  // 2B. HERO KEYWORD TYPEWRITER & ACCENT STROKE INTERACTION
+  // =========================================================================
+  const typedWordEl = document.getElementById('hero-typed-word');
+  const typedCursorEl = document.querySelector('.hero-typed-cursor');
+  const heroUnderlinePath = document.querySelector('.hero-typed-wrapper .hand-drawn-underline path');
+
+  const typewriterWords = ['complicated', 'stressful', 'chaotic', 'exhausting'];
+  let currentWordIdx = 0;
+  let currentCharIdx = typewriterWords[0].length;
+  let isDeletingWord = false;
+  let typewriterTimer = null;
+  let hasTypewriterStarted = false;
+
+  function drawStroke(path) {
+    if (!path) return;
+    if (prefersReducedMotion) {
+      path.style.strokeDashoffset = '0';
+      return;
+    }
+    gsap.to(path, { strokeDashoffset: 0, duration: 0.55, ease: 'power2.out' });
+  }
+
+  function retractStroke(path) {
+    if (!path || prefersReducedMotion) return;
+    gsap.to(path, { strokeDashoffset: 1, duration: 0.18, ease: 'power2.in' });
+  }
+
+  function stepTypewriter() {
+    if (!typedWordEl || prefersReducedMotion) return;
+
+    const targetWord = typewriterWords[currentWordIdx];
+
+    if (isDeletingWord) {
+      currentCharIdx--;
+      typedWordEl.textContent = targetWord.substring(0, currentCharIdx);
+      typedCursorEl?.classList.add('typing');
+
+      // Erase stroke immediately when deleting begins
+      if (currentCharIdx === targetWord.length - 1) {
+        retractStroke(heroUnderlinePath);
+      }
+    } else {
+      currentCharIdx++;
+      typedWordEl.textContent = targetWord.substring(0, currentCharIdx);
+      typedCursorEl?.classList.add('typing');
+    }
+
+    let delay = isDeletingWord ? 42 : 75;
+
+    if (!isDeletingWord && currentCharIdx === targetWord.length) {
+      // Completed full word
+      typedCursorEl?.classList.remove('typing');
+      drawStroke(heroUnderlinePath);
+      delay = 2400; // Pause so user reads comfortably
+      isDeletingWord = true;
+    } else if (isDeletingWord && currentCharIdx === 0) {
+      // Completed delete
+      isDeletingWord = false;
+      currentWordIdx = (currentWordIdx + 1) % typewriterWords.length;
+      delay = 360; // Brief pause before typing next word
+    }
+
+    typewriterTimer = setTimeout(stepTypewriter, delay);
+  }
+
+  function startHeroTypewriter() {
+    if (hasTypewriterStarted || prefersReducedMotion) return;
+    hasTypewriterStarted = true;
+    typewriterTimer = setTimeout(stepTypewriter, 2400);
+  }
+
+  if (heroTl) {
+    heroTl.eventCallback('onComplete', startHeroTypewriter);
+    // Safety fallback in case timeline is interrupted or delayed
+    setTimeout(startHeroTypewriter, 3200);
+  } else if (!prefersReducedMotion) {
+    drawStroke(heroUnderlinePath);
+    startHeroTypewriter();
+  } else if (heroUnderlinePath) {
+    heroUnderlinePath.style.strokeDashoffset = '0';
+  }
+
+  // Pause typewriter when tab is hidden to save CPU/battery
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      if (typewriterTimer) clearTimeout(typewriterTimer);
+    } else if (hasTypewriterStarted && !prefersReducedMotion) {
+      typewriterTimer = setTimeout(stepTypewriter, 800);
+    }
+  });
 
   // =========================================================================
   // 3. INTERACTIVE ROI CALCULATOR (DUAL CURRENCY: NGN ₦ / USD $)

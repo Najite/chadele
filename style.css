@@ -112,6 +112,70 @@ body {
   z-index: -1;
 }
 
+/* Hide static background-image fallback when animated SVG path is present */
+.text-underline:has(.hand-drawn-underline)::after {
+  display: none;
+}
+
+/* Animated Hand-Drawn SVG Underline */
+.hand-drawn-underline {
+  position: absolute;
+  left: -2%;
+  bottom: -5px;
+  width: 104%;
+  height: 10px;
+  pointer-events: none;
+  z-index: -1;
+  color: var(--accent);
+  overflow: visible;
+}
+
+.hand-drawn-underline path {
+  stroke: var(--accent);
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 0.65s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.hand-drawn-underline.drawn path,
+.text-underline.drawn .hand-drawn-underline path {
+  stroke-dashoffset: 0;
+}
+
+/* Hero Cycling Keyword Typewriter */
+.hero-typed-wrapper {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  color: var(--primary);
+}
+
+.hero-typed-word {
+  display: inline-block;
+  color: var(--primary);
+  min-width: 0.2ch;
+}
+
+.hero-typed-cursor {
+  display: inline-block;
+  margin-left: 2px;
+  color: var(--accent);
+  font-weight: 300;
+  animation: cursor-blink 0.85s step-start infinite;
+  user-select: none;
+  vertical-align: baseline;
+}
+
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.hero-typed-cursor.typing {
+  animation: none;
+  opacity: 1;
+}
+
 /* Category Mini Badge */
 .category-badge {
   display: inline-flex;
@@ -588,16 +652,18 @@ body {
   z-index: 3;
 }
 
-/* TRUST LOGO STRIP */
+/* TRUST LOGO STRIP & INFINITE MARQUEE */
 .trust-strip {
-  padding: 36px 20px;
+  padding: 34px 0;
   background-color: #ffffff;
   border-top: 1px solid var(--border-light);
   border-bottom: 1px solid var(--border-light);
+  overflow: hidden;
+  position: relative;
 }
 
 .trust-inner {
-  max-width: 1280px;
+  width: 100%;
   margin: 0 auto;
   text-align: center;
 }
@@ -608,26 +674,74 @@ body {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--text-light);
-  margin-bottom: 20px;
+  margin-bottom: 22px;
+  padding: 0 20px;
 }
 
-.trust-logos {
+.trust-marquee-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+.trust-marquee-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
+
+.trust-marquee-group {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 32px;
-  flex-wrap: wrap;
-  opacity: 0.7;
+  gap: 56px;
+  padding-right: 56px;
+  animation: trust-marquee 30s linear infinite;
+}
+
+.trust-marquee-container:hover .trust-marquee-group {
+  animation-play-state: paused;
 }
 
 .trust-logo-item {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 800;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.02em;
   color: var(--text-muted);
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
+  white-space: nowrap;
+  opacity: 0.68;
+  transition: opacity 0.25s ease, color 0.25s ease, transform 0.25s ease;
+  user-select: none;
+  cursor: default;
+}
+
+.trust-logo-item:hover {
+  opacity: 1;
+  color: var(--primary);
+  transform: translateY(-1px);
+}
+
+.trust-logo-item svg {
+  flex-shrink: 0;
+  color: var(--accent);
+  transition: transform 0.25s ease;
+}
+
+.trust-logo-item:hover svg {
+  transform: scale(1.15);
+}
+
+@keyframes trust-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 /* SECTION COMMONS */
