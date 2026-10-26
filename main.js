@@ -1,4 +1,4 @@
-// Chadele HR Advisory - Mobile-Native & Full-Page Flow Logic
+// Chadele HR Advisory - Humanized & Mobile-Native Interactive Logic
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -56,7 +56,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   mobileNavLinks.forEach(link => {
-    link.addEventListener('click', closeMobileDrawer);
+    link.addEventListener('click', () => {
+      closeMobileDrawer();
+    });
   });
 
   if (mobileDrawer) {
@@ -146,33 +148,6 @@ document.addEventListener('DOMContentLoaded', () => {
       clearProps: 'transform,opacity'
     });
 
-    // About Our Firm
-    gsap.from('#about .cutout-wrapper', {
-      scrollTrigger: {
-        trigger: '#about',
-        start: 'top 85%'
-      },
-      x: isMobile ? 0 : -30,
-      y: isMobile ? 25 : 0,
-      opacity: 0,
-      duration: 0.8,
-      ease: 'power2.out',
-      clearProps: 'transform,opacity'
-    });
-
-    gsap.from('#about .about-content > *', {
-      scrollTrigger: {
-        trigger: '#about',
-        start: 'top 85%'
-      },
-      y: 25,
-      opacity: 0,
-      stagger: 0.08,
-      duration: 0.65,
-      ease: 'power3.out',
-      clearProps: 'transform,opacity'
-    });
-
     // Services Cards
     gsap.from('.service-card', {
       scrollTrigger: {
@@ -181,11 +156,26 @@ document.addEventListener('DOMContentLoaded', () => {
       },
       y: 35,
       opacity: 0,
-      stagger: isMobile ? 0.06 : 0.1,
+      stagger: isMobile ? 0.06 : 0.08,
       duration: 0.6,
       ease: 'power3.out',
       clearProps: 'transform,opacity'
     });
+
+    // Training Pillars
+    gsap.from('.training-pillar-card', {
+      scrollTrigger: {
+        trigger: '.training-pillars-grid',
+        start: 'top 88%'
+      },
+      y: 30,
+      opacity: 0,
+      stagger: 0.08,
+      duration: 0.6,
+      ease: 'power3.out',
+      clearProps: 'transform,opacity'
+    });
+
 
     // Interactive Calculator
     gsap.from('.calc-wrapper', {
@@ -200,34 +190,35 @@ document.addEventListener('DOMContentLoaded', () => {
       clearProps: 'transform,opacity'
     });
 
-    // Why Choose Us
-    gsap.from('.why-pill-card', {
+    // Resource Cards
+    gsap.from('.article-card, .tool-card, .download-card', {
       scrollTrigger: {
-        trigger: '.why-card-grid',
+        trigger: '#resources',
         start: 'top 88%'
       },
       y: 25,
       opacity: 0,
-      stagger: 0.07,
+      stagger: 0.06,
       duration: 0.5,
       ease: 'power2.out',
       clearProps: 'transform,opacity'
     });
 
-    // Case Studies & Testimonials
-    gsap.from('.case-card', {
+    // Team Cards
+    gsap.from('.team-card', {
       scrollTrigger: {
-        trigger: '.cases-grid',
+        trigger: '.team-grid',
         start: 'top 88%'
       },
       y: 30,
       opacity: 0,
-      stagger: 0.1,
+      stagger: 0.08,
       duration: 0.6,
       ease: 'power3.out',
       clearProps: 'transform,opacity'
     });
 
+    // Testimonials
     gsap.from('.testimonial-card', {
       scrollTrigger: {
         trigger: '.testimonials-grid',
@@ -287,7 +278,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function setCurrency(currency, resetSalary = true) {
     currentCurrency = currency;
-    localStorage.setItem('chadele_calc_currency', currency);
+    try {
+      localStorage.setItem('chadele_calc_currency', currency);
+    } catch (e) {}
+
     if (currency === 'NGN') {
       btnNgn?.classList.add('active');
       btnUsd?.classList.remove('active');
@@ -326,9 +320,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (sliderHeadcount && savedHeadcount) sliderHeadcount.value = savedHeadcount;
     if (sliderSalary && savedSalary) sliderSalary.value = savedSalary;
     if (sliderTurnover && savedTurnover) sliderTurnover.value = savedTurnover;
-  } catch (e) {
-    // Graceful fallback if localStorage is disabled
-  }
+  } catch (e) {}
 
   function handleCalculatorInput() {
     updateCalculator();
@@ -348,170 +340,90 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // =========================================================================
-  // 4. PRACTICE AREA DETAILS (4 CORE SERVICE PILLARS)
+  // 4. SERVICES RENDERED (6 CORE SERVICES) & DETAILS MODAL
   // =========================================================================
   const practiceData = {
-    // PILLAR 1: BUSINESS ADVISORY
-    advisory_strategy: {
+    // 1. BUSINESS ADVISORY
+    advisory: {
       category: 'Business Advisory',
-      title: 'Strategic Planning & Organizational Architecture',
-      desc: 'Align executive vision with scalable operating realities. We assess departmental structures, eliminate cross-functional bottlenecks, and design agile operating models built for rapid market expansion.',
+      title: 'Business Advisory & Strategic Architecture',
+      desc: 'Clear direction and calm guidance when your business is growing or changing. We help you streamline how your departments work together, eliminate bottlenecks between managers, design clean org charts, and set up board governance that investors love.',
       deliverables: [
-        'Organizational Capability Audits & Span-of-Control Optimization',
-        'Operating Model Architecture & Departmental Restructuring Roadmaps',
-        'Commercial Growth Alignment & Resource Allocation Frameworks',
-        'Change Management Strategy & Executive Transformation Playbooks'
-      ]
-    },
-    advisory_governance: {
-      category: 'Business Advisory',
-      title: 'Corporate Governance & Board Advisory',
-      desc: 'Establish institutional governance frameworks that inspire shareholder confidence. We formulate board charters, advisory committees, compliance matrices, and risk oversight frameworks.',
-      deliverables: [
-        'Board of Directors Charter & Governance Committee Protocols',
-        'Executive Succession Planning & C-Suite Continuity Frameworks',
-        'Enterprise Risk Governance & Internal Control Charters',
-        'Ethical Conduct Policies, Whistleblowing & Board Evaluation Surveys'
+        'Organizational structure blueprints & span-of-control redesign',
+        'Departmental workflow mapping & bottleneck elimination',
+        'Leadership role definitions & clear accountability matrices',
+        'Board of directors governance charters & advisory committee protocols',
+        'Strategic 1–3 year growth & commercial scaling roadmaps'
       ]
     },
 
-    // PILLAR 2: HR CONSULTING
-    consulting_compliance: {
+    // 2. HR CONSULTING
+    consulting: {
       category: 'HR Consulting',
-      title: 'Labour Act Compliance & Employee Handbooks',
-      desc: 'Ensure 100% legal alignment with statutory Labour Act regulations, Trade Disputes Act, and industrial court precedents. Prevent costly employee claims, regulatory penalties, and union liabilities.',
+      title: 'HR Consulting & Workplace Compliance',
+      desc: 'Airtight employee policies, fair salaries, and complete peace of mind. We write easy-to-read employee handbooks, review staff contracts, ensure 100% compliance with Nigerian Labour Laws, and design transparent appraisal and salary systems that staff respect.',
       deliverables: [
-        'Comprehensive Statutory Labour Act Policy Audit & Gap Analysis',
-        'Customized Employee Handbooks & Enforceable Code of Conduct',
-        'Statutory Tax (PAYE), Pension (PenCom), ITF, and NSITF Compliance',
-        'National Industrial Court Tested Disciplinary & Severance Clauses'
-      ]
-    },
-    consulting_performance: {
-      category: 'HR Consulting',
-      title: 'Performance Management & Total Rewards Design',
-      desc: 'Replace stressful subjective evaluations with objective OKR scorecards and inflation-hedged total rewards. We build compensation architectures that motivate and retain high performers.',
-      deliverables: [
-        'Objective OKR and Strategic KPI Cascading Frameworks',
-        'Quarterly 360-Degree Appraisal & Calibration Guidelines',
-        'Macroeconomic & Inflation-Adjusted Compensation Benchmarks',
-        'Executive Equity, Long-Term Incentive & Bonus Pool Architecture'
+        'Plain-English Employee Handbooks & enforceable codes of conduct',
+        '100% Nigerian Labour Act, PenCom, PAYE, and ITF statutory compliance audits',
+        'Inflation-hedged salary tiering & transparent CIPM grade leveling',
+        'Objective quarterly OKR and performance appraisal frameworks',
+        'National Industrial Court-tested disciplinary & termination procedures'
       ]
     },
 
-    // PILLAR 3: RECRUITMENT & TALENT SOLUTION
-    recruitment_executive: {
-      category: 'Recruitment & Talent Solution',
-      title: 'Executive Search & Leadership Headhunting',
-      desc: 'Identify, attract, and secure transformational C-Suite, VP, and Director-level leaders. Supported by multi-stage behavioral scorecards, deep market mapping, and an unconditional 12-month replacement guarantee.',
+    // 3. RECRUITMENT & TALENT SOLUTIONS
+    recruitment: {
+      category: 'Recruitment & Talent Solutions',
+      title: 'Recruitment & Executive Talent Solutions',
+      desc: 'Find the right people the first time — without the headache. We source, thoroughly interview, and deliver vetted professionals — from key department managers to senior executives — backed by our unconditional 12-month placement replacement guarantee.',
       deliverables: [
-        'C-Suite & Managing Director Confidential Executive Search',
-        'Rigorous Multi-Tier Competency & Cultural Alignment Scorecards',
-        'Comprehensive Executive Background & Reputational Due Diligence',
-        'Unconditional 12-Month Candidate Placement & Replacement Guarantee'
-      ]
-    },
-    recruitment_sourcing: {
-      category: 'Recruitment & Talent Solution',
-      title: 'Technical Talent Sourcing & RPO Solutions',
-      desc: 'Scale your engineering, commercial, and operational teams rapidly without sacrificing quality. Turnkey recruitment process outsourcing (RPO) with proactive talent pipeline architecture.',
-      deliverables: [
-        'Specialized Technical & Commercial Talent Pipeline Mapping',
-        'Full-Lifecycle Recruitment Process Outsourcing (RPO)',
-        'Technical Skills Testing & Assessment Center Facilitation',
-        'Accelerated Time-to-Hire Frameworks with Structured Offer Negotiation'
+        'Confidential executive search for C-Suite, VP, and Director-level leaders',
+        'Structured competency scorecard interviews & cultural fit assessments',
+        'Comprehensive background checks, credential verification & referee audits',
+        'Unconditional 12-month candidate placement & replacement warranty',
+        'Accelerated time-to-hire pipelines for technical & commercial roles'
       ]
     },
 
-    // PILLAR 4: CORPORATE TRAINING
-    training_leadership: {
+    // 4. CORPORATE TRAINING
+    training_corp: {
       category: 'Corporate Training',
-      title: 'Executive Leadership & Management Development',
-      desc: 'Empower frontline supervisors and executives with high-impact management competencies. Experiential learning academies focused on strategic thinking, delegation, and emotional intelligence.',
+      title: 'Corporate Training & In-House Learning Academies',
+      desc: 'Practical, engaging workshops tailored around your team’s real daily challenges. In-house bootcamps, manager development, and leadership retreats designed specifically for your company. No boring slide decks — just interactive, memorable sessions your staff can use immediately.',
       deliverables: [
-        'C-Suite & Senior Executive Strategic Leadership Retreats',
-        'Emerging Leaders & Supervisory Management Masterclasses',
-        'Conflict Resolution, Delegation & High-Stakes Communication',
-        'Post-Training Behavioral Assessments & Real-World KPI Tracking'
-      ]
-    },
-    training_upskilling: {
-      category: 'Corporate Training',
-      title: 'Workforce Upskilling & Culture Transformation',
-      desc: 'Cultivate an aligned, high-performance workplace culture. Customized workshops covering statutory workplace compliance, customer excellence, and operational accountability.',
-      deliverables: [
-        'Statutory Workplace Ethics, Anti-Harassment & Compliance Workshops',
-        'Customer Centricity, Cross-Functional Alignment & Culture Design',
-        'Agile Collaboration & Problem-Solving Bootcamps',
-        'Turnkey Corporate Learning Portals & Certificate Issuance'
+        'Customized curriculum designed around your company’s exact operational targets',
+        'Interactive roleplaying, practical simulations & live problem-solving',
+        'Pre-training baseline skill surveys & post-training behavioral milestone tracking',
+        'Executive strategy retreats & emerging supervisory bootcamps',
+        'Actionable manager playbooks & ongoing implementation support'
       ]
     },
 
-    // LEGACY ALIASES FOR COMPATIBILITY
-    policies: {
-      category: 'HR Consulting',
-      title: 'Labour Act Compliance & Employee Handbooks',
-      desc: 'Ensure 100% legal alignment with statutory Labour Act regulations, Trade Disputes Act, and National Industrial Court precedents.',
+    // 5. PROFESSIONAL TRAINING
+    training_prof: {
+      category: 'Professional Training',
+      title: 'Professional Training & Certified Masterclasses',
+      desc: 'Certified, career-accelerating masterclasses for ambitious individuals and team leads. Open-enrollment public cohorts where HR practitioners, founders, and supervisors master people analytics, labor dispute mediation, salary structuring, and modern management techniques.',
       deliverables: [
-        'Statutory Labour Act (2004) Policy Review',
-        'State-Specific PAYE Tax & Statutory Mandate Audits',
-        'National Industrial Court Tested Disciplinary Clauses',
-        'Multi-Tier Severance, Redundancy & Gratuity Governance'
+        'Cohort-based masterclasses with verified certificates upon completion',
+        'Practical toolkits: Excel compensation models, policy templates & audit checklists',
+        'Weekend & evening friendly hybrid schedules for working professionals',
+        'Lifetime access to session recordings, learning portals & peer community',
+        'Direct Q&A sessions with seasoned Nigerian HR directors & legal advisors'
       ]
     },
-    performance: {
-      category: 'HR Consulting',
-      title: 'Performance Management & KPI Engineering',
-      desc: 'Design transparent appraisal systems, quarterly OKRs, and merit-driven bonuses that motivate distributed teams.',
+
+    // 6. HR OUTSOURCING
+    outsourcing: {
+      category: 'HR Outsourcing',
+      title: 'Complete HR Outsourcing & Payroll Administration',
+      desc: 'Hand over your day-to-day HR paperwork so you can focus on building your business. We act as your entire dedicated HR department. We handle monthly payroll calculations, statutory tax remittances (PAYE, PenCom, ITF), onboarding, leave tracking, and staff queries seamlessly.',
       deliverables: [
-        'Objective OKR and Strategic Priority Cascading Matrices',
-        'Seniority & Competency-Based Career Progression Frameworks',
-        'Quarterly 360-Degree Peer Feedback Calibration Guides',
-        'Manager Coaching for Objective Performance Scoring'
-      ]
-    },
-    talent: {
-      category: 'Recruitment & Talent Solution',
-      title: 'Key Talent Retention & Executive Search',
-      desc: 'Combat high turnover with strategic succession pipelines, leadership search, and an unconditional 12-month replacement warranty.',
-      deliverables: [
-        'Turnover Risk Matrix & Key Personnel Retention Roadmaps',
-        'Executive & Technical Leadership Recruitment',
-        'Structured Scorecard Interview Questions & Scoring',
-        'Unconditional 12-Month Replacement Guarantee'
-      ]
-    },
-    compensation: {
-      category: 'HR Consulting',
-      title: 'Total Rewards & Compensation Design',
-      desc: 'Design market-tested salary tiering calibrated for currency volatility, dual-currency bonus pools, and executive equity structures.',
-      deliverables: [
-        'Macroeconomic & Inflation Salary Benchmarking',
-        'Dual-Currency Compensation & Bonus Modeling',
-        'Executive Equity Vesting & Phantom Stock Plans',
-        'Transparent Salary Tiering & CIPM Grade Leveling'
-      ]
-    },
-    relations: {
-      category: 'Business Advisory',
-      title: 'Trade Union Relations & Conflict Mediation',
-      desc: 'Manage union relationships smoothly with certified arbitration. We support collective bargaining agreements (CBA) and conduct independent internal grievance investigations.',
-      deliverables: [
-        'Trade Union Negotiation & CBA Support',
-        'Independent Third-Party Workplace Investigations',
-        'Statutory Dispute Mediation & Settlement Agreements',
-        'Confidential Whistleblower & Workplace Ethics Policies'
-      ]
-    },
-    hrtech: {
-      category: 'HR Consulting',
-      title: 'HRIS & Automated Payroll Integration',
-      desc: 'Eliminate payroll errors and automate statutory deductions. Turnkey deployment of SeamlessHR, Workpay, BambooHR, and automated schedules.',
-      deliverables: [
-        'SeamlessHR / Workpay / BambooHR System Configuration',
-        'Automated PAYE, Pension (PenCom), NHF, and NSITF Calculations',
-        'Digital Employee Onboarding & Asset Tracking Workflows',
-        'Real-time Executive People Analytics & Attrition Dashboards'
+        'Monthly payroll processing & automated employee payslip distribution',
+        'Timely statutory remittance filings (PAYE State Taxes, PenCom Pensions, ITF, NSITF)',
+        'Digital employee records, leave administration & probation tracking',
+        'Dedicated staff helpdesk for employee queries & contract management',
+        'Disciplinary process facilitation in strict compliance with the Labour Act'
       ]
     }
   };
@@ -543,60 +455,378 @@ document.addEventListener('DOMContentLoaded', () => {
   practiceModalBack?.addEventListener('click', () => practiceModal?.classList.remove('open'));
 
   // =========================================================================
-  // 5. SERVICES FILTER TABS
+  // 5. SERVICES FILTER TABS & DROPDOWN JUMPS
   // =========================================================================
   const filterBtns = document.querySelectorAll('.filter-btn');
   const serviceCards = document.querySelectorAll('.service-card');
 
+  function filterServices(filter) {
+    filterBtns.forEach(b => {
+      if (b.getAttribute('data-filter') === filter) {
+        b.classList.add('active');
+        b.setAttribute('aria-selected', 'true');
+      } else {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      }
+    });
+
+    const visibleCards = [];
+    serviceCards.forEach(card => {
+      const category = card.getAttribute('data-category');
+      if (filter === 'all' || category === filter) {
+        card.style.display = 'flex';
+        visibleCards.push(card);
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    if (!prefersReducedMotion && visibleCards.length > 0) {
+      gsap.fromTo(visibleCards, 
+        { opacity: 0, y: 15 }, 
+        { opacity: 1, y: 0, duration: 0.35, stagger: 0.05, ease: 'power2.out', clearProps: 'transform,opacity' }
+      );
+    }
+  }
+
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
       const filter = btn.getAttribute('data-filter');
-      try {
-        sessionStorage.setItem('chadele_service_filter', filter);
-      } catch (e) {}
+      filterServices(filter);
+    });
+  });
 
-      const visibleCards = [];
-
-      serviceCards.forEach(card => {
-        const category = card.getAttribute('data-category');
-        if (filter === 'all' || category === filter) {
-          card.style.display = 'flex';
-          visibleCards.push(card);
-        } else {
-          card.style.display = 'none';
-        }
-      });
-
-      if (!prefersReducedMotion && visibleCards.length > 0) {
-        gsap.fromTo(visibleCards, 
-          { opacity: 0, y: 15 }, 
-          { opacity: 1, y: 0, duration: 0.35, stagger: 0.05, ease: 'power2.out', clearProps: 'transform,opacity' }
-        );
+  // Handle Dropdown Filter Jumps (from navbar or mobile drawer)
+  document.querySelectorAll('[data-filter-jump]').forEach(el => {
+    el.addEventListener('click', (e) => {
+      const targetFilter = el.getAttribute('data-filter-jump');
+      if (targetFilter) {
+        filterServices(targetFilter);
       }
     });
   });
 
-  // Restore saved filter tab across reloads
-  try {
-    const savedFilter = sessionStorage.getItem('chadele_service_filter');
-    if (savedFilter && savedFilter !== 'all') {
-      const activeFilterBtn = document.querySelector(`.filter-btn[data-filter="${savedFilter}"]`);
-      if (activeFilterBtn) {
-        filterBtns.forEach(b => b.classList.remove('active'));
-        activeFilterBtn.classList.add('active');
-        serviceCards.forEach(card => {
-          const category = card.getAttribute('data-category');
-          card.style.display = (category === savedFilter) ? 'flex' : 'none';
-        });
+  // =========================================================================
+  // 6. TRAINING OFFERED: REGISTRATION & SYLLABUS MODALS
+  // =========================================================================
+
+  const trainingModal = document.getElementById('training-modal');
+  const trainingModalClose = document.getElementById('training-modal-close');
+  const trainingModalTitle = document.getElementById('training-modal-title');
+  const trainingModalSubtitle = document.getElementById('training-modal-subtitle');
+  const trainingInputCourse = document.getElementById('training-input-course');
+  const trainingForm = document.getElementById('training-form');
+  const trainingModalSuccess = document.getElementById('training-modal-success');
+  const btnTrainSuccessDone = document.getElementById('btn-train-success-done');
+
+  document.querySelectorAll('.open-training-modal').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const courseTitle = btn.getAttribute('data-course-title') || btn.getAttribute('data-course-type') || 'Course Registration';
+      const courseDate = btn.getAttribute('data-course-date') || '';
+      if (trainingModal) {
+        trainingModalTitle.textContent = courseTitle;
+        trainingModalSubtitle.textContent = courseDate ? `Scheduled Date: ${courseDate} • Reserve your seat below` : 'Reserve your seat or request corporate group pricing';
+        if (trainingInputCourse) trainingInputCourse.value = courseTitle;
+        if (trainingForm) trainingForm.style.display = 'block';
+        if (trainingModalSuccess) trainingModalSuccess.style.display = 'none';
+        trainingModal.classList.add('open');
       }
-    }
-  } catch (e) {}
+    });
+  });
+
+  document.querySelectorAll('.open-syllabus-modal').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const courseTitle = btn.getAttribute('data-course-title') || 'Course Syllabus';
+      if (trainingModal) {
+        trainingModalTitle.textContent = `Get Syllabus: ${courseTitle}`;
+        trainingModalSubtitle.textContent = 'Enter your email to receive the complete learning objectives, schedule & pricing.';
+        if (trainingInputCourse) trainingInputCourse.value = courseTitle;
+        if (trainingForm) trainingForm.style.display = 'block';
+        if (trainingModalSuccess) trainingModalSuccess.style.display = 'none';
+        trainingModal.classList.add('open');
+      }
+    });
+  });
+
+  trainingModalClose?.addEventListener('click', () => trainingModal?.classList.remove('open'));
+  btnTrainSuccessDone?.addEventListener('click', () => trainingModal?.classList.remove('open'));
+
+  trainingForm?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (trainingForm) trainingForm.style.display = 'none';
+    if (trainingModalSuccess) trainingModalSuccess.style.display = 'block';
+    trainingForm.reset();
+  });
+
+  // Handle Training Jump from navbar dropdown
+  document.querySelectorAll('[data-training-jump]').forEach(el => {
+    el.addEventListener('click', () => {
+      const target = el.getAttribute('data-training-jump');
+      const targetCard = document.getElementById(target === 'corporate' ? 'train-corporate' : 'train-professional');
+      if (targetCard) {
+        targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        targetCard.style.outline = '2px solid var(--accent)';
+        setTimeout(() => {
+          targetCard.style.outline = '';
+        }, 2000);
+      }
+    });
+  });
 
   // =========================================================================
-  // 6. CONSULTATION & QUOTE REQUEST MODAL
+  // 7. RESOURCES HUB: TABS, ARTICLES, TOOLS & DOWNLOADS
+  // =========================================================================
+  const resTabBtns = document.querySelectorAll('.res-tab-btn');
+  const resPanels = document.querySelectorAll('.res-panel');
+
+  function switchResourceTab(targetId) {
+    resTabBtns.forEach(btn => {
+      if (btn.getAttribute('data-res-target') === targetId) {
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+      } else {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-selected', 'false');
+      }
+    });
+
+    resPanels.forEach(panel => {
+      if (panel.id === targetId) {
+        panel.classList.add('active');
+      } else {
+        panel.classList.remove('active');
+      }
+    });
+  }
+
+  resTabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.getAttribute('data-res-target');
+      switchResourceTab(targetId);
+    });
+  });
+
+  // Handle Dropdown Resources Jump
+  document.querySelectorAll('[data-res-tab]').forEach(el => {
+    el.addEventListener('click', () => {
+      const tabKey = el.getAttribute('data-res-tab');
+      const targetId = tabKey === 'articles' ? 'res-articles' : (tabKey === 'tools' ? 'res-tools' : 'res-downloads');
+      switchResourceTab(targetId);
+    });
+  });
+
+  // Article Summaries Dictionary
+  const articleSummaries = {
+    labour_mistakes: {
+      category: 'Labour Law • Nigerian Startups',
+      title: '5 Costly Mistakes Growing Nigerian Companies Make With Labour Law',
+      body: `
+        <p><strong>1. Verbal Contracts Without Written Confirmation:</strong> Under Section 7 of the Nigerian Labour Act, employers must provide written employment terms within 3 months of hiring. Verbal promises leave you wide open to disputes at the National Industrial Court.</p><br>
+        <p><strong>2. Informal Probation Traps:</strong> Failing to conduct a formal review at the end of probation or leaving staff in limbo can legally confirm them as permanent employees with full severance rights.</p><br>
+        <p><strong>3. Vague Overtime & Weekend Policies:</strong> Without clear written working hours in an employee handbook, disputed overtime claims can accumulate massive liability.</p><br>
+        <p><strong>4. Arbitrary Dismissal Without Fair Hearing:</strong> Even in employment "at-will" contracts, terminating someone for misconduct requires documented procedural fair hearing to withstand judicial scrutiny.</p><br>
+        <p><strong>5. Neglecting Statutory Filings:</strong> Not remitting PAYE, PenCom pensions, ITF, or NSITF incurs heavy penalties during state revenue audits. <em>Action: Schedule a free Labour Act audit with Chadele to protect your business.</em></p>
+      `
+    },
+    performance_reviews: {
+      category: 'Performance • Workplace Culture',
+      title: 'How to Run Performance Reviews People Actually Look Forward To',
+      body: `
+        <p><strong>Move from Annual Judgments to Quarterly Conversations:</strong> Once-a-year appraisals feel like a trial. When feedback happens every quarter, there are zero surprises and staff stay motivated.</p><br>
+        <p><strong>The 3-Question Framework:</strong> Instead of confusing 50-point rating rubrics, structure your 1-on-1 around three simple questions:</p>
+        <ul style="padding-left: 20px; margin: 10px 0;">
+          <li><em>"What wins are you most proud of since our last chat?"</em></li>
+          <li><em>"Where did you feel blocked or slowed down, and how can I help remove that roadblock?"</em></li>
+          <li><em>"What is one skill or project you want to tackle next quarter?"</em></li>
+        </ul>
+        <p><strong>Focus on Growth, Not Blame:</strong> When managers coach instead of critique, employees take ownership of their numbers and productivity jumps naturally.</p>
+      `
+    },
+    retention_2026: {
+      category: 'Hiring & Retention • Economic Resilience',
+      title: 'Retaining Your Best Talent in 2026: Why Fair Pay Isn’t The Only Key',
+      body: `
+        <p>While inflation makes competitive, benchmarked compensation mandatory, money alone does not prevent your top performers from leaving. Research across high-growth African companies shows five non-monetary reasons staff stay:</p><br>
+        <p><strong>1. Clear Career Progression:</strong> High performers want to know where they can be in 18 months. Ambiguity breeds restlessness.</p><br>
+        <p><strong>2. Empathetic Direct Managers:</strong> 70% of employee churn is driven by friction with frontline supervisors, not executive leadership.</p><br>
+        <p><strong>3. Flexibility & Autonomy:</strong> Hybrid work options, trust, and output-focused KPIs mean more than rigid 9-to-5 desk presence.</p><br>
+        <p><strong>4. Learning & Upskilling Stipends:</strong> Sponsoring your team leads to attend masterclasses makes them feel valued and invested in.</p>
+      `
+    }
+  };
+
+  const articleModal = document.getElementById('article-modal');
+  const articleModalClose = document.getElementById('article-modal-close');
+  const articleModalDone = document.getElementById('article-modal-done');
+  const articleModalCategory = document.getElementById('article-modal-category');
+  const articleModalTitle = document.getElementById('article-modal-title');
+  const articleModalBody = document.getElementById('article-modal-body');
+
+  document.querySelectorAll('.open-article-modal').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const articleKey = btn.getAttribute('data-article');
+      const article = articleSummaries[articleKey];
+      if (article && articleModal) {
+        articleModalCategory.textContent = article.category;
+        articleModalTitle.textContent = article.title;
+        articleModalBody.innerHTML = article.body;
+        articleModal.classList.add('open');
+      }
+    });
+  });
+
+  articleModalClose?.addEventListener('click', () => articleModal?.classList.remove('open'));
+  articleModalDone?.addEventListener('click', () => articleModal?.classList.remove('open'));
+
+  // Download Modal
+  const downloadModal = document.getElementById('download-modal');
+  const downloadModalClose = document.getElementById('download-modal-close');
+  const downloadModalTitle = document.getElementById('download-modal-title');
+  const downloadResourceTitle = document.getElementById('download-resource-title');
+  const downloadForm = document.getElementById('download-form');
+  const downloadModalSuccess = document.getElementById('download-modal-success');
+  const btnDownloadDone = document.getElementById('btn-download-done');
+
+  document.querySelectorAll('.open-download-modal').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const resName = btn.getAttribute('data-resource-name') || 'Resource Template';
+      if (downloadModal) {
+        downloadModalTitle.textContent = `Download: ${resName}`;
+        if (downloadResourceTitle) downloadResourceTitle.value = resName;
+        if (downloadForm) downloadForm.style.display = 'block';
+        if (downloadModalSuccess) downloadModalSuccess.style.display = 'none';
+        downloadModal.classList.add('open');
+      }
+    });
+  });
+
+  downloadModalClose?.addEventListener('click', () => downloadModal?.classList.remove('open'));
+  btnDownloadDone?.addEventListener('click', () => downloadModal?.classList.remove('open'));
+
+  downloadForm?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (downloadForm) downloadForm.style.display = 'none';
+    if (downloadModalSuccess) downloadModalSuccess.style.display = 'block';
+    downloadForm.reset();
+  });
+
+  // =========================================================================
+  // 8. INTERACTIVE 2-MINUTE HR COMPLIANCE HEALTH CHECK QUIZ
+  // =========================================================================
+  const quizModal = document.getElementById('quiz-modal');
+  const quizModalClose = document.getElementById('quiz-modal-close');
+  const quizQuestionsView = document.getElementById('quiz-questions-view');
+  const quizResultsView = document.getElementById('quiz-results-view');
+  const quizProgress = document.getElementById('quiz-progress');
+  const quizQuestionText = document.getElementById('quiz-question-text');
+  const quizScoreCircle = document.getElementById('quiz-score-circle');
+  const quizResultTitle = document.getElementById('quiz-result-title');
+  const quizResultFeedback = document.getElementById('quiz-result-feedback');
+
+  const quizQuestions = [
+    "Do all your current employees have a signed employment contract that explicitly references their salary, working hours, and notice period?",
+    "Are you currently registered and remitting statutory PenCom pensions and PAYE state taxes for all eligible staff?",
+    "Does your company have a written Employee Handbook with clear disciplinary procedures, leave entitlements, and code of conduct?",
+    "Do you have an objective, documented process for conducting performance appraisals and determining salary adjustments?",
+    "Are job descriptions and reporting lines clearly defined so every staff member knows who they report to and what is expected of them?"
+  ];
+
+  let currentQuestionIndex = 0;
+  let quizScore = 0;
+
+  function loadQuestion(index) {
+    if (quizProgress) quizProgress.textContent = `Question ${index + 1} of ${quizQuestions.length}`;
+    if (quizQuestionText) quizQuestionText.textContent = quizQuestions[index];
+  }
+
+  function startQuiz() {
+    currentQuestionIndex = 0;
+    quizScore = 0;
+    if (quizQuestionsView) quizQuestionsView.style.display = 'block';
+    if (quizResultsView) quizResultsView.style.display = 'none';
+    loadQuestion(0);
+    quizModal?.classList.add('open');
+  }
+
+  document.querySelectorAll('.open-quiz-modal').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      startQuiz();
+    });
+  });
+
+  document.querySelectorAll('.quiz-answer-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const isYes = btn.getAttribute('data-answer') === 'yes';
+      if (isYes) quizScore++;
+
+      currentQuestionIndex++;
+      if (currentQuestionIndex < quizQuestions.length) {
+        loadQuestion(currentQuestionIndex);
+      } else {
+        // Show Results
+        if (quizQuestionsView) quizQuestionsView.style.display = 'none';
+        if (quizResultsView) quizResultsView.style.display = 'block';
+        if (quizScoreCircle) quizScoreCircle.textContent = `${quizScore}/5`;
+
+        if (quizScore === 5) {
+          quizResultTitle.textContent = 'Outstanding HR Health!';
+          quizResultFeedback.textContent = 'Congratulations! Your business has clean documentation and sound employment structures in place. Regular quarterly reviews will keep you protected.';
+        } else if (quizScore >= 3) {
+          quizResultTitle.textContent = 'Solid Basics, Key Vulnerabilities';
+          quizResultFeedback.textContent = 'You have good foundations, but the gaps in handbooks, statutory filings, or contracts could expose your company to costly fines or employee disputes.';
+        } else {
+          quizResultTitle.textContent = 'Urgent Legal & Operational Protection Needed';
+          quizResultFeedback.textContent = 'Your business is currently operating with critical employment risks. Let us help you audit your policies and establish airtight contracts immediately.';
+        }
+      }
+    });
+  });
+
+  quizModalClose?.addEventListener('click', () => quizModal?.classList.remove('open'));
+
+  // =========================================================================
+  // 9. CAREER APPLICATION MODAL
+  // =========================================================================
+  const careerModal = document.getElementById('career-modal');
+  const careerModalClose = document.getElementById('career-modal-close');
+  const careerModalTitle = document.getElementById('career-modal-title');
+  const careerInputRole = document.getElementById('career-input-role');
+  const careerForm = document.getElementById('career-form');
+  const careerModalSuccess = document.getElementById('career-modal-success');
+  const btnCareerDone = document.getElementById('btn-career-done');
+
+  document.querySelectorAll('.open-career-modal').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const role = btn.getAttribute('data-job-role') || 'Open Role';
+      if (careerModal) {
+        careerModalTitle.textContent = `Apply: ${role}`;
+        if (careerInputRole) careerInputRole.value = role;
+        if (careerForm) careerForm.style.display = 'block';
+        if (careerModalSuccess) careerModalSuccess.style.display = 'none';
+        careerModal.classList.add('open');
+      }
+    });
+  });
+
+  careerModalClose?.addEventListener('click', () => careerModal?.classList.remove('open'));
+  btnCareerDone?.addEventListener('click', () => careerModal?.classList.remove('open'));
+
+  careerForm?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (careerForm) careerForm.style.display = 'none';
+    if (careerModalSuccess) careerModalSuccess.style.display = 'block';
+    careerForm.reset();
+  });
+
+  // =========================================================================
+  // 10. CONSULTATION & QUOTE REQUEST MODAL
   // =========================================================================
   const consultationModal = document.getElementById('consultation-modal');
   const modalCloseBtn = document.getElementById('modal-close-btn');
@@ -608,6 +838,8 @@ document.addEventListener('DOMContentLoaded', () => {
   function openConsultationModal() {
     closeMobileDrawer();
     practiceModal?.classList.remove('open');
+    quizModal?.classList.remove('open');
+    trainingModal?.classList.remove('open');
     if (consultationModal) {
       if (modalFormContent) modalFormContent.style.display = 'block';
       if (modalSuccessContent) modalSuccessContent.style.display = 'none';
@@ -629,7 +861,7 @@ document.addEventListener('DOMContentLoaded', () => {
   modalCloseBtn?.addEventListener('click', closeConsultationModal);
   btnModalDone?.addEventListener('click', closeConsultationModal);
 
-  [consultationModal, practiceModal].forEach(modal => {
+  [consultationModal, practiceModal, trainingModal, downloadModal, articleModal, careerModal, quizModal].forEach(modal => {
     modal?.addEventListener('click', (e) => {
       if (e.target === modal) modal.classList.remove('open');
     });
@@ -637,51 +869,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-      closeConsultationModal();
-      practiceModal?.classList.remove('open');
+      [consultationModal, practiceModal, trainingModal, downloadModal, articleModal, careerModal, quizModal].forEach(m => m?.classList.remove('open'));
       closeMobileDrawer();
     }
   });
-
-  const draftInputs = {
-    name: document.getElementById('input-name'),
-    email: document.getElementById('input-email'),
-    size: document.getElementById('select-size'),
-    practice: document.getElementById('select-practice'),
-    notes: document.getElementById('input-notes')
-  };
-
-  // Restore draft if saved across reloads
-  try {
-    const savedDraft = JSON.parse(sessionStorage.getItem('chadele_consultation_draft') || '{}');
-    if (savedDraft.name && draftInputs.name) draftInputs.name.value = savedDraft.name;
-    if (savedDraft.email && draftInputs.email) draftInputs.email.value = savedDraft.email;
-    if (savedDraft.size && draftInputs.size) draftInputs.size.value = savedDraft.size;
-    if (savedDraft.practice && draftInputs.practice) draftInputs.practice.value = savedDraft.practice;
-    if (savedDraft.notes && draftInputs.notes) draftInputs.notes.value = savedDraft.notes;
-  } catch (e) {}
-
-  function saveFormDraft() {
-    try {
-      const draft = {
-        name: draftInputs.name?.value || '',
-        email: draftInputs.email?.value || '',
-        size: draftInputs.size?.value || '',
-        practice: draftInputs.practice?.value || '',
-        notes: draftInputs.notes?.value || ''
-      };
-      sessionStorage.setItem('chadele_consultation_draft', JSON.stringify(draft));
-    } catch (e) {}
-  }
-
-  consultationForm?.addEventListener('input', saveFormDraft);
-  consultationForm?.addEventListener('change', saveFormDraft);
 
   consultationForm?.addEventListener('submit', (e) => {
     e.preventDefault();
     const submitBtn = document.getElementById('btn-submit-consultation');
     if (submitBtn) {
-      submitBtn.textContent = 'Transmitting Scope Request...';
+      submitBtn.textContent = 'Transmitting...';
       submitBtn.style.opacity = '0.7';
     }
 
@@ -689,18 +886,15 @@ document.addEventListener('DOMContentLoaded', () => {
       if (modalFormContent) modalFormContent.style.display = 'none';
       if (modalSuccessContent) modalSuccessContent.style.display = 'block';
       consultationForm.reset();
-      try {
-        sessionStorage.removeItem('chadele_consultation_draft');
-      } catch (e) {}
       if (submitBtn) {
-        submitBtn.textContent = 'Submit Scope Request';
+        submitBtn.textContent = 'Book 20-Minute Chat';
         submitBtn.style.opacity = '1';
       }
-    }, 500);
+    }, 450);
   });
 
   // =========================================================================
-  // 7. FAQ ACCORDION
+  // 11. FAQ ACCORDION
   // =========================================================================
   const faqItems = document.querySelectorAll('.faq-item');
   faqItems.forEach(item => {
@@ -713,28 +907,13 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // =========================================================================
-  // 8. NEWSLETTER SUBSCRIPTION
-  // =========================================================================
-  const newsletterForm = document.getElementById('newsletter-form');
-  const newsletterFeedback = document.getElementById('newsletter-feedback');
-  newsletterForm?.addEventListener('submit', (e) => {
-    e.preventDefault();
-    if (newsletterFeedback) newsletterFeedback.style.display = 'block';
-    newsletterForm.reset();
-    setTimeout(() => {
-      if (newsletterFeedback) newsletterFeedback.style.display = 'none';
-    }, 4000);
-  });
-
-  // =========================================================================
-  // 9. SCROLL PERSISTENCE & POSITION RESTORATION
+  // 12. SCROLL PERSISTENCE & POSITION RESTORATION
   // =========================================================================
   const navbar = document.querySelector('.navbar-wrapper');
   const allSections = document.querySelectorAll('main section[id]');
   let scrollTicking = false;
   let currentActiveId = '';
 
-  // Brand logo click clears scroll memory to return home
   document.querySelectorAll('.brand-logo').forEach(logo => {
     logo.addEventListener('click', () => {
       try {
@@ -748,19 +927,16 @@ document.addEventListener('DOMContentLoaded', () => {
   function handleScrollPersistence() {
     const scrollY = window.pageYOffset || document.documentElement.scrollTop;
 
-    // Persist raw scroll offset
     try {
       sessionStorage.setItem('chadele_scroll_pos', Math.round(scrollY).toString());
     } catch (e) {}
 
-    // Navbar scrolled state
     if (scrollY > 40) {
       navbar?.classList.add('scrolled');
     } else {
       navbar?.classList.remove('scrolled');
     }
 
-    // Detect currently visible section
     let detectedId = 'hero';
     allSections.forEach(sec => {
       const top = sec.offsetTop - 140;
@@ -775,22 +951,10 @@ document.addEventListener('DOMContentLoaded', () => {
       try {
         if (detectedId && detectedId !== 'hero') {
           sessionStorage.setItem('chadele_active_section', detectedId);
-          history.replaceState(null, '', '#' + detectedId);
         } else if (scrollY < 120) {
           sessionStorage.setItem('chadele_active_section', 'hero');
-          history.replaceState(null, '', window.location.pathname + window.location.search);
         }
       } catch (e) {}
-
-      // Update active state on nav links
-      document.querySelectorAll('.nav-links a').forEach(link => {
-        const href = link.getAttribute('href');
-        if (href === '#' + detectedId) {
-          link.classList.add('active');
-        } else {
-          link.classList.remove('active');
-        }
-      });
     }
 
     scrollTicking = false;
@@ -803,7 +967,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }, { passive: true });
 
-  // Guarantee persistence before page unloads
   window.addEventListener('beforeunload', () => {
     try {
       const currentScroll = Math.round(window.pageYOffset || document.documentElement.scrollTop);
@@ -811,16 +974,6 @@ document.addEventListener('DOMContentLoaded', () => {
     } catch (e) {}
   });
 
-  document.addEventListener('visibilitychange', () => {
-    if (document.visibilityState === 'hidden') {
-      try {
-        const currentScroll = Math.round(window.pageYOffset || document.documentElement.scrollTop);
-        sessionStorage.setItem('chadele_scroll_pos', currentScroll.toString());
-      } catch (e) {}
-    }
-  });
-
-  // RESTORATION FUNCTION: Restores user to their exact place on page reload
   function restoreScrollPosition() {
     let savedSection = '';
     let savedPos = 0;
@@ -832,7 +985,6 @@ document.addEventListener('DOMContentLoaded', () => {
     } catch (e) {}
 
     let targetY = 0;
-
     if (savedSection && savedSection !== 'hero') {
       const targetEl = document.getElementById(savedSection);
       if (targetEl) {
@@ -845,7 +997,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (targetY > 20) {
-      // Temporarily disable smooth scroll so the jump is instant and accurate
       document.documentElement.style.scrollBehavior = 'auto';
       window.scrollTo(0, targetY);
 
@@ -853,12 +1004,10 @@ document.addEventListener('DOMContentLoaded', () => {
         navbar.classList.add('scrolled');
       }
 
-      // If user was far below hero, complete hero entrance animation to avoid layout shifts above
       if (targetY > 400 && heroTl) {
         heroTl.progress(1);
       }
 
-      // Re-confirm scroll position after ScrollTrigger layout calculations
       requestAnimationFrame(() => {
         ScrollTrigger.refresh();
         window.scrollTo(0, targetY);
@@ -869,10 +1018,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Execute scroll restoration immediately
   restoreScrollPosition();
 
-  // Double check after all images and fonts load
   window.addEventListener('load', () => {
     try {
       const savedY = parseInt(sessionStorage.getItem('chadele_scroll_pos') || '0', 10);

@@ -4,30 +4,199 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
   <meta name="theme-color" content="#073b33">
-  <title>Chadele — Business Advisory, HR Consulting, Recruitment & Training</title>
-  <meta name="description" content="Chadele provides premier corporate solutions: strategic Business Advisory, expert HR Consulting, specialized Recruitment & Talent Solutions, and transformative Corporate Training.">
+  <title>Chadele — Friendly, Practical People & Business Solutions</title>
+  <meta name="description" content="Chadele makes people operations simple. We provide Business Advisory, HR Consulting, Recruitment & Talent Solutions, Corporate Training, Professional Training, and HR Outsourcing in Lagos and Abuja.">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='%23073b33'%3E%3Crect width='32' height='32' rx='8' fill='%23073b33'/%3E%3Cpath d='M10 16a6 6 0 1 1 12 0 6 6 0 0 1-12 0z' fill='%2300b87c'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 
+  <!-- TOP ANNOUNCEMENT BAR -->
+  <aside class="top-announcement" aria-label="Quick contact and location info">
+    <span>✨ Friendly, practical HR & business advice across Lagos, Abuja & remote teams</span>
+    <span>&bull;</span>
+    <span>Need quick guidance? Call <a href="tel:+23418882390">+234 1 888 2390</a> or WhatsApp us</span>
+  </aside>
+
   <!-- NAVBAR -->
   <header class="navbar-wrapper">
     <div class="navbar-inner">
-      <a href="#" class="brand-logo" id="nav-brand">
-        <div class="brand-emblem">C</div>
-        <span class="brand-name">Chadele</span>
-        <span class="badge-hiring">Lagos &bull; Abuja</span>
+      <a href="#hero" class="brand-logo" id="nav-brand">
+        <div class="brand-emblem" aria-hidden="true">C</div>
+        <div>
+          <span class="brand-name">Chadele</span>
+          <span class="badge-hiring">People & Business</span>
+        </div>
       </a>
 
-      <ul class="nav-links">
-        <li><a href="#about" class="nav-link">About Us</a></li>
-        <li><a href="#services" class="nav-link">Our Services</a></li>
-        <li><a href="#calculator" class="nav-link">ROI Calculator</a></li>
-        <li><a href="#why-us" class="nav-link">Why Choose Us</a></li>
-        <li><a href="#case-studies" class="nav-link">Case Studies</a></li>
-        <li><a href="#faq" class="nav-link">FAQ</a></li>
-      </ul>
+      <!-- Desktop Nav Links with Dropdowns -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <!-- 1. Services Dropdown -->
+          <li class="nav-item-dropdown">
+            <a href="#services" class="nav-link nav-link-dropdown">
+              Services
+              <svg class="dropdown-arrow" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1l4 4 4-4"/></svg>
+            </a>
+            <ul class="nav-dropdown-menu">
+              <li class="nav-dropdown-item">
+                <a href="#services" data-filter-jump="advisory">
+                  <div>
+                    <strong>Business Advisory</strong>
+                    <span class="nav-dropdown-desc">Strategy, org design & board governance</span>
+                  </div>
+                </a>
+              </li>
+              <li class="nav-dropdown-item">
+                <a href="#services" data-filter-jump="consulting">
+                  <div>
+                    <strong>HR Consulting</strong>
+                    <span class="nav-dropdown-desc">Policies, Labour Act & fair salaries</span>
+                  </div>
+                </a>
+              </li>
+              <li class="nav-dropdown-item">
+                <a href="#services" data-filter-jump="recruitment">
+                  <div>
+                    <strong>Recruitment & Talent</strong>
+                    <span class="nav-dropdown-desc">Vetted hiring with 12-month warranty</span>
+                  </div>
+                </a>
+              </li>
+              <li class="nav-dropdown-item">
+                <a href="#services" data-filter-jump="training">
+                  <div>
+                    <strong>Corporate Training</strong>
+                    <span class="nav-dropdown-desc">Custom in-house team workshops</span>
+                  </div>
+                </a>
+              </li>
+              <li class="nav-dropdown-item">
+                <a href="#services" data-filter-jump="professional">
+                  <div>
+                    <strong>Professional Training</strong>
+                    <span class="nav-dropdown-desc">Certified public cohorts for careers</span>
+                  </div>
+                </a>
+              </li>
+              <li class="nav-dropdown-item">
+                <a href="#services" data-filter-jump="outsourcing">
+                  <div>
+                    <strong>HR Outsourcing</strong>
+                    <span class="nav-dropdown-desc">We handle payroll, contracts & daily HR</span>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <!-- 2. Training Offered Dropdown -->
+          <li class="nav-item-dropdown">
+            <a href="#training" class="nav-link nav-link-dropdown">
+              Training
+              <svg class="dropdown-arrow" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1l4 4 4-4"/></svg>
+            </a>
+            <ul class="nav-dropdown-menu">
+              <li class="nav-dropdown-item">
+                <a href="#training" data-training-jump="corporate">
+                  <div>
+                    <strong>Corporate Training</strong>
+                    <span class="nav-dropdown-desc">Custom bootcamps for your company</span>
+                  </div>
+                </a>
+              </li>
+              <li class="nav-dropdown-item">
+                <a href="#training" data-training-jump="professional">
+                  <div>
+                    <strong>Professional / Open Training</strong>
+                    <span class="nav-dropdown-desc">Public cohorts for career advancement</span>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <!-- 3. Resources Dropdown -->
+          <li class="nav-item-dropdown">
+            <a href="#resources" class="nav-link nav-link-dropdown">
+              Resources
+              <svg class="dropdown-arrow" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1l4 4 4-4"/></svg>
+            </a>
+            <ul class="nav-dropdown-menu">
+              <li class="nav-dropdown-item">
+                <a href="#resources" data-res-tab="articles">
+                  <div>
+                    <strong>Articles & Blog</strong>
+                    <span class="nav-dropdown-desc">Practical insights on Nigerian workplaces</span>
+                  </div>
+                </a>
+              </li>
+              <li class="nav-dropdown-item">
+                <a href="#resources" data-res-tab="tools">
+                  <div>
+                    <strong>Guides & Tools</strong>
+                    <span class="nav-dropdown-desc">HR quizzes, checklists & calculators</span>
+                  </div>
+                </a>
+              </li>
+              <li class="nav-dropdown-item">
+                <a href="#resources" data-res-tab="downloads">
+                  <div>
+                    <strong>Downloadable Resources</strong>
+                    <span class="nav-dropdown-desc">Free handbooks, scorecards & templates</span>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <!-- 4. Company Dropdown -->
+          <li class="nav-item-dropdown">
+            <a href="#company" class="nav-link nav-link-dropdown">
+              Company
+              <svg class="dropdown-arrow" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1l4 4 4-4"/></svg>
+            </a>
+            <ul class="nav-dropdown-menu">
+              <li class="nav-dropdown-item">
+                <a href="#company-team">
+                  <div>
+                    <strong>Our Teams</strong>
+                    <span class="nav-dropdown-desc">Meet the friendly experts behind Chadele</span>
+                  </div>
+                </a>
+              </li>
+              <li class="nav-dropdown-item">
+                <a href="#company-careers">
+                  <div>
+                    <strong>Careers</strong>
+                    <span class="nav-dropdown-desc">Join our team & view open positions</span>
+                  </div>
+                </a>
+              </li>
+              <li class="nav-dropdown-item">
+                <a href="#company-testimonials">
+                  <div>
+                    <strong>Testimonials</strong>
+                    <span class="nav-dropdown-desc">Real stories from founders & leaders</span>
+                  </div>
+                </a>
+              </li>
+              <li class="nav-dropdown-item">
+                <a href="#company-partners">
+                  <div>
+                    <strong>Partners & Clients</strong>
+                    <span class="nav-dropdown-desc">Client ecosystems & accreditations</span>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <!-- 5. Interactive ROI Calculator Link -->
+          <li><a href="#calculator" class="nav-link">Cost Calculator</a></li>
+          <li><a href="#faq" class="nav-link">FAQ</a></li>
+        </ul>
+      </nav>
 
       <div class="nav-actions">
         <a href="tel:+23418882390" class="btn-sign-in" id="nav-phone-link">
@@ -35,12 +204,12 @@
           +234 1 888 2390
         </a>
         <button class="btn-pill btn-pill-primary btn-pill-sm open-modal-btn" id="btn-nav-quote">
-          Request Consultation
+          Book Free Chat
         </button>
       </div>
 
       <!-- Mobile Hamburger Button -->
-      <button class="nav-mobile-toggle" id="btn-mobile-menu" aria-label="Toggle Navigation Menu" aria-expanded="false">
+      <button class="nav-mobile-toggle" id="btn-mobile-menu" aria-label="Open Navigation Menu" aria-expanded="false">
         <span class="hamburger-bar"></span>
         <span class="hamburger-bar"></span>
         <span class="hamburger-bar"></span>
@@ -54,34 +223,55 @@
       <div class="mobile-drawer-header">
         <div class="brand-logo">
           <div class="brand-emblem">C</div>
-          <span class="brand-name">Chadele</span>
+          <div>
+            <span class="brand-name">Chadele</span>
+            <span class="badge-hiring" style="display: block; font-size: 10px; margin-top: 2px;">Lagos &bull; Abuja</span>
+          </div>
         </div>
-        <button class="mobile-drawer-close" id="mobile-drawer-close" aria-label="Close menu">&times;</button>
+        <button class="mobile-drawer-close" id="mobile-drawer-close" aria-label="Close navigation menu">&times;</button>
       </div>
 
       <nav class="mobile-drawer-nav">
-        <a href="#about" class="mobile-nav-link">About Chadele</a>
-        <a href="#services" class="mobile-nav-link">Our Services</a>
-        <a href="#calculator" class="mobile-nav-link">ROI & Turnover Calculator</a>
-        <a href="#why-us" class="mobile-nav-link">Why Choose Us</a>
-        <a href="#case-studies" class="mobile-nav-link">Case Studies</a>
-        <a href="#faq" class="mobile-nav-link">FAQ & Compliance</a>
+        <div style="font-size: 11px; font-weight: 800; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin: 12px 0 6px;">Services Rendered</div>
+        <a href="#services" class="mobile-nav-link" data-filter-jump="advisory">1. Business Advisory</a>
+        <a href="#services" class="mobile-nav-link" data-filter-jump="consulting">2. HR Consulting</a>
+        <a href="#services" class="mobile-nav-link" data-filter-jump="recruitment">3. Recruitment & Talent</a>
+        <a href="#services" class="mobile-nav-link" data-filter-jump="training">4. Corporate Training</a>
+        <a href="#services" class="mobile-nav-link" data-filter-jump="professional">5. Professional Training</a>
+        <a href="#services" class="mobile-nav-link" data-filter-jump="outsourcing">6. HR Outsourcing</a>
+
+        <div style="font-size: 11px; font-weight: 800; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin: 20px 0 6px;">Training Offered</div>
+        <a href="#training" class="mobile-nav-link" data-training-jump="corporate">Corporate Training</a>
+        <a href="#training" class="mobile-nav-link" data-training-jump="professional">Professional / Open Training</a>
+
+        <div style="font-size: 11px; font-weight: 800; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin: 20px 0 6px;">Resources & Tools</div>
+        <a href="#resources" class="mobile-nav-link" data-res-tab="articles">Articles & Blog</a>
+        <a href="#resources" class="mobile-nav-link" data-res-tab="tools">Guides & Tools</a>
+        <a href="#resources" class="mobile-nav-link" data-res-tab="downloads">Downloadable Resources</a>
+        <a href="#calculator" class="mobile-nav-link">Turnover ROI Calculator</a>
+
+        <div style="font-size: 11px; font-weight: 800; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin: 20px 0 6px;">Company</div>
+        <a href="#company-team" class="mobile-nav-link">Our Teams</a>
+        <a href="#company-careers" class="mobile-nav-link">Careers</a>
+        <a href="#company-testimonials" class="mobile-nav-link">Testimonials</a>
+        <a href="#company-partners" class="mobile-nav-link">Partners & Clients</a>
+        <a href="#faq" class="mobile-nav-link">Common Questions (FAQ)</a>
       </nav>
 
       <div class="mobile-drawer-actions">
         <button class="btn-pill btn-pill-primary open-modal-btn" style="width: 100%;">
-          Request Strategic Scope
+          Book a Free 20-Min Chat
         </button>
-        <a href="https://wa.me/2348039421100?text=Hello%20Chadele%20HR,%20I%20would%20like%20to%20discuss%20our%20workforce%20needs." class="btn-pill btn-pill-secondary" style="width: 100%; border-color: #25D366; color: #128C7E;" target="_blank" rel="noopener">
+        <a href="https://wa.me/2348039421100?text=Hello%20Chadele,%20I%20would%20like%20to%20discuss%20our%20workforce%20needs." class="btn-pill btn-pill-secondary" style="width: 100%; border-color: #25D366; color: #128C7E;" target="_blank" rel="noopener">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.971.53 1.769.813 2.796.813 3.179 0 5.766-2.587 5.767-5.766.001-3.18-2.585-5.767-5.767-5.767zm3.39 8.167c-.14.394-.813.738-1.121.785-.308.047-.711.066-1.144-.075-.433-.142-.996-.328-1.722-.647-1.074-.473-1.77-1.558-1.824-1.63-.053-.072-.439-.585-.439-1.116 0-.53.278-.791.377-.899.099-.108.217-.136.289-.136.072 0 .144.001.207.004.067.003.155-.025.243.185.09.215.308.752.335.807.027.054.045.118.009.19-.036.072-.054.117-.108.18-.054.063-.114.141-.163.19-.054.054-.11.113-.047.221.063.108.28 4.62.602.748.414.164.764.215.872.269.108.054.171.045.234-.027.063-.072.27-.315.342-.423.072-.108.144-.09.243-.054.099.036.63.297.738.351.108.054.18.081.207.126.027.045.027.261-.113.655z"/></svg>
           Chat on WhatsApp
         </a>
       </div>
 
       <div class="mobile-drawer-footer">
-        <div><strong>Lagos Office:</strong> Victoria Island, Nigeria</div>
-        <div><strong>Abuja Office:</strong> Maitama District, Nigeria</div>
-        <div>CIPM & SPHR Certified Partners</div>
+        <div><strong>Lagos:</strong> 14A Idowu Martins, Victoria Island</div>
+        <div><strong>Abuja:</strong> Maitama District, Abuja</div>
+        <div style="color: var(--accent); font-weight: 700; margin-top: 4px;">CIPM & SPHR Certified Partners</div>
       </div>
     </div>
   </div>
@@ -89,322 +279,239 @@
   <main>
     <!-- HERO SECTION -->
     <section class="hero-section" id="hero">
-      <div class="zigzag-decor" style="top: 20px; left: -10px;"></div>
-      <div class="ambient-orb" style="top: 100px; left: 10%; width: 280px; height: 280px;"></div>
+      <div class="zigzag-decor" style="top: 20px; left: -10px;" aria-hidden="true"></div>
+      <div class="ambient-orb" style="top: 100px; left: 10%; width: 280px; height: 280px;" aria-hidden="true"></div>
 
       <div class="hero-content">
         <div class="category-badge" style="color: var(--accent); margin-bottom: 12px;">
-          Business Advisory &bull; HR Consulting &bull; Recruitment &bull; Training
+          Friendly &bull; Practical &bull; Full-Service People Solutions
         </div>
 
         <h1 class="hero-title">
-          Empower Your Enterprise With <span class="text-rays">Business Advisory</span> & <span class="text-underline">People Solutions</span>
+          Managing people & growing your business <span class="text-rays">doesn’t have to be</span> <span class="text-underline">complicated</span>.
         </h1>
 
         <p class="hero-description">
-          Chadele delivers integrated corporate excellence across four core pillars: strategic Business Advisory, expert HR Consulting, specialized Recruitment & Talent Solutions, and transformative Corporate Training for high-performing organizations.
+          We help ambitious Nigerian businesses hire great talent, write clear workplace policies, train confident leaders, and take day-to-day HR off your plate — with zero stress and zero corporate fluff.
         </p>
 
         <div class="hero-cta-group">
           <button class="btn-pill btn-pill-primary open-modal-btn" id="hero-btn-consultation">
-            Book Strategy Consultation
+            Book a Free 20-Min Chat
           </button>
           <a href="#services" class="btn-pill btn-pill-secondary" id="hero-btn-learn-more">
-            Explore Our 4 Services
+            Explore What We Do &darr;
           </a>
         </div>
 
         <div class="hero-metrics">
           <div>
+            <div class="metric-number tabular-nums">250+</div>
+            <div class="metric-label">Businesses Supported</div>
+          </div>
+          <div>
             <div class="metric-number tabular-nums">98.4%</div>
             <div class="metric-label">Placement & Retention</div>
           </div>
           <div>
-            <div class="metric-number tabular-nums">₦45B+</div>
-            <div class="metric-label">Enterprise Value Advised</div>
-          </div>
-          <div>
             <div class="metric-number tabular-nums">15+ Yrs</div>
-            <div class="metric-label">Advisory & Training</div>
+            <div class="metric-label">Practical People Experience</div>
           </div>
         </div>
       </div>
 
       <div class="cutout-wrapper">
-        <div class="cutout-contour-shadow"></div>
+        <div class="cutout-contour-shadow" aria-hidden="true"></div>
         <div class="cutout-image-container">
-          <img src="/images/hero-team.jpg" alt="Chadele HR Consulting Leadership Team" id="hero-image">
+          <img src="/images/hero-team.jpg" alt="Friendly Chadele team collaborating on people strategy" id="hero-image" width="520" height="440">
         </div>
-        <div class="hero-floating-orb"></div>
+        <div class="hero-floating-orb" aria-hidden="true"></div>
       </div>
     </section>
 
-    <!-- TRUST STRIP -->
-    <div class="trust-strip">
+    <!-- TRUST STRIP: PARTNERS & CLIENTS PREVIEW -->
+    <section class="trust-strip" id="trust" aria-label="Accreditations and trusted clients">
       <div class="trust-inner">
-        <div class="trust-title">Trusted By Leading Corporates & High-Growth Scale-Ups</div>
+        <div class="trust-title">Proudly Trusted By Ambitious Teams Across Nigeria & Certified By Global Bodies</div>
         <div class="trust-logos">
           <div class="trust-logo-item">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
             PAYSTACK ECOSYSTEM
           </div>
           <div class="trust-logo-item">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
             FLUTTERWAVE LABS
           </div>
           <div class="trust-logo-item">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 22 22 2 22"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 22 22 2 22"/></svg>
             INTERSWITCH GROUP
           </div>
           <div class="trust-logo-item">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="18" height="18" rx="4"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="18" height="18" rx="4"/></svg>
             MONIEPOINT CLIENTS
           </div>
           <div class="trust-logo-item">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/></svg>
-            PIGGYVEST ADVISORY
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ABOUT OUR FIRM -->
-    <section class="section-wrapper" id="about">
-      <div class="section-container">
-        <div class="about-grid">
-          <div class="cutout-wrapper">
-            <div class="cutout-contour-shadow" style="transform: rotate(-1.5deg);"></div>
-            <div class="cutout-image-container">
-              <img src="/images/about-team.jpg" alt="Experienced Chadele HR Consulting Executive Team" id="about-image">
-            </div>
-          </div>
-
-          <div class="about-content">
-            <div class="category-badge">About Chadele</div>
-            <h2 class="section-title">
-              Integrated Business Advisory, <span class="text-rays">HR Consulting</span> & <span class="text-underline">Talent Solutions</span>
-            </h2>
-
-            <p class="section-subtitle">
-              Headquartered in Lagos with strategic operations in Abuja, Chadele empowers forward-looking enterprises with end-to-end corporate and human capital solutions. We unite boardroom governance, statutory HR compliance, executive recruitment, and workforce training under a cohesive execution framework.
-            </p>
-
-            <ul class="about-features-list">
-              <li class="about-feature-item">
-                <div class="feature-check-icon">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-                </div>
-                <div>
-                  <div class="feature-title">1. Strategic Business Advisory</div>
-                  <div class="feature-desc">Operating model redesign, organizational architecture, board advisory, and change management strategies that position your company for scalable market expansion.</div>
-                </div>
-              </li>
-              <li class="about-feature-item">
-                <div class="feature-check-icon">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-                </div>
-                <div>
-                  <div class="feature-title">2. Full-Suite HR Consulting</div>
-                  <div class="feature-desc">Airtight employee handbooks, 100% statutory Labour Act compliance audits, objective OKR performance systems, and Radford-calibrated total rewards design.</div>
-                </div>
-              </li>
-              <li class="about-feature-item">
-                <div class="feature-check-icon">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-                </div>
-                <div>
-                  <div class="feature-title">3. Recruitment & Talent Solutions</div>
-                  <div class="feature-desc">Targeted executive search, specialized technical sourcing, candidate scorecard assessments, and an unconditional 12-month candidate replacement warranty.</div>
-                </div>
-              </li>
-              <li class="about-feature-item">
-                <div class="feature-check-icon">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-                </div>
-                <div>
-                  <div class="feature-title">4. Corporate Training & Capability Building</div>
-                  <div class="feature-desc">Executive leadership accelerators, people management masterclasses, statutory compliance workshops, and measurable culture transformation programs.</div>
-                </div>
-              </li>
-            </ul>
-
-            <button class="btn-pill btn-pill-primary open-modal-btn" id="about-btn-consulting">
-              Schedule Strategic Scope
-            </button>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            CIPM CERTIFIED PARTNER
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SERVICES SECTION -->
+    <!-- ======================================================================
+         SECTION 1: SERVICES RENDERED (6 CORE SERVICES)
+         ====================================================================== -->
     <section class="section-wrapper" id="services" style="background-color: #f7f9f8;">
       <div class="section-container">
         <div class="section-header-center">
-          <div class="category-badge">Core Service Offerings</div>
+          <div class="category-badge">Services Rendered</div>
           <h2 class="section-title">
-            Four Pillars Of <span class="text-rays">Expert Advisory</span> & <span class="text-underline">Workforce Solutions</span>
+            Six Ways We Help Your <span class="text-rays">Business Grow</span> & <span class="text-underline">Stay Protected</span>
           </h2>
           <p class="section-subtitle">
-            Explore our specialized service lines across Business Advisory, HR Consulting, Recruitment & Talent Solutions, and Corporate Training.
+            No jargon. No confusing corporate theories. Just practical, friendly people support designed to make running your company easier, fairer, and far more rewarding.
           </p>
         </div>
 
-        <div class="services-filter-bar">
-          <button class="filter-btn active" data-filter="all">All Services</button>
-          <button class="filter-btn" data-filter="advisory">Business Advisory</button>
-          <button class="filter-btn" data-filter="consulting">HR Consulting</button>
-          <button class="filter-btn" data-filter="recruitment">Recruitment & Talent</button>
-          <button class="filter-btn" data-filter="training">Corporate Training</button>
+        <!-- 6-Service Filter Bar -->
+        <div class="services-filter-bar" role="tablist" aria-label="Service category filters">
+          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All 6 Services</button>
+          <button class="filter-btn" data-filter="advisory" role="tab" aria-selected="false">Business Advisory</button>
+          <button class="filter-btn" data-filter="consulting" role="tab" aria-selected="false">HR Consulting</button>
+          <button class="filter-btn" data-filter="recruitment" role="tab" aria-selected="false">Recruitment & Talent</button>
+          <button class="filter-btn" data-filter="training" role="tab" aria-selected="false">Corporate Training</button>
+          <button class="filter-btn" data-filter="professional" role="tab" aria-selected="false">Professional Training</button>
+          <button class="filter-btn" data-filter="outsourcing" role="tab" aria-selected="false">HR Outsourcing</button>
         </div>
 
         <div class="services-grid" id="services-grid">
-          <!-- PILLAR 1: BUSINESS ADVISORY (Card 1) -->
+          <!-- 1. BUSINESS ADVISORY -->
           <article class="service-card" data-category="advisory">
             <div class="service-card-image">
-              <img src="/images/team-meeting.jpg" alt="Strategic Planning and Organizational Architecture" loading="lazy">
+              <img src="/images/team-meeting.jpg" alt="Business advisory and organizational planning session" loading="lazy">
               <span class="service-card-badge">Business Advisory</span>
             </div>
             <div class="service-card-body">
-              <h3 class="service-card-title">Strategic Planning & Organizational Architecture</h3>
+              <h3 class="service-card-title">Business Advisory</h3>
               <p class="service-card-desc">
-                Align executive vision with scalable operating realities. We assess departmental structures, eliminate cross-functional bottlenecks, and design agile operating models built for market expansion.
+                Clear direction and calm guidance when your business is growing or changing. We help you streamline how your departments work together, eliminate bottlenecks between managers, design clean org charts, and set up board governance that investors love.
               </p>
+              <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 16px; background-color: var(--bg-subtle); padding: 8px 12px; border-radius: var(--radius-xs);">
+                <strong>Best For:</strong> Growing companies scaling up, opening new branches, or facing big organizational changes.
+              </div>
               <div class="service-card-footer">
-                <a class="service-link open-practice-modal" data-service="advisory_strategy">
-                  View Practice Details <span>&rarr;</span>
+                <a class="service-link open-practice-modal" data-service="advisory" href="#">
+                  View Deliverables &amp; Details <span>&rarr;</span>
                 </a>
               </div>
             </div>
           </article>
 
-          <!-- PILLAR 1: BUSINESS ADVISORY (Card 2) -->
-          <article class="service-card" data-category="advisory">
-            <div class="service-card-image">
-              <img src="/images/about-team.jpg" alt="Corporate Governance and Board Advisory" loading="lazy">
-              <span class="service-card-badge">Business Advisory</span>
-            </div>
-            <div class="service-card-body">
-              <h3 class="service-card-title">Corporate Governance & Board Advisory</h3>
-              <p class="service-card-desc">
-                Establish institutional governance frameworks that inspire shareholder confidence. We formulate board charters, advisory committees, compliance matrices, and risk oversight frameworks.
-              </p>
-              <div class="service-card-footer">
-                <a class="service-link open-practice-modal" data-service="advisory_governance">
-                  View Practice Details <span>&rarr;</span>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- PILLAR 2: HR CONSULTING (Card 3) -->
+          <!-- 2. HR CONSULTING -->
           <article class="service-card" data-category="consulting">
             <div class="service-card-image">
-              <img src="/images/service-policy.jpg" alt="Labour Act Compliance and Employee Handbooks" loading="lazy">
+              <img src="/images/service-policy.jpg" alt="HR consulting, compliance and handbook review" loading="lazy">
               <span class="service-card-badge">HR Consulting</span>
             </div>
             <div class="service-card-body">
-              <h3 class="service-card-title">Labour Act Compliance & Employee Handbooks</h3>
+              <h3 class="service-card-title">HR Consulting</h3>
               <p class="service-card-desc">
-                Ensure 100% legal alignment with statutory Labour Act regulations, Trade Disputes Act, and industrial court precedents. Prevent costly employee claims and industrial disputes.
+                Airtight employee policies, fair salaries, and complete peace of mind. We write easy-to-read employee handbooks, review staff contracts, ensure 100% compliance with Nigerian Labour Laws, and design transparent appraisal and salary systems that staff respect.
               </p>
+              <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 16px; background-color: var(--bg-subtle); padding: 8px 12px; border-radius: var(--radius-xs);">
+                <strong>Best For:</strong> Companies wanting to avoid costly legal disputes while building a workplace where people feel respected.
+              </div>
               <div class="service-card-footer">
-                <a class="service-link open-practice-modal" data-service="consulting_compliance">
-                  View Practice Details <span>&rarr;</span>
+                <a class="service-link open-practice-modal" data-service="consulting" href="#">
+                  View Deliverables &amp; Details <span>&rarr;</span>
                 </a>
               </div>
             </div>
           </article>
 
-          <!-- PILLAR 2: HR CONSULTING (Card 4) -->
-          <article class="service-card" data-category="consulting">
-            <div class="service-card-image">
-              <img src="/images/service-perf.jpg" alt="Performance Management and Total Rewards Design" loading="lazy">
-              <span class="service-card-badge">HR Consulting</span>
-            </div>
-            <div class="service-card-body">
-              <h3 class="service-card-title">Performance Management & Total Rewards</h3>
-              <p class="service-card-desc">
-                Replace stressful subjective reviews with objective OKR scorecards and inflation-hedged total rewards. We build compensation architectures that motivate and retain high performers.
-              </p>
-              <div class="service-card-footer">
-                <a class="service-link open-practice-modal" data-service="consulting_performance">
-                  View Practice Details <span>&rarr;</span>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- PILLAR 3: RECRUITMENT & TALENT SOLUTION (Card 5) -->
+          <!-- 3. RECRUITMENT AND TALENT SOLUTIONS -->
           <article class="service-card" data-category="recruitment">
             <div class="service-card-image">
-              <img src="/images/hero-team.jpg" alt="Executive Search and Leadership Headhunting" loading="lazy">
-              <span class="service-card-badge">Recruitment</span>
+              <img src="/images/team-recruiter.jpg" alt="Recruitment and executive talent headhunting" loading="lazy">
+              <span class="service-card-badge">Recruitment &amp; Talent</span>
             </div>
             <div class="service-card-body">
-              <h3 class="service-card-title">Executive Search & Leadership Headhunting</h3>
+              <h3 class="service-card-title">Recruitment &amp; Talent Solutions</h3>
               <p class="service-card-desc">
-                Identify, attract, and secure transformational C-Suite, VP, and Director-level leaders. Supported by multi-stage behavioral scorecards and an unconditional 12-month replacement guarantee.
+                Find the right people the first time — without the headache. We source, thoroughly interview, and deliver vetted professionals — from key department managers to senior executives — backed by our unconditional 12-month placement replacement guarantee.
               </p>
+              <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 16px; background-color: var(--bg-subtle); padding: 8px 12px; border-radius: var(--radius-xs);">
+                <strong>Best For:</strong> Fast-moving teams who can't afford bad hires, long recruitment delays, or empty leadership seats.
+              </div>
               <div class="service-card-footer">
-                <a class="service-link open-practice-modal" data-service="recruitment_executive">
-                  View Practice Details <span>&rarr;</span>
+                <a class="service-link open-practice-modal" data-service="recruitment" href="#">
+                  View Deliverables &amp; Details <span>&rarr;</span>
                 </a>
               </div>
             </div>
           </article>
 
-          <!-- PILLAR 3: RECRUITMENT & TALENT SOLUTION (Card 6) -->
-          <article class="service-card" data-category="recruitment">
-            <div class="service-card-image">
-              <img src="/images/team-meeting.jpg" alt="Technical Talent Sourcing and RPO Solutions" loading="lazy">
-              <span class="service-card-badge">Talent Solution</span>
-            </div>
-            <div class="service-card-body">
-              <h3 class="service-card-title">Technical Talent Sourcing & RPO Solutions</h3>
-              <p class="service-card-desc">
-                Scale your engineering, commercial, and operational teams rapidly without sacrificing quality. Turnkey recruitment process outsourcing (RPO) with proactive talent pipeline architecture.
-              </p>
-              <div class="service-card-footer">
-                <a class="service-link open-practice-modal" data-service="recruitment_sourcing">
-                  View Practice Details <span>&rarr;</span>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- PILLAR 4: CORPORATE TRAINING (Card 7) -->
+          <!-- 4. CORPORATE TRAINING -->
           <article class="service-card" data-category="training">
             <div class="service-card-image">
-              <img src="/images/service-perf.jpg" alt="Executive Leadership and Management Development" loading="lazy">
-              <span class="service-card-badge">Training</span>
+              <img src="/images/training-session.jpg" alt="Interactive corporate team training session" loading="lazy">
+              <span class="service-card-badge">Corporate Training</span>
             </div>
             <div class="service-card-body">
-              <h3 class="service-card-title">Executive Leadership & Management Development</h3>
+              <h3 class="service-card-title">Corporate Training</h3>
               <p class="service-card-desc">
-                Empower frontline supervisors and executives with high-impact management competencies. Experiential learning academies focused on strategic execution, delegation, and emotional intelligence.
+                Practical, engaging workshops tailored around your team’s real daily challenges. In-house bootcamps, manager development, and leadership retreats designed specifically for your company. No boring slide decks — just interactive, memorable sessions your staff can use immediately.
               </p>
+              <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 16px; background-color: var(--bg-subtle); padding: 8px 12px; border-radius: var(--radius-xs);">
+                <strong>Best For:</strong> Organizations looking to upskill their supervisors, improve cross-team communication, and boost workplace output.
+              </div>
               <div class="service-card-footer">
-                <a class="service-link open-practice-modal" data-service="training_leadership">
-                  View Practice Details <span>&rarr;</span>
+                <a class="service-link open-practice-modal" data-service="training_corp" href="#">
+                  View Deliverables &amp; Details <span>&rarr;</span>
                 </a>
               </div>
             </div>
           </article>
 
-          <!-- PILLAR 4: CORPORATE TRAINING (Card 8) -->
-          <article class="service-card" data-category="training">
+          <!-- 5. PROFESSIONAL TRAINING -->
+          <article class="service-card" data-category="professional">
             <div class="service-card-image">
-              <img src="/images/about-team.jpg" alt="Workforce Upskilling and Culture Transformation" loading="lazy">
-              <span class="service-card-badge">Training</span>
+              <img src="/images/service-perf.jpg" alt="Professional training and career masterclass" loading="lazy">
+              <span class="service-card-badge">Professional Training</span>
             </div>
             <div class="service-card-body">
-              <h3 class="service-card-title">Workforce Upskilling & Culture Transformation</h3>
+              <h3 class="service-card-title">Professional Training</h3>
               <p class="service-card-desc">
-                Cultivate an aligned, high-performance workplace culture. Customized workshops covering statutory workplace compliance, customer excellence, and operational accountability.
+                Certified, career-accelerating masterclasses for ambitious individuals and team leads. Open-enrollment public cohorts where HR practitioners, founders, and supervisors master people analytics, labor dispute mediation, salary structuring, and modern management techniques.
               </p>
+              <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 16px; background-color: var(--bg-subtle); padding: 8px 12px; border-radius: var(--radius-xs);">
+                <strong>Best For:</strong> Career-driven professionals, newly promoted managers, and HR specialists wanting recognized certifications.
+              </div>
               <div class="service-card-footer">
-                <a class="service-link open-practice-modal" data-service="training_upskilling">
-                  View Practice Details <span>&rarr;</span>
+                <a class="service-link open-practice-modal" data-service="training_prof" href="#">
+                  View Deliverables &amp; Details <span>&rarr;</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 6. HR OUTSOURCING -->
+          <article class="service-card" data-category="outsourcing">
+            <div class="service-card-image">
+              <img src="/images/about-team.jpg" alt="HR outsourcing and complete payroll operations" loading="lazy">
+              <span class="service-card-badge">HR Outsourcing</span>
+            </div>
+            <div class="service-card-body">
+              <h3 class="service-card-title">HR Outsourcing</h3>
+              <p class="service-card-desc">
+                Hand over your day-to-day HR paperwork so you can focus on building your business. We act as your entire dedicated HR department. We handle monthly payroll calculations, statutory tax remittances (PAYE, PenCom, ITF), onboarding, leave tracking, and staff queries seamlessly.
+              </p>
+              <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 16px; background-color: var(--bg-subtle); padding: 8px 12px; border-radius: var(--radius-xs);">
+                <strong>Best For:</strong> Small &amp; mid-sized businesses that don't need a full-time in-house HR officer, or companies wanting error-free operations.
+              </div>
+              <div class="service-card-footer">
+                <a class="service-link open-practice-modal" data-service="outsourcing" href="#">
+                  View Deliverables &amp; Details <span>&rarr;</span>
                 </a>
               </div>
             </div>
@@ -412,23 +519,85 @@
         </div>
 
         <div style="text-align: center;">
-          <button class="btn-pill btn-pill-primary open-modal-btn" id="services-btn-all">
-            Schedule Strategic Scope Consultation
+          <button class="btn-pill btn-pill-primary open-modal-btn">
+            Discuss Your Needs With an Expert
           </button>
         </div>
       </div>
     </section>
 
-    <!-- INTERACTIVE ROI & HEADCOUNT CALCULATOR (NAIRA / USD TOGGLE) -->
-    <section class="section-wrapper" id="calculator">
+    <!-- ======================================================================
+         SECTION 2: TRAINING OFFERED (CORPORATE & PROFESSIONAL TRAINING)
+         ====================================================================== -->
+    <section class="section-wrapper" id="training">
       <div class="section-container">
-        <div class="section-header-center" style="margin-bottom: 24px;">
-          <div class="category-badge">Interactive Business Value</div>
+        <div class="section-header-center">
+          <div class="category-badge">Training Offered</div>
           <h2 class="section-title">
-            Calculate Your Projected <span class="text-underline">HR Cost Savings</span>
+            Learning Programs That <span class="text-rays">Actually Stick</span>
           </h2>
           <p class="section-subtitle">
-            Unplanned employee turnover and key staff departures cost companies up to 6 months of departed staff salary in lost productivity and re-hiring. See your numbers.
+            Whether you want custom training for your in-house staff, or an open certification to advance your own career, our courses are practical, engaging, and focused on real workplace success.
+          </p>
+        </div>
+
+        <!-- 2 Training Pillars Grid -->
+        <div class="training-pillars-grid">
+          <!-- Pillar 1: Corporate Training -->
+          <div class="training-pillar-card featured" id="train-corporate">
+            <div class="training-pillar-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3 class="training-pillar-title">Corporate Training</h3>
+            <p class="training-pillar-desc">
+              Custom-built learning programs designed exclusively for your company's team, culture, and targets. Delivered on-site at your offices, at an executive retreat, or live online.
+            </p>
+            <ul class="training-feature-bullets">
+              <li><span class="training-bullet-check">&check;</span> Custom curriculum tailored to your industry</li>
+              <li><span class="training-bullet-check">&check;</span> Interactive roleplay &amp; real company case studies</li>
+              <li><span class="training-bullet-check">&check;</span> Pre-training assessment &amp; post-training KPI tracking</li>
+              <li><span class="training-bullet-check">&check;</span> Executive retreats &amp; frontline supervisor bootcamps</li>
+            </ul>
+            <button class="btn-pill btn-pill-primary open-training-modal" data-course-type="Corporate Team Training" style="width: 100%; margin-top: auto;">
+              Request Custom Team Training
+            </button>
+          </div>
+
+          <!-- Pillar 2: Professional / Open Training -->
+          <div class="training-pillar-card" id="train-professional">
+            <div class="training-pillar-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </div>
+            <h3 class="training-pillar-title">Professional / Open Training</h3>
+            <p class="training-pillar-desc">
+              Public cohort masterclasses for individual HR practitioners, managers, and team leads looking to sharpen their skills, gain certified credentials, and expand their professional network.
+            </p>
+            <ul class="training-feature-bullets">
+              <li><span class="training-bullet-check">&check;</span> Industry-recognized certificate upon completion</li>
+              <li><span class="training-bullet-check">&check;</span> Weekend &amp; evening friendly hybrid schedules</li>
+              <li><span class="training-bullet-check">&check;</span> Lifetime access to course templates &amp; toolkits</li>
+              <li><span class="training-bullet-check">&check;</span> Networking with peers across top Nigerian sectors</li>
+            </ul>
+            <button class="btn-pill btn-pill-secondary open-training-modal" data-course-type="Professional Open Cohort" style="width: 100%; margin-top: auto;">
+              Join an Open Masterclass
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         INTERACTIVE ROI & TURNOVER CALCULATOR (GUIDES & TOOLS HIGHLIGHT)
+         ====================================================================== -->
+    <section class="section-wrapper" id="calculator" style="background-color: #f7f9f8;">
+      <div class="section-container">
+        <div class="section-header-center" style="margin-bottom: 24px;">
+          <div class="category-badge">Interactive Practical Tool</div>
+          <h2 class="section-title">
+            How Much Does Staff Turnover <span class="text-underline">Really Cost You?</span>
+          </h2>
+          <p class="section-subtitle">
+            When an employee leaves, hiring and training their replacement usually costs around half of their annual salary in lost time and recruiting fees. Use our simple calculator to see what keeping good people can save your business.
           </p>
 
           <!-- Currency Switcher -->
@@ -473,305 +642,561 @@
             </div>
 
             <div>
-              <div class="calc-stat-label">Projected Chadele Net Annual Retention Savings (35% Churn Reduction)</div>
+              <div class="calc-stat-label">Projected Chadele Net Annual Savings (35% Churn Reduction)</div>
               <div class="calc-stat-number accent tabular-nums" id="stat-savings">₦40,906,250</div>
             </div>
 
             <div style="font-size: 13px; color: rgba(255, 255, 255, 0.7); line-height: 1.5; border-top: 1px solid rgba(255, 255, 255, 0.15); padding-top: 16px;">
-              *Benchmarked on CIPM & SHRM metrics calculating replacement cost at 50% of annual wage.
+              *Calculated using standard SHRM &amp; CIPM replacement benchmarks (50% of departed staff salary in re-hiring, lost productivity &amp; onboarding).
             </div>
 
             <button class="btn-pill btn-pill-accent btn-pill-sm open-modal-btn" style="margin-top: 8px;">
-              Unlock Full Retention Blueprint
+              Unlock Your Retention Blueprint
             </button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- WHY CHOOSE US -->
-    <section class="section-wrapper" id="why-us" style="background-color: #f7f9f8;">
-      <div class="section-container">
-        <div class="why-grid">
-          <div>
-            <div class="category-badge">Why Choose Chadele</div>
-            <h2 class="section-title">
-              Why Industry Leaders <span class="text-rays">Choose Chadele</span> For <span class="text-underline">Holistic Growth</span>
-            </h2>
-            <p class="section-subtitle" style="margin-bottom: 36px;">
-              Most firms provide fragmented assistance. Chadele integrates business strategy, HR governance, executive talent acquisition, and workforce training into an aligned growth engine.
-            </p>
-
-            <div class="why-card-grid">
-              <div class="why-pill-card">
-                <div class="why-icon-box">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                </div>
-                <div class="why-card-title">4-Pillar Synergy</div>
-                <div class="why-card-desc">Seamless alignment between your corporate strategy, HR governance, hiring pipeline, and staff development.</div>
-              </div>
-
-              <div class="why-pill-card">
-                <div class="why-icon-box">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                </div>
-                <div class="why-card-title">Statutory Immunity</div>
-                <div class="why-card-desc">Zero non-compliance fines across Labour Act, PenCom, PAYE tax, ITF, and NSITF audits.</div>
-              </div>
-
-              <div class="why-pill-card">
-                <div class="why-icon-box">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-                </div>
-                <div class="why-card-title">12-Mo Placement Warranty</div>
-                <div class="why-card-desc">Unconditional candidate replacement guarantee protecting your executive recruitment investments.</div>
-              </div>
-
-              <div class="why-pill-card">
-                <div class="why-icon-box">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-                </div>
-                <div class="why-card-title">Measurable Training ROI</div>
-                <div class="why-card-desc">Practical, industry-certified curricula that demonstrably elevate employee output and managerial retention.</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="cutout-wrapper">
-            <div class="cutout-contour-shadow" style="transform: rotate(2deg);"></div>
-            <div class="cutout-image-container">
-              <img src="/images/team-meeting.jpg" alt="Chadele Executive Strategy Advisory Session" loading="lazy">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CASE STUDIES -->
-    <section class="section-wrapper" id="case-studies">
+    <!-- ======================================================================
+         SECTION 3: RESOURCES (ARTICLES / BLOG, GUIDES & TOOLS, DOWNLOADS)
+         ====================================================================== -->
+    <section class="section-wrapper" id="resources">
       <div class="section-container">
         <div class="section-header-center">
-          <div class="category-badge">Case Studies</div>
+          <div class="category-badge">Resources Hub</div>
           <h2 class="section-title">
-            Proven Impact Across <span class="text-rays">All Four</span> <span class="text-underline">Service Pillars</span>
+            Free Guides, Helpful Tools &amp; <span class="text-rays">Fresh Thinking</span>
           </h2>
           <p class="section-subtitle">
-            Authentic success records across fast-scaling tech startups, commercial institutions, and regional conglomerates.
+            We believe in sharing what we know. Explore our free guides, practical articles, and ready-to-use templates to help your team thrive without spending a kobo.
           </p>
         </div>
 
-        <div class="cases-grid">
-          <!-- Business Advisory Case -->
-          <div class="case-card">
-            <div class="case-tag">Business Advisory &bull; Logistics</div>
-            <h3 class="case-title">Organizational Restructuring & Operating Model Redesign for 350+ Staff</h3>
-            <p class="case-desc">
-              Restructured fragmented business units, optimized departmental spans of control, and established corporate governance charters that eliminated bottlenecks and accelerated revenue.
-            </p>
-            <div class="case-metrics-badge">
-              <span class="case-metric-text">Operating Efficiency</span>
-              <span class="case-metric-val tabular-nums">+42% Growth</span>
+        <!-- Resources 3-Tab Switcher -->
+        <div class="resources-tabs-bar" role="tablist" aria-label="Resource categories">
+          <button class="res-tab-btn active" data-res-target="res-articles" role="tab" aria-selected="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            Articles / Blog
+          </button>
+          <button class="res-tab-btn" data-res-target="res-tools" role="tab" aria-selected="false">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            Guides &amp; Tools
+          </button>
+          <button class="res-tab-btn" data-res-target="res-downloads" role="tab" aria-selected="false">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Downloadable Resources
+          </button>
+        </div>
+
+        <!-- TAB 1: ARTICLES / BLOG -->
+        <div class="res-panel active" id="res-articles">
+          <div class="articles-grid">
+            <!-- Article 1 -->
+            <article class="article-card">
+              <div class="article-header">
+                <span class="article-category">Labour Law &bull; Startups</span>
+                <span class="article-read-time">5 min read</span>
+              </div>
+              <h3 class="article-title">5 Costly Mistakes Growing Nigerian Companies Make With Labour Law</h3>
+              <p class="article-snippet">
+                Why verbal agreements, informal probation periods, and unclear overtime rules trigger expensive National Industrial Court tribunal claims — and how to fix them in an afternoon.
+              </p>
+              <div class="article-footer">
+                <span class="article-author">By Amina Bello, MCIPM</span>
+                <button class="article-btn-read open-article-modal" data-article="labour_mistakes">
+                  Read Summary <span>&rarr;</span>
+                </button>
+              </div>
+            </article>
+
+            <!-- Article 2 -->
+            <article class="article-card">
+              <div class="article-header">
+                <span class="article-category">Performance &bull; Culture</span>
+                <span class="article-read-time">4 min read</span>
+              </div>
+              <h3 class="article-title">How to Run Performance Reviews People Actually Look Forward To</h3>
+              <p class="article-snippet">
+                Ditch the awkward once-a-year judgment sessions. Here is a friendly 3-step conversation framework that motivates staff instead of draining morale.
+              </p>
+              <div class="article-footer">
+                <span class="article-author">By Funmi Adebayo, SPHR</span>
+                <button class="article-btn-read open-article-modal" data-article="performance_reviews">
+                  Read Summary <span>&rarr;</span>
+                </button>
+              </div>
+            </article>
+
+            <!-- Article 3 -->
+            <article class="article-card">
+              <div class="article-header">
+                <span class="article-category">Hiring &bull; Retention</span>
+                <span class="article-read-time">6 min read</span>
+              </div>
+              <h3 class="article-title">Retaining Your Best Talent in 2026: Why Fair Pay Isn't The Only Key</h3>
+              <p class="article-snippet">
+                While inflation makes competitive pay essential, employees stay when they feel heard, challenged, and respected. Discover the five non-monetary perks top performers value most.
+              </p>
+              <div class="article-footer">
+                <span class="article-author">By Emeka Okafor</span>
+                <button class="article-btn-read open-article-modal" data-article="retention_2026">
+                  Read Summary <span>&rarr;</span>
+                </button>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- TAB 2: GUIDES & TOOLS -->
+        <div class="res-panel" id="res-tools">
+          <div class="tools-grid">
+            <!-- Tool 1: Interactive Health Check -->
+            <div class="tool-card">
+              <span class="tool-badge">Interactive Quiz</span>
+              <h3 class="tool-title">2-Minute HR Compliance Health Check</h3>
+              <p class="tool-desc">
+                Answer 5 simple yes/no questions to see if your business has any hidden risks around employment contracts, pensions (PenCom), PAYE taxes, or staff handbooks.
+              </p>
+              <button class="btn-pill btn-pill-primary open-quiz-modal" style="align-self: flex-start;">
+                Start 2-Min Health Check
+              </button>
+            </div>
+
+            <!-- Tool 2: Onboarding Roadmap -->
+            <div class="tool-card">
+              <span class="tool-badge">Practical Guide</span>
+              <h3 class="tool-title">The First 90 Days: New Hire Onboarding Roadmap</h3>
+              <p class="tool-desc">
+                A step-by-step checklist to turn first-day nervousness into lasting high performance. Covers pre-boarding, day one welcomes, the 30-day review, and probation sign-offs.
+              </p>
+              <button class="btn-pill btn-pill-secondary open-download-modal" data-resource-name="First 90 Days Onboarding Roadmap" style="align-self: flex-start;">
+                Get Onboarding Roadmap
+              </button>
+            </div>
+
+            <!-- Tool 3: Manager 1-on-1 Meeting Guide -->
+            <div class="tool-card">
+              <span class="tool-badge">Manager Toolkit</span>
+              <h3 class="tool-title">Manager’s 1-on-1 Catch-Up Playbook</h3>
+              <p class="tool-desc">
+                Ten powerful questions to ask during bi-weekly team check-ins to spot employee burnout early, eliminate roadblocks, and build deep team loyalty.
+              </p>
+              <button class="btn-pill btn-pill-secondary open-download-modal" data-resource-name="Manager 1-on-1 Playbook" style="align-self: flex-start;">
+                Get 1-on-1 Playbook
+              </button>
+            </div>
+
+            <!-- Tool 4: ROI Calculator Link -->
+            <div class="tool-card">
+              <span class="tool-badge">Financial Tool</span>
+              <h3 class="tool-title">Employee Turnover Cost Calculator</h3>
+              <p class="tool-desc">
+                Easily simulate what lost productivity and key departures cost your business in Naira or USD, and see the financial upside of lowering team turnover.
+              </p>
+              <a href="#calculator" class="btn-pill btn-pill-primary" style="align-self: flex-start;">
+                Use Online Calculator &uarr;
+              </a>
             </div>
           </div>
+        </div>
 
-          <!-- HR Consulting Case -->
-          <div class="case-card">
-            <div class="case-tag">HR Consulting &bull; Energy Sector</div>
-            <h3 class="case-title">Harmonizing 1,200 Staff Under Statutory Labour Act & Pension Compliance</h3>
-            <p class="case-desc">
-              Conducted exhaustive multi-state employment audit across regional operations, resolving legacy pension gaps and modernizing employee contracts with zero operational downtime.
-            </p>
-            <div class="case-metrics-badge">
-              <span class="case-metric-text">Tribunal Exposure</span>
-              <span class="case-metric-val tabular-nums">0 Legal Disputes</span>
+        <!-- TAB 3: DOWNLOADABLE RESOURCES -->
+        <div class="res-panel" id="res-downloads">
+          <div class="downloads-grid">
+            <!-- Download 1 -->
+            <div class="download-card">
+              <div style="display: flex; gap: 16px; align-items: center;">
+                <div class="download-icon-box" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                </div>
+                <div>
+                  <h4 class="download-title">2026 Nigerian Labour Act &amp; Tax Checklist</h4>
+                  <p class="download-desc">Check contract clauses, leave rules, and pension/tax compliance.</p>
+                  <span class="download-meta">PDF &bull; 1.2 MB &bull; Free</span>
+                </div>
+              </div>
+              <button class="btn-pill btn-pill-primary btn-pill-sm open-download-modal" data-resource-name="2026 Labour Act & Tax Compliance Checklist">Download</button>
             </div>
-          </div>
 
-          <!-- Recruitment & Talent Case -->
-          <div class="case-card">
-            <div class="case-tag">Recruitment &bull; Fintech Growth</div>
-            <h3 class="case-title">Securing 14 C-Suite & Technical Department Heads with 100% Retention</h3>
-            <p class="case-desc">
-              Executed confidential executive search for Chief Operating Officer, VP of Engineering, and Commercial Directors with rigorous scorecard assessments and full 12-month retention.
-            </p>
-            <div class="case-metrics-badge">
-              <span class="case-metric-text">Executive Retention</span>
-              <span class="case-metric-val tabular-nums">100% Retained</span>
+            <!-- Download 2 -->
+            <div class="download-card">
+              <div style="display: flex; gap: 16px; align-items: center;">
+                <div class="download-icon-box" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                </div>
+                <div>
+                  <h4 class="download-title">Employee Handbook Starter Template</h4>
+                  <p class="download-desc">Ready-to-edit staff policy template with conduct and leave rules.</p>
+                  <span class="download-meta">DOCX &bull; 850 KB &bull; Free</span>
+                </div>
+              </div>
+              <button class="btn-pill btn-pill-primary btn-pill-sm open-download-modal" data-resource-name="Employee Handbook Starter Template">Download</button>
             </div>
-          </div>
 
-          <!-- Corporate Training Case -->
-          <div class="case-card">
-            <div class="case-tag">Training &bull; Financial Services</div>
-            <h3 class="case-title">Transformative Leadership Academy & People Management Masterclasses</h3>
-            <p class="case-desc">
-              Delivered an 8-week experiential management curriculum for 120 frontline supervisors, elevating internal team engagement scores and cutting voluntary turnover by half.
-            </p>
-            <div class="case-metrics-badge">
-              <span class="case-metric-text">Supervisory Churn</span>
-              <span class="case-metric-val tabular-nums">54% Drop in Turnover</span>
+            <!-- Download 3 -->
+            <div class="download-card">
+              <div style="display: flex; gap: 16px; align-items: center;">
+                <div class="download-icon-box" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                </div>
+                <div>
+                  <h4 class="download-title">Structured Candidate Interview Scorecard</h4>
+                  <p class="download-desc">Objective scoring template to assess skills, culture fit, and character.</p>
+                  <span class="download-meta">PDF &bull; 640 KB &bull; Free</span>
+                </div>
+              </div>
+              <button class="btn-pill btn-pill-primary btn-pill-sm open-download-modal" data-resource-name="Structured Candidate Interview Scorecard">Download</button>
+            </div>
+
+            <!-- Download 4 -->
+            <div class="download-card">
+              <div style="display: flex; gap: 16px; align-items: center;">
+                <div class="download-icon-box" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                </div>
+                <div>
+                  <h4 class="download-title">2026 Corporate &amp; Professional Training Catalog</h4>
+                  <p class="download-desc">Complete outlines, learning objectives, and dates for all 2026 courses.</p>
+                  <span class="download-meta">PDF &bull; 3.4 MB &bull; Free</span>
+                </div>
+              </div>
+              <button class="btn-pill btn-pill-primary btn-pill-sm open-download-modal" data-resource-name="2026 Complete Training Catalog">Download</button>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- TESTIMONIALS -->
-    <section class="section-wrapper" id="testimonials" style="background-color: #f7f9f8;">
+    <!-- ======================================================================
+         SECTION 4: COMPANY (OUR TEAMS, CAREERS, TESTIMONIALS, PARTNERS)
+         ====================================================================== -->
+    <section class="section-wrapper" id="company" style="background-color: #f7f9f8;">
       <div class="section-container">
         <div class="section-header-center">
-          <div class="category-badge">Executive Testimonials</div>
-          <h2 class="section-title">What Executive Leaders Say About Chadele</h2>
-          <p class="section-subtitle">Trusted by founders, board directors, and Chief People Officers across leading organizations.</p>
+          <div class="category-badge">About Chadele</div>
+          <h2 class="section-title">
+            The Company &amp; People <span class="text-underline">Behind The Work</span>
+          </h2>
+          <p class="section-subtitle">
+            We are certified HR advisors, executive talent headhunters, and leadership facilitators who believe great businesses are built by happy, confident people.
+          </p>
         </div>
 
-        <div class="testimonials-grid">
-          <!-- Testimonial 1: Business Advisory -->
-          <div class="testimonial-card">
-            <div class="test-stars">&starf;&starf;&starf;&starf;&starf;</div>
-            <p class="test-quote">
-              "Chadele restructured our operating model and board governance as we expanded into two regional markets. Their strategic clarity and departmental alignment were invaluable."
-            </p>
-            <div class="test-author-box">
-              <div class="test-avatar">TO</div>
-              <div>
-                <div class="test-name">Tunde Olawale</div>
-                <div class="test-role">Group Managing Director, SwiftPay Ecosystem</div>
+        <!-- Subnav quick jumps within Company -->
+        <div class="company-subnav">
+          <a href="#company-team" class="company-subnav-btn active">Our Teams</a>
+          <a href="#company-testimonials" class="company-subnav-btn">Testimonials</a>
+          <a href="#company-careers" class="company-subnav-btn">Careers</a>
+          <a href="#company-partners" class="company-subnav-btn">Partners &amp; Clients</a>
+        </div>
+
+        <!-- 1. OUR TEAMS -->
+        <div id="company-team">
+          <div style="text-align: center; margin-bottom: 28px;">
+            <h3 style="font-size: 22px; font-weight: 800; color: var(--text-main);">Meet Our Advisory &amp; People Leaders</h3>
+            <p style="font-size: 14px; color: var(--text-muted);">Real, friendly professionals with years of hands-on Nigerian and international experience.</p>
+          </div>
+
+          <div class="team-grid">
+            <!-- Team Member 1 -->
+            <article class="team-card">
+              <div class="team-image-box">
+                <img src="/images/team-lead.jpg" alt="Funmi Adebayo, Lead Advisory Partner" loading="lazy">
+              </div>
+              <div class="team-body">
+                <h4 class="team-name">Funmi Adebayo, SPHR, CIPM</h4>
+                <div class="team-role">Lead Advisory Partner</div>
+                <p class="team-bio">
+                  15+ years guiding boardroom strategy and scaling fast-growing companies. Believes the best business plan in the world is useless if your people aren't excited to execute it.
+                </p>
+                <span class="team-passion">🌱 Org Architecture &amp; Executive Coaching</span>
+              </div>
+            </article>
+
+            <!-- Team Member 2 -->
+            <article class="team-card">
+              <div class="team-image-box">
+                <img src="/images/team-recruiter.jpg" alt="Emeka Okafor, Head of Recruitment" loading="lazy">
+              </div>
+              <div class="team-body">
+                <h4 class="team-name">Emeka Okafor</h4>
+                <div class="team-role">Head of Recruitment &amp; Talent Solutions</div>
+                <p class="team-bio">
+                  Executive talent specialist who has placed over 300 transformational leaders across West Africa. Passionate about spotting genuine culture fit and leadership grit.
+                </p>
+                <span class="team-passion">🎯 C-Suite Headhunting &amp; Retention</span>
+              </div>
+            </article>
+
+            <!-- Team Member 3 -->
+            <article class="team-card">
+              <div class="team-image-box">
+                <img src="/images/about-team.jpg" alt="Amina Bello, Head of HR Consulting & Outsourcing" loading="lazy">
+              </div>
+              <div class="team-body">
+                <h4 class="team-name">Amina Bello, MCIPM</h4>
+                <div class="team-role">Head of HR Consulting &amp; Outsourcing</div>
+                <p class="team-bio">
+                  Labour law specialist and policy designer. Passionate about translating complex employment regulations into simple, human policies that employees genuinely understand.
+                </p>
+                <span class="team-passion">⚖️ Labour Act Compliance &amp; Payroll</span>
+              </div>
+            </article>
+
+            <!-- Team Member 4 -->
+            <article class="team-card">
+              <div class="team-image-box">
+                <img src="/images/team-meeting.jpg" alt="Tunde Bakare, Director of Training" loading="lazy">
+              </div>
+              <div class="team-body">
+                <h4 class="team-name">Tunde Bakare</h4>
+                <div class="team-role">Director of Corporate &amp; Professional Training</div>
+                <p class="team-bio">
+                  Experiential educator who has trained over 4,500 managers and staff. Known for energetic, practical workshops where people learn by doing, not just sitting through slides.
+                </p>
+                <span class="team-passion">💡 Interactive Leadership Bootcamps</span>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- 2. TESTIMONIALS -->
+        <div id="company-testimonials" style="padding-top: 20px; margin-bottom: 56px;">
+          <div style="text-align: center; margin-bottom: 28px;">
+            <h3 style="font-size: 22px; font-weight: 800; color: var(--text-main);">What Founders &amp; People Leaders Say</h3>
+            <p style="font-size: 14px; color: var(--text-muted);">Real words from leaders who rely on Chadele across our six core services.</p>
+          </div>
+
+          <div class="testimonials-grid">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-card">
+              <div class="test-stars">&starf;&starf;&starf;&starf;&starf;</div>
+              <p class="test-quote">
+                "Working with Chadele felt like gaining an instant superpower. They cleaned up our contracts, audited our Labour Act compliance, and now our entire team feels secure and supported."
+              </p>
+              <div class="test-author-box">
+                <div class="test-avatar">TB</div>
+                <div>
+                  <div class="test-name">Toyin Balogun</div>
+                  <div class="test-role">Chief Executive Officer, Veloce Commerce</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="testimonial-card">
+              <div class="test-stars">&starf;&starf;&starf;&starf;&starf;</div>
+              <p class="test-quote">
+                "Finding our Head of Operations took weeks of frustrating search until Chadele stepped in. They brought us three top-tier candidates within 10 days, and their 12-month guarantee gave our board complete confidence."
+              </p>
+              <div class="test-author-box">
+                <div class="test-avatar">BA</div>
+                <div>
+                  <div class="test-name">Babatunde Adeleke</div>
+                  <div class="test-role">Chief Operating Officer, Alpha Logistics</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="testimonial-card">
+              <div class="test-stars">&starf;&starf;&starf;&starf;&starf;</div>
+              <p class="test-quote">
+                "Their 3-day supervisory leadership bootcamp was a game-changer for our department managers. We saw an immediate shift in how they delegate tasks and resolve daily conflicts without drama."
+              </p>
+              <div class="test-author-box">
+                <div class="test-avatar">CO</div>
+                <div>
+                  <div class="test-name">Chidinma Okonkwo</div>
+                  <div class="test-role">Director of Talent, PrimeHealth Nigeria</div>
+                </div>
               </div>
             </div>
           </div>
+        </div>
 
-          <!-- Testimonial 2: HR Consulting -->
-          <div class="testimonial-card">
-            <div class="test-stars">&starf;&starf;&starf;&starf;&starf;</div>
-            <p class="test-quote">
-              "Their mastery of the Labour Act, statutory audit defence, and total rewards gave our board complete legal reassurance. Zero non-compliance exposure across all state audits."
+        <!-- 3. CAREERS (JOIN OUR TEAM) -->
+        <div id="company-careers" style="padding-top: 20px; margin-bottom: 56px;">
+          <div style="text-align: center; margin-bottom: 28px;">
+            <div class="category-badge">Join Us</div>
+            <h3 style="font-size: 22px; font-weight: 800; color: var(--text-main);">Build Meaningful Work At Chadele</h3>
+            <p style="font-size: 14px; color: var(--text-muted); max-width: 600px; margin: 0 auto;">
+              We believe in kind colleagues, genuine flexibility, transparent communication, and doing work that makes Nigerian workplaces better places to be.
             </p>
-            <div class="test-author-box">
-              <div class="test-avatar">AA</div>
-              <div>
-                <div class="test-name">Amina Abubakar</div>
-                <div class="test-role">Head of People & Corporate Services, Kora Capital</div>
-              </div>
-            </div>
           </div>
 
-          <!-- Testimonial 3: Recruitment & Talent -->
-          <div class="testimonial-card">
-            <div class="test-stars">&starf;&starf;&starf;&starf;&starf;</div>
-            <p class="test-quote">
-              "Securing transformational VP-level and technical leaders was our biggest bottleneck. Chadele delivered world-class executives backed by their 12-month candidate warranty."
-            </p>
-            <div class="test-author-box">
-              <div class="test-avatar">BA</div>
-              <div>
-                <div class="test-name">Babatunde Adeleke</div>
-                <div class="test-role">Chief Operating Officer, Alpha Logistics</div>
-              </div>
+          <div class="careers-grid">
+            <!-- Job 1 -->
+            <div class="career-card">
+              <span class="career-type-tag">Full-Time &bull; Hybrid</span>
+              <h4 class="career-role-title">Senior HR Consultant</h4>
+              <div class="career-location">📍 Lagos (Victoria Island) / Hybrid</div>
+              <p class="career-desc">
+                Partner directly with client founders and CEOs to audit workplace policies, conduct Labour Act reviews, and design modern performance appraisal systems.
+              </p>
+              <button class="btn-pill btn-pill-primary btn-pill-sm open-career-modal" data-job-role="Senior HR Consultant">
+                Apply for this Role
+              </button>
+            </div>
+
+            <!-- Job 2 -->
+            <div class="career-card">
+              <span class="career-type-tag">Full-Time &bull; Remote / Hybrid</span>
+              <h4 class="career-role-title">Talent Acquisition Specialist</h4>
+              <div class="career-location">📍 Lagos / Remote</div>
+              <p class="career-desc">
+                Lead end-to-end executive search and technical sourcing. Manage candidate pipelines, conduct structured scorecard interviews, and delight hiring managers.
+              </p>
+              <button class="btn-pill btn-pill-primary btn-pill-sm open-career-modal" data-job-role="Talent Acquisition Specialist">
+                Apply for this Role
+              </button>
+            </div>
+
+            <!-- Job 3 -->
+            <div class="career-card">
+              <span class="career-type-tag">Full-Time &bull; Hybrid</span>
+              <h4 class="career-role-title">Learning &amp; Development Facilitator</h4>
+              <div class="career-location">📍 Abuja &bull; Hybrid</div>
+              <p class="career-desc">
+                Design and facilitate dynamic in-person and virtual workshops for supervisors, executive cohorts, and corporate client retreats across Nigeria.
+              </p>
+              <button class="btn-pill btn-pill-primary btn-pill-sm open-career-modal" data-job-role="Learning & Development Facilitator">
+                Apply for this Role
+              </button>
             </div>
           </div>
+        </div>
 
-          <!-- Testimonial 4: Corporate Training -->
-          <div class="testimonial-card">
-            <div class="test-stars">&starf;&starf;&starf;&starf;&starf;</div>
-            <p class="test-quote">
-              "Their 8-week Leadership Academy transformed our frontline supervisors. Team engagement jumped by 38% and our voluntary supervisory turnover dropped dramatically."
-            </p>
-            <div class="test-author-box">
-              <div class="test-avatar">CO</div>
-              <div>
-                <div class="test-name">Chidinma Okonkwo</div>
-                <div class="test-role">Director of Talent & Organization, PrimeHealth</div>
-              </div>
+        <!-- 4. PARTNERS AND CLIENTS -->
+        <div id="company-partners" style="padding-top: 20px;">
+          <div style="text-align: center; margin-bottom: 28px;">
+            <div class="category-badge">Ecosystem</div>
+            <h3 style="font-size: 22px; font-weight: 800; color: var(--text-main);">Partners &amp; Client Ecosystem</h3>
+            <p style="font-size: 14px; color: var(--text-muted);">Collaborating with leading industry bodies and high-performing organizations.</p>
+          </div>
+
+          <div style="background-color: #ffffff; border-radius: var(--radius-md); padding: 36px 28px; border: 1px solid var(--border-light); display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; text-align: center; align-items: center;">
+            <div>
+              <div style="font-size: 15px; font-weight: 800; color: var(--primary);">CIPM NIGERIA</div>
+              <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Institutional Practice Member</div>
+            </div>
+            <div>
+              <div style="font-size: 15px; font-weight: 800; color: var(--primary);">SHRM GLOBAL</div>
+              <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Senior Certified Professional Partner</div>
+            </div>
+            <div>
+              <div style="font-size: 15px; font-weight: 800; color: var(--primary);">NECA</div>
+              <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Employers' Consultative Alliance</div>
+            </div>
+            <div>
+              <div style="font-size: 15px; font-weight: 800; color: var(--primary);">TECHSTARS ALUMNI</div>
+              <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Preferred Talent Advisory Partner</div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- FAQ ACCORDION -->
+    <!-- ======================================================================
+         SECTION 5: SIMPLIFIED FAQ
+         ====================================================================== -->
     <section class="section-wrapper" id="faq">
       <div class="section-container">
         <div class="section-header-center">
           <div class="category-badge">Frequently Asked Questions</div>
           <h2 class="section-title">Answers To Top Client Questions</h2>
-          <p class="section-subtitle">Everything you need to know about working with Chadele across our four core services.</p>
+          <p class="section-subtitle">Everything you need to know about working with Chadele, explained in plain English.</p>
         </div>
 
         <div class="faq-container">
           <div class="faq-item active">
             <button class="faq-question">
-              <span>What is included in Chadele's Business Advisory service?</span>
+              <span>What makes Chadele different from traditional consulting firms?</span>
               <span class="faq-toggle-icon">+</span>
             </button>
             <div class="faq-answer">
-              We partner with CEOs, boards, and executive teams on organizational architecture, operating model redesign, corporate governance charters, change management, and commercial scaling strategies to ensure high-performance execution.
+              We don't hand you a 100-page slide deck and leave. We roll up our sleeves and implement the solution alongside you — writing the contracts, training the managers, or handling the payroll ourselves until everything runs smoothly and stress-free.
             </div>
           </div>
 
           <div class="faq-item">
             <button class="faq-question">
-              <span>How does your HR Consulting service protect against statutory risks?</span>
+              <span>We are a small business with 15 staff. Are we too small for Chadele?</span>
               <span class="faq-toggle-icon">+</span>
             </button>
             <div class="faq-answer">
-              We conduct comprehensive audits of employee contracts, disciplinary codes, and workplace policies against the Labour Act (2004), Pension Reform Act (PRA), PAYE tax laws, and National Industrial Court precedents to deliver 100% legal protection.
+              Not at all! Many of our best partnerships started with teams of 10 to 30 people. Setting up proper employment policies, clean contracts, and fair salary bands early is the best way to grow without chaos later.
             </div>
           </div>
 
           <div class="faq-item">
             <button class="faq-question">
-              <span>How does your Recruitment & Talent Solution process work and what guarantees apply?</span>
+              <span>What is the difference between Corporate Training and Professional Training?</span>
               <span class="faq-toggle-icon">+</span>
             </button>
             <div class="faq-answer">
-              We provide specialized executive search and technical sourcing utilizing multi-stage behavioral scorecards and talent mapping. All C-Suite and leadership placements come with our unconditional 12-month replacement guarantee.
+              <strong>Corporate Training</strong> is custom-tailored for a specific company and delivered exclusively to their internal team (e.g., your supervisors or executive team). <strong>Professional Training</strong> consists of open public cohorts where individual professionals from different companies join to earn certificates and advance their careers.
             </div>
           </div>
 
           <div class="faq-item">
             <button class="faq-question">
-              <span>What formats are available for Corporate Training & Leadership Development?</span>
+              <span>How does HR Outsourcing work on a day-to-day basis?</span>
               <span class="faq-toggle-icon">+</span>
             </button>
             <div class="faq-answer">
-              We offer custom executive retreats, supervisory masterclasses, and on-site or hybrid learning academies. All modules include pre-training skills assessments and post-training behavioral milestone tracking.
+              Think of us as your external people operations department. We calculate your monthly payroll, generate payslips, remit statutory taxes (PAYE, PenCom, ITF, NSITF), manage leave requests, onboard new hires, and answer everyday staff HR questions so you can focus on building your business.
             </div>
           </div>
 
           <div class="faq-item">
             <button class="faq-question">
-              <span>Can an enterprise engage Chadele for a single service or an integrated retainer?</span>
+              <span>What guarantees do you offer for recruitment and executive search?</span>
               <span class="faq-toggle-icon">+</span>
             </button>
             <div class="faq-answer">
-              Yes. Clients can engage us for dedicated single-scope projects (such as an executive search or HR compliance audit) or retain us across all four pillars for cohesive long-term advisory and workforce development.
+              All executive and managerial placements come with our unconditional 12-month placement replacement guarantee. If a placed candidate leaves or does not work out within 12 months, we find a qualified replacement at zero additional recruitment fee.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Can we hire Chadele for a single one-off project?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Yes, absolutely. You can hire us for a single project (like auditing an employee handbook or running a single leadership bootcamp) or work with us on an ongoing monthly retainer across our six services.
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CTA BANNER -->
-    <section class="section-container" style="padding: 0 24px;">
+    <!-- ======================================================================
+         SECTION 6: WARM CALL TO ACTION BANNER
+         ====================================================================== -->
+    <section class="section-container" style="padding: 0 20px;">
       <div class="cta-banner-wrapper">
-        <h2 class="cta-banner-title">Ready To Transform Your Organization & Workforce?</h2>
+        <h2 class="cta-banner-title">Ready To Make People Management Simple?</h2>
         <p class="cta-banner-subtitle">
-          Schedule a complimentary 30-minute strategic consultation with our Senior Advisory Partners in Lagos or Abuja. We will evaluate your corporate priorities and outline an immediate action plan.
+          Let’s have a friendly 20-minute chat about your business goals. No high-pressure sales pitches — just honest, practical advice on what your team needs.
         </p>
         <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
           <button class="btn-pill btn-pill-accent open-modal-btn" id="cta-bottom-btn">
-            Schedule Free Strategy Call
+            Book a Free 20-Min Chat
           </button>
-          <a href="https://wa.me/2348039421100?text=Hello%20Chadele%20HR,%20I%20would%20like%20to%20discuss%20our%20workforce%20needs." class="btn-pill" style="background-color: #25D366; color: #fff;" target="_blank" rel="noopener">
-            WhatsApp Practice Director
+          <a href="https://wa.me/2348039421100?text=Hello%20Chadele,%20I%20would%20like%20to%20discuss%20our%20workforce%20needs." class="btn-pill" style="background-color: #25D366; color: #fff;" target="_blank" rel="noopener">
+            WhatsApp an HR Partner
           </a>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- FOOTER -->
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
   <footer class="footer-wrapper">
     <div class="footer-inner">
       <div class="footer-top">
@@ -781,86 +1206,91 @@
             <span class="brand-name" style="color: #ffffff;">Chadele</span>
           </div>
           <p style="font-size: 14px; color: rgba(255, 255, 255, 0.65); line-height: 1.6; max-width: 280px; margin-bottom: 20px;">
-            Premier business advisory, HR consulting, executive talent recruitment, and corporate training partner for ambitious enterprises.
+            Friendly, practical people &amp; business solutions for ambitious teams in Nigeria and beyond.
           </p>
           <div style="font-size: 13px; color: var(--accent); font-weight: 700; line-height: 1.8;">
-            advisory@chadele.com<br>
+            hello@chadele.com<br>
             +234 1 888 2390 &bull; +234 803 942 1100
           </div>
         </div>
 
+        <!-- Col 1: Services Rendered -->
         <div>
-          <div class="footer-col-title">Our Services</div>
+          <div class="footer-col-title">Services Rendered</div>
           <ul class="footer-links">
-            <li><a href="#services" class="footer-link">Business Advisory</a></li>
-            <li><a href="#services" class="footer-link">HR Consulting</a></li>
-            <li><a href="#services" class="footer-link">Recruitment & Talent</a></li>
-            <li><a href="#services" class="footer-link">Corporate Training</a></li>
-            <li><a href="#services" class="footer-link">Executive Retainers</a></li>
+            <li><a href="#services" class="footer-link" data-filter-jump="advisory">Business Advisory</a></li>
+            <li><a href="#services" class="footer-link" data-filter-jump="consulting">HR Consulting</a></li>
+            <li><a href="#services" class="footer-link" data-filter-jump="recruitment">Recruitment &amp; Talent</a></li>
+            <li><a href="#services" class="footer-link" data-filter-jump="training">Corporate Training</a></li>
+            <li><a href="#services" class="footer-link" data-filter-jump="professional">Professional Training</a></li>
+            <li><a href="#services" class="footer-link" data-filter-jump="outsourcing">HR Outsourcing</a></li>
           </ul>
         </div>
 
+        <!-- Col 2: Training Offered -->
         <div>
-          <div class="footer-col-title">Offices</div>
-          <p style="font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.6; margin-bottom: 14px;">
-            <strong>Lagos (HQ):</strong><br>
-            14A Idowu Martins Street, Victoria Island, Lagos, Nigeria
-          </p>
-          <p style="font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.6;">
-            <strong>Abuja Branch:</strong><br>
-            Plot 1024 Cadastral Zone, Maitama, Abuja, Nigeria
-          </p>
+          <div class="footer-col-title">Training Offered</div>
+          <ul class="footer-links">
+            <li><a href="#training" class="footer-link" data-training-jump="corporate">Corporate Training</a></li>
+            <li><a href="#training" class="footer-link" data-training-jump="professional">Professional / Open Training</a></li>
+            <li><a href="#training" class="footer-link open-training-modal" data-course-type="Custom In-House Training">Request Team Training</a></li>
+            <li><a href="#training" class="footer-link open-training-modal" data-course-type="Open Masterclasses">Upcoming Cohorts</a></li>
+          </ul>
         </div>
 
+        <!-- Col 3: Resources -->
         <div>
-          <div class="footer-col-title">Certifications</div>
-          <p style="font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.6; margin-bottom: 10px;">
-            &bull; Chartered Institute of Personnel Management (CIPM)<br>
-            &bull; SHRM Senior Certified Professional (SHRM-SCP)<br>
-            &bull; HR Certification Institute (SPHR)
-          </p>
+          <div class="footer-col-title">Resources</div>
+          <ul class="footer-links">
+            <li><a href="#resources" class="footer-link" data-res-tab="articles">Articles &amp; Blog</a></li>
+            <li><a href="#resources" class="footer-link" data-res-tab="tools">Guides &amp; Tools</a></li>
+            <li><a href="#resources" class="footer-link" data-res-tab="downloads">Downloadable Resources</a></li>
+            <li><a href="#calculator" class="footer-link">Turnover ROI Calculator</a></li>
+          </ul>
         </div>
 
+        <!-- Col 4: Company -->
         <div>
-          <div class="footer-col-title">Executive Briefing</div>
-          <p style="font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.5; margin-bottom: 14px;">
-            Receive our quarterly executive regulatory briefing and workforce compensation index.
-          </p>
-          <form id="newsletter-form" style="display: flex; gap: 8px;">
-            <input type="email" placeholder="Your work email" required class="form-input" style="padding: 10px 14px; font-size: 14px; background-color: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: #fff;">
-            <button type="submit" class="btn-pill btn-pill-accent btn-pill-sm">Subscribe</button>
-          </form>
-          <div id="newsletter-feedback" style="font-size: 12px; color: var(--accent); margin-top: 8px; display: none;">Thank you for subscribing!</div>
+          <div class="footer-col-title">Company</div>
+          <ul class="footer-links">
+            <li><a href="#company-team" class="footer-link">Our Teams</a></li>
+            <li><a href="#company-careers" class="footer-link">Careers</a></li>
+            <li><a href="#company-testimonials" class="footer-link">Testimonials</a></li>
+            <li><a href="#company-partners" class="footer-link">Partners &amp; Clients</a></li>
+          </ul>
         </div>
       </div>
 
       <div class="footer-bottom">
         <div>&copy; 2026 Chadele Human Capital Advisory Ltd. RC: 1849201. All rights reserved.</div>
         <div style="display: flex; gap: 24px;">
-          <a href="#" class="footer-link">Privacy Policy</a>
-          <a href="#" class="footer-link">Terms of Advisory</a>
-          <a href="#" class="footer-link">Labour Act Guidance</a>
+          <span>Lagos HQ: 14A Idowu Martins, Victoria Island</span>
+          <span>Abuja: Maitama District</span>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- CONSULTATION / QUOTE REQUEST MODAL -->
+  <!-- ========================================================================
+       MODALS
+       ======================================================================== -->
+
+  <!-- 1. CONSULTATION / QUOTE REQUEST MODAL -->
   <div class="modal-overlay" id="consultation-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div class="modal-container">
       <button class="modal-close-btn" id="modal-close-btn" aria-label="Close dialog">&times;</button>
       <div id="modal-form-content">
-        <div class="category-badge" style="margin-bottom: 8px;">Complimentary Strategy Session</div>
+        <div class="category-badge" style="margin-bottom: 8px;">Friendly Strategy Session</div>
         <h3 id="modal-title" style="font-size: 22px; font-weight: 800; color: var(--text-main); margin-bottom: 10px;">
-          Request Strategic Scope & Proposal
+          Book a Free 20-Min Chat
         </h3>
         <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 24px;">
-          Connect with a Senior Partner in Lagos or Abuja to review your organizational priorities and receive an advisory proposal.
+          Connect with an HR Partner in Lagos or Abuja to talk through your team needs. No sales pitch, just honest guidance.
         </p>
 
         <form id="consultation-form">
           <div class="form-group">
-            <label class="form-label" for="input-name">Full Name *</label>
+            <label class="form-label" for="input-name">Your Full Name *</label>
             <input type="text" id="input-name" class="form-input" placeholder="e.g. Babatunde Adeleke" required>
           </div>
 
@@ -871,9 +1301,10 @@
 
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
             <div class="form-group">
-              <label class="form-label" for="select-size">Company Headcount</label>
+              <label class="form-label" for="select-size">Team Headcount</label>
               <select id="select-size" class="form-select">
-                <option value="15-50">15 – 50 Employees</option>
+                <option value="1-15">1 – 15 Employees</option>
+                <option value="16-50">16 – 50 Employees</option>
                 <option value="51-200" selected>51 – 200 Employees</option>
                 <option value="201-500">201 – 500 Employees</option>
                 <option value="500+">500+ Employees</option>
@@ -881,24 +1312,26 @@
             </div>
 
             <div class="form-group">
-              <label class="form-label" for="select-practice">Primary Need</label>
+              <label class="form-label" for="select-practice">Service Needed</label>
               <select id="select-practice" class="form-select">
-                <option value="advisory">Business Advisory & Strategy</option>
-                <option value="consulting">HR Consulting & Labour Compliance</option>
-                <option value="recruitment">Recruitment & Executive Search</option>
-                <option value="training">Corporate Training & Upskilling</option>
-                <option value="integrated">Integrated Multi-Pillar Engagement</option>
+                <option value="advisory">Business Advisory</option>
+                <option value="consulting">HR Consulting &amp; Policies</option>
+                <option value="recruitment">Recruitment &amp; Talent</option>
+                <option value="training_corp">Corporate Training (In-House)</option>
+                <option value="training_prof">Professional / Open Training</option>
+                <option value="outsourcing">HR Outsourcing</option>
+                <option value="general">Not sure yet / General chat</option>
               </select>
             </div>
           </div>
 
           <div class="form-group">
-            <label class="form-label" for="input-notes">Notes or Deadlines (Optional)</label>
-            <textarea id="input-notes" class="form-textarea" rows="3" placeholder="Describe current challenges or immediate deadlines..."></textarea>
+            <label class="form-label" for="input-notes">What would you like to discuss? (Optional)</label>
+            <textarea id="input-notes" class="form-textarea" rows="3" placeholder="Tell us briefly about current challenges or upcoming plans..."></textarea>
           </div>
 
           <button type="submit" class="btn-pill btn-pill-primary" style="width: 100%;" id="btn-submit-consultation">
-            Submit Scope Request
+            Book 20-Minute Chat
           </button>
         </form>
       </div>
@@ -907,34 +1340,228 @@
         <div style="width: 56px; height: 56px; border-radius: 50%; background-color: var(--accent-light); color: var(--accent); margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; font-size: 28px;">
           &check;
         </div>
-        <h3 style="font-size: 22px; font-weight: 800; color: var(--text-main); margin-bottom: 8px;">Scope Request Received!</h3>
+        <h3 style="font-size: 22px; font-weight: 800; color: var(--text-main); margin-bottom: 8px;">Message Received!</h3>
         <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6; margin-bottom: 24px;">
-          Thank you. A Senior HR Practice Director from our Victoria Island or Abuja office will reach out within 4 business hours.
+          Thank you! An HR Partner from our Lagos or Abuja office will reach out within 4 business hours to confirm your chat.
         </p>
         <button class="btn-pill btn-pill-primary" id="btn-modal-done">Done</button>
       </div>
     </div>
   </div>
 
-  <!-- PRACTICE AREA DETAILS MODAL -->
+  <!-- 2. PRACTICE AREA DETAILS MODAL -->
   <div class="modal-overlay" id="practice-modal" role="dialog" aria-modal="true" aria-labelledby="practice-modal-title">
     <div class="modal-container">
       <button class="modal-close-btn" id="practice-close-btn" aria-label="Close dialog">&times;</button>
-      <div class="category-badge" id="practice-modal-category">PRACTICE AREA OVERVIEW</div>
+      <div class="category-badge" id="practice-modal-category">SERVICE OVERVIEW</div>
       <h3 id="practice-modal-title" style="font-size: 22px; font-weight: 800; color: var(--text-main); margin-bottom: 12px;"></h3>
-      <p id="practice-modal-desc" style="font-size: 15px; color: var(--text-muted); line-height: 1.65; margin-bottom: 24px;"></p>
+      <p id="practice-modal-desc" style="font-size: 15px; color: var(--text-muted); line-height: 1.65; margin-bottom: 20px;"></p>
       
-      <div style="background-color: var(--bg-subtle); border-radius: var(--radius-sm); padding: 20px; margin-bottom: 28px;">
-        <div style="font-size: 13px; font-weight: 800; color: var(--primary); text-transform: uppercase; margin-bottom: 10px;">Key Engagement Deliverables:</div>
+      <div style="background-color: var(--bg-subtle); border-radius: var(--radius-sm); padding: 20px; margin-bottom: 24px;">
+        <div style="font-size: 13px; font-weight: 800; color: var(--primary); text-transform: uppercase; margin-bottom: 10px;">What This Service Includes:</div>
         <ul id="practice-modal-deliverables" style="font-size: 14px; color: var(--text-main); display: flex; flex-direction: column; gap: 8px; padding-left: 20px;"></ul>
       </div>
 
       <div style="display: flex; gap: 14px; flex-wrap: wrap;">
         <button class="btn-pill btn-pill-primary open-modal-btn" id="practice-modal-cta">
-          Book This Practice
+          Talk to an Expert About This
         </button>
         <button class="btn-pill btn-pill-secondary" id="practice-modal-back">
-          Back
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. TRAINING ENROLLMENT & SYLLABUS MODAL -->
+  <div class="modal-overlay" id="training-modal" role="dialog" aria-modal="true" aria-labelledby="training-modal-title">
+    <div class="modal-container">
+      <button class="modal-close-btn" id="training-modal-close" aria-label="Close dialog">&times;</button>
+      <div class="category-badge" id="training-modal-tag">TRAINING ENROLLMENT</div>
+      <h3 id="training-modal-title" style="font-size: 22px; font-weight: 800; color: var(--text-main); margin-bottom: 8px;">
+        Course Registration &amp; Syllabus
+      </h3>
+      <p id="training-modal-subtitle" style="font-size: 14px; color: var(--text-muted); margin-bottom: 20px;">
+        Reserve your seat or request the complete course curriculum and pricing.
+      </p>
+
+      <form id="training-form">
+        <input type="hidden" id="training-input-course" value="">
+        <div class="form-group">
+          <label class="form-label" for="train-input-name">Full Name *</label>
+          <input type="text" id="train-input-name" class="form-input" placeholder="e.g. Ngozi Adeleke" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="train-input-email">Work Email *</label>
+          <input type="email" id="train-input-email" class="form-input" placeholder="e.g. ngozi@company.com" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="train-input-phone">Phone / WhatsApp Number *</label>
+          <input type="tel" id="train-input-phone" class="form-input" placeholder="e.g. +234 803 123 4567" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="train-select-attendees">Number of Seats</label>
+          <select id="train-select-attendees" class="form-select">
+            <option value="1">1 Person (Individual Seat)</option>
+            <option value="2-4">2 – 4 Team Members (10% Group Discount)</option>
+            <option value="5+">5+ Team Members (Custom Corporate Rate)</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn-pill btn-pill-primary" style="width: 100%;">
+          Submit Request
+        </button>
+      </form>
+
+      <div id="training-modal-success" style="display: none; text-align: center; padding: 20px 0;">
+        <div style="width: 50px; height: 50px; border-radius: 50%; background-color: var(--accent-light); color: var(--accent); margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; font-size: 24px;">&check;</div>
+        <h4 style="font-size: 20px; font-weight: 800; color: var(--text-main); margin-bottom: 6px;">Request Received!</h4>
+        <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 20px;">Our learning coordinator will email you the full course syllabus and fee details shortly.</p>
+        <button class="btn-pill btn-pill-primary" id="btn-train-success-done">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. RESOURCE DOWNLOAD MODAL -->
+  <div class="modal-overlay" id="download-modal" role="dialog" aria-modal="true" aria-labelledby="download-modal-title">
+    <div class="modal-container" style="max-width: 480px;">
+      <button class="modal-close-btn" id="download-modal-close" aria-label="Close dialog">&times;</button>
+      <div class="category-badge">Free Download</div>
+      <h3 id="download-modal-title" style="font-size: 20px; font-weight: 800; color: var(--text-main); margin-bottom: 8px;">
+        Download Resource
+      </h3>
+      <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 20px;">
+        Where should we send your free copy?
+      </p>
+
+      <form id="download-form">
+        <input type="hidden" id="download-resource-title" value="">
+        <div class="form-group">
+          <label class="form-label" for="dl-input-name">Your Name</label>
+          <input type="text" id="dl-input-name" class="form-input" placeholder="e.g. Babatunde Adeleke" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="dl-input-email">Work Email</label>
+          <input type="email" id="dl-input-email" class="form-input" placeholder="e.g. name@company.com" required>
+        </div>
+
+        <button type="submit" class="btn-pill btn-pill-primary" style="width: 100%;">
+          Download Now &darr;
+        </button>
+      </form>
+
+      <div id="download-modal-success" style="display: none; text-align: center; padding: 20px 0;">
+        <div style="width: 50px; height: 50px; border-radius: 50%; background-color: var(--accent-light); color: var(--accent); margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; font-size: 24px;">&check;</div>
+        <h4 style="font-size: 20px; font-weight: 800; color: var(--text-main); margin-bottom: 6px;">Download Ready!</h4>
+        <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 20px;">Your resource has been prepared and a backup link sent to your inbox.</p>
+        <button class="btn-pill btn-pill-primary" id="btn-download-done">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. ARTICLE SUMMARY MODAL -->
+  <div class="modal-overlay" id="article-modal" role="dialog" aria-modal="true" aria-labelledby="article-modal-title">
+    <div class="modal-container">
+      <button class="modal-close-btn" id="article-modal-close" aria-label="Close dialog">&times;</button>
+      <div class="category-badge" id="article-modal-category">ARTICLE SUMMARY</div>
+      <h3 id="article-modal-title" style="font-size: 22px; font-weight: 800; color: var(--text-main); margin-bottom: 12px;"></h3>
+      <div id="article-modal-body" style="font-size: 15px; color: var(--text-muted); line-height: 1.7; margin-bottom: 24px;"></div>
+      <button class="btn-pill btn-pill-secondary" id="article-modal-done">Close Summary</button>
+    </div>
+  </div>
+
+  <!-- 6. CAREER APPLICATION MODAL -->
+  <div class="modal-overlay" id="career-modal" role="dialog" aria-modal="true" aria-labelledby="career-modal-title">
+    <div class="modal-container">
+      <button class="modal-close-btn" id="career-modal-close" aria-label="Close dialog">&times;</button>
+      <div class="category-badge">Join Chadele</div>
+      <h3 id="career-modal-title" style="font-size: 22px; font-weight: 800; color: var(--text-main); margin-bottom: 8px;">
+        Apply for Position
+      </h3>
+      <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 20px;">
+        We'd love to learn about you. Fill out the quick details below.
+      </p>
+
+      <form id="career-form">
+        <input type="hidden" id="career-input-role" value="">
+        <div class="form-group">
+          <label class="form-label" for="job-input-name">Full Name *</label>
+          <input type="text" id="job-input-name" class="form-input" placeholder="e.g. Chinedu Eze" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="job-input-email">Email Address *</label>
+          <input type="email" id="job-input-email" class="form-input" placeholder="e.g. chinedu@example.com" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="job-input-phone">Phone Number *</label>
+          <input type="tel" id="job-input-phone" class="form-input" placeholder="e.g. +234 802 345 6789" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="job-input-link">LinkedIn Profile or Portfolio URL *</label>
+          <input type="url" id="job-input-link" class="form-input" placeholder="https://linkedin.com/in/yourprofile" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="job-input-intro">Brief Intro (Why you'd love to work with Chadele)</label>
+          <textarea id="job-input-intro" class="form-textarea" rows="3" placeholder="Tell us a bit about your experience..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-pill btn-pill-primary" style="width: 100%;">
+          Submit Application
+        </button>
+      </form>
+
+      <div id="career-modal-success" style="display: none; text-align: center; padding: 20px 0;">
+        <div style="width: 50px; height: 50px; border-radius: 50%; background-color: var(--accent-light); color: var(--accent); margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; font-size: 24px;">&check;</div>
+        <h4 style="font-size: 20px; font-weight: 800; color: var(--text-main); margin-bottom: 6px;">Application Received!</h4>
+        <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 20px;">Thank you for your interest in Chadele. Our people team reviews every application within 5 business days.</p>
+        <button class="btn-pill btn-pill-primary" id="btn-career-done">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. 2-MINUTE HR COMPLIANCE HEALTH CHECK MODAL -->
+  <div class="modal-overlay" id="quiz-modal" role="dialog" aria-modal="true" aria-labelledby="quiz-modal-title">
+    <div class="modal-container" style="max-width: 520px;">
+      <button class="modal-close-btn" id="quiz-modal-close" aria-label="Close dialog">&times;</button>
+      <div class="category-badge">Interactive Diagnostic</div>
+      <h3 id="quiz-modal-title" style="font-size: 22px; font-weight: 800; color: var(--text-main); margin-bottom: 8px;">
+        2-Minute HR Compliance Health Check
+      </h3>
+      <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 20px;">
+        Check your company's risk profile across Nigerian labour laws in 5 quick questions.
+      </p>
+
+      <div id="quiz-questions-view">
+        <div id="quiz-question-container" style="background-color: var(--bg-subtle); border-radius: var(--radius-sm); padding: 24px; margin-bottom: 20px;">
+          <div id="quiz-progress" style="font-size: 12px; font-weight: 800; color: var(--accent); text-transform: uppercase; margin-bottom: 8px;">Question 1 of 5</div>
+          <div id="quiz-question-text" style="font-size: 16px; font-weight: 700; color: var(--text-main); line-height: 1.4; margin-bottom: 20px;">
+            Do all your current employees have a signed employment contract that explicitly references their salary, working hours, and notice period?
+          </div>
+          <div style="display: flex; gap: 12px;">
+            <button class="btn-pill btn-pill-primary btn-pill-sm quiz-answer-btn" data-answer="yes" style="flex: 1;">Yes, Absolutely</button>
+            <button class="btn-pill btn-pill-secondary btn-pill-sm quiz-answer-btn" data-answer="no" style="flex: 1;">Not All / Not Sure</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="quiz-results-view" style="display: none; text-align: center; padding: 10px 0;">
+        <div id="quiz-score-circle" style="width: 64px; height: 64px; border-radius: 50%; background-color: var(--accent-light); color: var(--primary); margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 800;">
+          4/5
+        </div>
+        <h4 id="quiz-result-title" style="font-size: 20px; font-weight: 800; color: var(--text-main); margin-bottom: 8px;">Good Health, Minor Gaps</h4>
+        <p id="quiz-result-feedback" style="font-size: 14px; color: var(--text-muted); line-height: 1.6; margin-bottom: 24px;">
+          Your workplace basics are solid, but missing items like updated handbooks or statutory remittance filings can expose you to state audit penalties.
+        </p>
+        <button class="btn-pill btn-pill-primary open-modal-btn" id="btn-quiz-book-audit" style="width: 100%;">
+          Schedule a Free 20-Min Review
         </button>
       </div>
     </div>
