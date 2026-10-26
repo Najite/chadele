@@ -768,6 +768,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 25%;
 }
 
 .service-card-badge {
@@ -899,6 +900,8 @@ body {
   font-size: 16px;
   font-weight: 800;
   color: var(--primary);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
 }
 
 .calc-slider {
@@ -910,8 +913,13 @@ body {
   -webkit-appearance: none;
   appearance: none;
   accent-color: var(--primary);
-  cursor: pointer;
+  cursor: grab;
   touch-action: pan-x;
+  transition: opacity 0.15s ease;
+}
+
+.calc-slider:active {
+  cursor: grabbing;
 }
 
 .calc-slider::-webkit-slider-thumb {
@@ -921,8 +929,15 @@ body {
   height: 24px;
   border-radius: 50%;
   background: var(--primary);
-  cursor: pointer;
+  cursor: grab;
   box-shadow: 0 2px 8px rgba(7, 59, 51, 0.3);
+  transition: transform 0.12s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.12s ease;
+}
+
+.calc-slider:active::-webkit-slider-thumb {
+  cursor: grabbing;
+  transform: scale(1.22);
+  box-shadow: 0 0 0 6px rgba(7, 59, 51, 0.2);
 }
 
 .calc-results-card {
@@ -951,10 +966,14 @@ body {
   font-weight: 800;
   color: #ffffff;
   line-height: 1.15;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
 }
 
 .calc-stat-number.accent {
   color: var(--accent);
+  display: inline-block;
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* WHY CHOOSE US */
@@ -1180,18 +1199,25 @@ body {
 }
 
 .faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease, padding 0.3s ease;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.24s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease, padding 0.24s ease;
+  opacity: 0;
   padding: 0 20px;
-  font-size: 14px;
-  color: var(--text-muted);
-  line-height: 1.7;
 }
 
 .faq-item.active .faq-answer {
-  max-height: 250px;
+  grid-template-rows: 1fr;
+  opacity: 1;
   padding: 0 20px 18px;
+}
+
+.faq-answer-inner {
+  overflow: hidden;
+  min-height: 0;
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
 }
 
 /* CTA BANNER */
@@ -1802,10 +1828,24 @@ body {
 
 .res-panel {
   display: none;
+  opacity: 0;
+  transform: translateY(8px);
 }
 
 .res-panel.active {
   display: block;
+  animation: panelEntrance 0.24s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes panelEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Articles Grid */
@@ -2062,6 +2102,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top center;
   transition: transform 0.3s ease;
 }
 
@@ -2189,6 +2230,66 @@ body {
   .download-card .btn-pill {
     width: 100%;
   }
+}
+
+/* ==========================================================================
+   5 TACTILE & INTERACTIVE UPGRADES (EMIL KOWALSKI DESIGN ENGINEERING)
+   ========================================================================== */
+
+/* 1. Global Tabular Numbers for Smooth Rolling Counters */
+.tabular-nums,
+.calc-stat-number,
+.calc-field-val,
+.metric-number {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+/* 2. Tactile Press Feedback (100ms physical feedback on press) */
+.btn-pill:active,
+.filter-btn:active,
+.res-tab-btn:active,
+.currency-btn:active,
+.quiz-answer-btn:active,
+.faq-question:active,
+.nav-mobile-toggle:active,
+.modal-close-btn:active {
+  transform: scale(0.975);
+  transition: transform 0.08s ease-out;
+}
+
+/* 3. Interactive Card Physical Hover & Active Spring */
+.service-card,
+.article-card,
+.tool-card,
+.download-card,
+.training-pillar-card,
+.career-card,
+.team-card {
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
+}
+
+.service-card:active,
+.article-card:active,
+.tool-card:active,
+.download-card:active,
+.career-card:active {
+  transform: translateY(-2px) scale(0.99);
+}
+
+/* 4. Quiz Progress Ring Animation (Delight / Completion state) */
+.quiz-score-meter-wrap {
+  filter: drop-shadow(0 6px 16px rgba(7, 59, 51, 0.12));
+}
+
+#quiz-progress-ring {
+  transition: stroke-dashoffset 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: center;
+}
+
+/* 5. Question Container Transition */
+#quiz-question-container {
+  transition: opacity 0.16s ease, transform 0.18s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @media (prefers-reduced-motion: reduce) {

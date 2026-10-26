@@ -257,7 +257,14 @@ document.addEventListener('DOMContentLoaded', () => {
     return symbol + Math.round(amount).toLocaleString('en-US');
   }
 
-  function updateCalculator() {
+  const calcState = {
+    cost: 0,
+    savings: 0,
+    initialized: false
+  };
+  let calcTween = null;
+
+  function updateCalculator(animate = true) {
     if (!sliderHeadcount || !sliderSalary || !sliderTurnover) return;
     const headcount = parseInt(sliderHeadcount.value, 10);
     const salary = parseInt(sliderSalary.value, 10);
@@ -272,8 +279,35 @@ document.addEventListener('DOMContentLoaded', () => {
     const turnoverLoss = annualTurnovers * (salary * 0.5);
     const projectedSavings = turnoverLoss * 0.35; // 35% retention improvement with Chadele
 
-    statTurnoverCost.textContent = formatMoney(turnoverLoss, currentCurrency);
-    statSavings.textContent = formatMoney(projectedSavings, currentCurrency);
+    if (!calcState.initialized || !animate || prefersReducedMotion) {
+      calcState.cost = turnoverLoss;
+      calcState.savings = projectedSavings;
+      calcState.initialized = true;
+      if (statTurnoverCost) statTurnoverCost.textContent = formatMoney(turnoverLoss, currentCurrency);
+      if (statSavings) statSavings.textContent = formatMoney(projectedSavings, currentCurrency);
+      return;
+    }
+
+    if (calcTween) calcTween.kill();
+
+    // Subtle tactile feedback pulse on savings
+    if (statSavings) {
+      statSavings.style.transform = 'scale(1.035)';
+      setTimeout(() => {
+        if (statSavings) statSavings.style.transform = 'scale(1)';
+      }, 140);
+    }
+
+    calcTween = gsap.to(calcState, {
+      cost: turnoverLoss,
+      savings: projectedSavings,
+      duration: 0.22,
+      ease: 'power1.out',
+      onUpdate: () => {
+        if (statTurnoverCost) statTurnoverCost.textContent = formatMoney(calcState.cost, currentCurrency);
+        if (statSavings) statSavings.textContent = formatMoney(calcState.savings, currentCurrency);
+      }
+    });
   }
 
   function setCurrency(currency, resetSalary = true) {
@@ -301,7 +335,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (resetSalary) sliderSalary.value = "75000";
       }
     }
-    updateCalculator();
+    updateCalculator(false);
   }
 
   btnNgn?.addEventListener('click', () => setCurrency('NGN', true));
@@ -723,11 +757,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const quizQuestionsView = document.getElementById('quiz-questions-view');
   const quizResultsView = document.getElementById('quiz-results-view');
   const quizProgress = document.getElementById('quiz-progress');
+  const quizQuestionContainer = document.getElementById('quiz-question-container');
   const quizQuestionText = document.getElementById('quiz-question-text');
+  const quizProgressRing = document.getElementById('quiz-progress-ring');
   const quizScoreCircle = document.getElementById('quiz-score-circle');
   const quizResultTitle = document.getElementById('quiz-result-title');
   const quizResultFeedback = document.getElementById('quiz-result-feedback');
-
   const quizQuestions = [
     "Do all your current employees have a signed employment contract that explicitly references their salary, working hours, and notice period?",
     "Are you currently registered and remitting statutory PenCom pensions and PAYE state taxes for all eligible staff?",
@@ -738,6 +773,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let currentQuestionIndex = 0;
   let quizScore = 0;
+  let isQuizTransitioning = false;
 
   function loadQuestion(index) {
     if (quizProgress) quizProgress.textContent = `Question ${index + 1} of ${quizQuestions.length}`;
@@ -747,8 +783,15 @@ document.addEventListener('DOMContentLoaded', () => {
   function startQuiz() {
     currentQuestionIndex = 0;
     quizScore = 0;
+    isQuizTransitioning = false;
     if (quizQuestionsView) quizQuestionsView.style.display = 'block';
     if (quizResultsView) quizResultsView.style.display = 'none';
+    if (quizProgressRing) quizProgressRing.style.strokeDashoffset = '232.48';
+    if (quizScoreCircle) quizScoreCircle.textContent = '0/5';
+    if (quizQuestionContainer) {
+      quizQuestionContainer.style.opacity = '1';
+      quizQuestionContainer.style.transform = 'none';
+    }
     loadQuestion(0);
     quizModal?.classList.add('open');
   }
@@ -762,29 +805,72 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('.quiz-answer-btn').forEach(btn => {
     btn.addEventListener('click', () => {
+      if (isQuizTransitioning) return;
+      isQuizTransitioning = true;
+
       const isYes = btn.getAttribute('data-answer') === 'yes';
       if (isYes) quizScore++;
 
-      currentQuestionIndex++;
-      if (currentQuestionIndex < quizQuestions.length) {
-        loadQuestion(currentQuestionIndex);
-      } else {
-        // Show Results
-        if (quizQuestionsView) quizQuestionsView.style.display = 'none';
-        if (quizResultsView) quizResultsView.style.display = 'block';
-        if (quizScoreCircle) quizScoreCircle.textContent = `${quizScore}/5`;
-
-        if (quizScore === 5) {
-          quizResultTitle.textContent = 'Outstanding HR Health!';
-          quizResultFeedback.textContent = 'Congratulations! Your business has clean documentation and sound employment structures in place. Regular quarterly reviews will keep you protected.';
-        } else if (quizScore >= 3) {
-          quizResultTitle.textContent = 'Solid Basics, Key Vulnerabilities';
-          quizResultFeedback.textContent = 'You have good foundations, but the gaps in handbooks, statutory filings, or contracts could expose your company to costly fines or employee disputes.';
-        } else {
-          quizResultTitle.textContent = 'Urgent Legal & Operational Protection Needed';
-          quizResultFeedback.textContent = 'Your business is currently operating with critical employment risks. Let us help you audit your policies and establish airtight contracts immediately.';
-        }
+      if (quizQuestionContainer && !prefersReducedMotion) {
+        quizQuestionContainer.style.opacity = '0';
+        quizQuestionContainer.style.transform = 'translateX(-12px)';
       }
+
+      setTimeout(() => {
+        currentQuestionIndex++;
+        if (currentQuestionIndex < quizQuestions.length) {
+          loadQuestion(currentQuestionIndex);
+          if (quizQuestionContainer && !prefersReducedMotion) {
+            quizQuestionContainer.style.transform = 'translateX(12px)';
+            requestAnimationFrame(() => {
+              quizQuestionContainer.style.opacity = '1';
+              quizQuestionContainer.style.transform = 'translateX(0)';
+            });
+          }
+          isQuizTransitioning = false;
+        } else {
+          // Show Results
+          if (quizQuestionsView) quizQuestionsView.style.display = 'none';
+          if (quizResultsView) quizResultsView.style.display = 'block';
+
+          // Animate SVG Ring & Score Counter
+          const circumference = 232.48;
+          const targetOffset = circumference * (1 - (quizScore / 5));
+
+          if (quizProgressRing) {
+            quizProgressRing.style.strokeDashoffset = circumference;
+            setTimeout(() => {
+              if (quizProgressRing) quizProgressRing.style.strokeDashoffset = targetOffset;
+            }, 60);
+          }
+
+          if (prefersReducedMotion) {
+            if (quizScoreCircle) quizScoreCircle.textContent = `${quizScore}/5`;
+          } else {
+            const scoreCounter = { val: 0 };
+            gsap.to(scoreCounter, {
+              val: quizScore,
+              duration: 0.65,
+              ease: 'power2.out',
+              onUpdate: () => {
+                if (quizScoreCircle) quizScoreCircle.textContent = `${Math.round(scoreCounter.val)}/5`;
+              }
+            });
+          }
+
+          if (quizScore === 5) {
+            quizResultTitle.textContent = 'Outstanding HR Health!';
+            quizResultFeedback.textContent = 'Congratulations! Your business has clean documentation and sound employment structures in place. Regular quarterly reviews will keep you protected.';
+          } else if (quizScore >= 3) {
+            quizResultTitle.textContent = 'Solid Basics, Key Vulnerabilities';
+            quizResultFeedback.textContent = 'You have good foundations, but the gaps in handbooks, statutory filings, or contracts could expose your company to costly fines or employee disputes.';
+          } else {
+            quizResultTitle.textContent = 'Urgent Legal & Operational Protection Needed';
+            quizResultFeedback.textContent = 'Your business is currently operating with critical employment risks. Let us help you audit your policies and establish airtight contracts immediately.';
+          }
+          isQuizTransitioning = false;
+        }
+      }, prefersReducedMotion ? 0 : 130);
     });
   });
 
